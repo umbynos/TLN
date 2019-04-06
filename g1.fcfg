@@ -1,0 +1,18 @@
+## Grammar used to parse 3 phrases:
+
+## You are imagining things
+## There is a price on my head
+## Your big opportunity is flying out of here
+
+% start S
+############################
+# Grammar Rules
+#############################
+
+#############################
+# Lexical Rules
+#############################
+
+N[NUM=sg,SEM=<\x.thing(x)>] -> 'thing'
+N[NUM=sg,SEM=<\x.price(x)>] -> 'price'
+N[NUM=sg,SEM=<\x.head(x)>] -> 'head'
