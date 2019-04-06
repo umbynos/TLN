@@ -3,7 +3,7 @@ In questa repo potrete trovare i vari progetti realizzati per il corso di Tecnol
 
 # Testo Esercizio
 ## Traduzione intelingua En -> It
-1. Scrivere a una CFG per l'Inglese (G1), dotata di semantica, che parsifichi (almeno) le frasi:
+1. Scrivere una CFG per l'Inglese (G1), dotata di semantica, che parsifichi (almeno) le frasi:
 (1) You are imagining things
 (2) There is a price on my head
 (3) Your big opportunity is flying out of here
