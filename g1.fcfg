@@ -13,6 +13,7 @@ S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
 
 NP[NUM=?n,SEM=<?det(?nom)> ] -> Det[NUM=?n,SEM=?det]  Nom[NUM=?n,SEM=?nom]
 NP[LOC=?l,NUM=?n,SEM=?np] -> PropN[LOC=?l,NUM=?n,SEM=?np]
+NP[NUM=?n,SEM=?np] -> PRON[NUM=?n,SEM=?np]
 
 Nom[NUM=?n,SEM=?nom] -> N[NUM=?n,SEM=?nom]
 
@@ -35,7 +36,7 @@ AuxP[COP=?c,NUM=?n,SEM=?aux] -> AUX[COP=?c,NUM=?n,SEM=?aux]
 #############################
 
 ## pl? altri pron?
-PRON[NUM=pl,SEM=<\P.P(you)>] -> 'you'
+PRON[NUM=pl,SEM=<\P.P(you)>] -> 'you' | 'You'
 
 AUX[+COP,NUM=pl,SEM=<\P x.P(x)>,TNS=pres] -> 'are'
 
