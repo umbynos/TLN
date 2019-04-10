@@ -7,9 +7,9 @@ In questa repo potrete trovare i vari progetti realizzati per il corso di Tecnol
 - (1) *You are imagining things*
 - (2) *There is a price on my head*
 - (3) *Your big opportunity is flying out of here*
-- **HINT**: ispirarsi alla grammatica [“simple-sem.fcfg”](https://github.com/nltk/nltk_teach/blob/master/examples/grammars/book_grammars/simple-sem.fcfg)
+- **HINT**: ispirarsi alla grammatica [â€œsimple-sem.fcfgâ€](https://github.com/nltk/nltk_teach/blob/master/examples/grammars/book_grammars/simple-sem.fcfg)
 2. Provare G1 in NLTK (http://www.nltk.org/book/ch10.html)
-3. Costruire un sentence planner che per ogni formula prodotta dalla grammatica G1 produca un sentence-plan (proto-albero a dipendenze) valido. (**HINT**: È possibile usare un semplice approccio basato su espressioni regolari e sentence-plan precompilati)
+3. Costruire un sentence planner che per ogni formula prodotta dalla grammatica G1 produca un sentence-plan (proto-albero a dipendenze) valido. (**HINT**: Ãˆ possibile usare un semplice approccio basato su espressioni regolari e sentence-plan precompilati)
 4. Usando la librerie SimpleNLG-IT (eventualmente come server attraverso socket o via pipe) implementare un semplice realizer che trasformi i sentence plans in frasi italiane (**HINT**: usare una lessicalizzazione EN->IT 1-1)
 
 ## Consegna
@@ -26,9 +26,9 @@ Es: `python3 test.py simple-sem.fcfg "every dog bites a bone"`.
 [qui](https://universaldependencies.org/u/pos/)
 
 ## Debug python da linea di comando
-Inserire `import pdb; pdb.set_trace()` nel codice. Scrivere step(s) per andare avanti ed entrare nelle funzioni, next(n) per andare avanti senza entrare nelle funzioni. Pi� dettagli [qui](https://codeburst.io/how-i-use-python-debugger-to-fix-code-279f11f75866)
+Inserire `import pdb; pdb.set_trace()` nel codice. Scrivere `step(s)` per andare avanti ed entrare nelle funzioni, `next(n)` per andare avanti senza entrare nelle funzioni. Più dettagli [qui](https://codeburst.io/how-i-use-python-debugger-to-fix-code-279f11f75866)
 
 ## Appunti
 `SEM` all'interno delle regole lessicali regola la semantica dei simpboli terminali definite secondo le regole del lambda calcolo. (Vedi pacco 7 slide 41 Ro)
 
-Non stampa un cazzo in output, c'è qualcosa che non va
+Non stampa un cazzo in output, c'Ã¨ qualcosa che non va
