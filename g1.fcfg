@@ -9,10 +9,41 @@
 # Grammar Rules
 #############################
 
+S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
+
+NP[NUM=?n,SEM=<?det(?nom)> ] -> Det[NUM=?n,SEM=?det]  Nom[NUM=?n,SEM=?nom]
+NP[LOC=?l,NUM=?n,SEM=?np] -> PropN[LOC=?l,NUM=?n,SEM=?np]
+
+Nom[NUM=?n,SEM=?nom] -> N[NUM=?n,SEM=?nom]
+
+VP[NUM=?n,SEM=?v] -> IV[NUM=?n,SEM=?v]
+VP[NUM=?n,SEM=<?v(?obj)>] -> TV[NUM=?n,SEM=?v] NP[SEM=?obj]
+VP[NUM=?n,SEM=<?v(?obj,?pp)>] -> DTV[NUM=?n,SEM=?v] NP[SEM=?obj] PP[+TO,SEM=?pp]
+
+PP[+TO, SEM=?np] -> P[+TO] NP[SEM=?np]
+
+## Copular VPs
+##VP[NUM=?n,SEM=<app(?v,?prd)>] -> AuxP[+COP,NUM=?n,SEM=?v] Pred[SEM=?prd]
+
+TV[NUM=?n,SEM=?v] -> AuxP[NUM=?n] TV[SEM=?v,TNS=continuous]
+
+AuxP[COP=?c,NUM=?n,SEM=?aux] -> AUX[COP=?c,NUM=?n,SEM=?aux]
+
+
 #############################
 # Lexical Rules
 #############################
 
+## pl? altri pron?
+PRON[NUM=pl,SEM=<\P.P(you)>] -> 'you'
+
+AUX[+COP,NUM=pl,SEM=<\P x.P(x)>,TNS=pres] -> 'are'
+
+TV[NUM=pl,SEM=<\X x.X(\y.imagine(x,y))>,TNS=continuous] -> 'imagining'
+
+
+
 N[NUM=sg,SEM=<\x.thing(x)>] -> 'thing'
+N[NUM=pl,SEM=<\x.thing(x)>] -> 'things'
 N[NUM=sg,SEM=<\x.price(x)>] -> 'price'
 N[NUM=sg,SEM=<\x.head(x)>] -> 'head'

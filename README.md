@@ -16,5 +16,16 @@ In questa repo potrete trovare i vari progetti realizzati per il corso di Tecnol
 Bisogna consegnare il codice e una breve relazione (max 10 pagine) almeno **due giorni prima** della data dell'esame dell'orale concordata.
 Attenzione: gli esercizi si possono fare in gruppi da 2.
 
+## How to
+per eseguire `python3 test.py <grammatica> "<frase da parsificare>"`.
+
+
+Es: `python3 test.py simple-sem.fcfg "every dog bites a bone"`.
+
+## Elenco dei POS tags usati
+[qui](https://universaldependencies.org/u/pos/)
+
 ## Appunti
 `SEM` all'interno delle regole lessicali regola la semantica dei simpboli terminali definite secondo le regole del lambda calcolo. (Vedi pacco 7 slide 41 Ro)
+
+Non stampa un cazzo in output, c'è qualcosa che non va
