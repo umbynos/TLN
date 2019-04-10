@@ -26,7 +26,7 @@ Es: `python3 test.py simple-sem.fcfg "every dog bites a bone"`.
 [qui](https://universaldependencies.org/u/pos/)
 
 ## Debug python da linea di comando
-Inserire `import pdb; pdb.set_trace()` nel codice. Scrivere step(s) per andare avanti. Più dettagli [qui](https://codeburst.io/how-i-use-python-debugger-to-fix-code-279f11f75866)
+Inserire `import pdb; pdb.set_trace()` nel codice. Scrivere step(s) per andare avanti ed entrare nelle funzioni, next(n) per andare avanti senza entrare nelle funzioni. Più dettagli [qui](https://codeburst.io/how-i-use-python-debugger-to-fix-code-279f11f75866)
 
 ## Appunti
 `SEM` all'interno delle regole lessicali regola la semantica dei simpboli terminali definite secondo le regole del lambda calcolo. (Vedi pacco 7 slide 41 Ro)
