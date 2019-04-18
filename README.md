@@ -12,6 +12,20 @@ In questa repo potrete trovare i vari progetti realizzati per il corso di Tecnol
 3. Costruire un sentence planner che per ogni formula prodotta dalla grammatica G1 produca un sentence-plan (proto-albero a dipendenze) valido. (**HINT**: Ãˆ possibile usare un semplice approccio basato su espressioni regolari e sentence-plan precompilati)
 4. Usando la librerie SimpleNLG-IT (eventualmente come server attraverso socket o via pipe) implementare un semplice realizer che trasformi i sentence plans in frasi italiane (**HINT**: usare una lessicalizzazione EN->IT 1-1)
 
+# Testo Esercizio 2 (Mazzei)
+SVX -> XSV
+- Scrivere a una CFG per l'italiano (G1) che parsifchi (almeno) le frasi di esempio.
+- HINT: ispirarsi alla [grammatica “simple-sem.fcfg”](https://github.com/nltk/nltk_teach/blob/master/examples/grammars/book_grammars/simple-sem.fcfg) e costruirla direttamente in CNF
+- Implementare l'algoritmo CKY e provare la grammatica G1 su questo programma per le frasi di esempio.
+- Costruire un algoritmo di traduzione che riscriva l'abero di derivazione per Italiano in un albero Italiano-Yodish e stamparne
+le foglie.
+- Attenzione: ignorare l'ambiguità e prendere il primo albero ottenuto
+Frasi di esempio esercizio 2
+- Tu avrai novecento anni di età -> Novecento anni di età tu avrai
+- Tu hai amici lì-> Amici hai tu lì
+- Noi siamo illuminati-> Illuminati noi siamo
+
+
 ## Consegna
 Bisogna consegnare il codice e una breve relazione (max 10 pagine) almeno **due giorni prima** della data dell'esame dell'orale concordata.
 Attenzione: gli esercizi si possono fare in gruppi da 2.
@@ -29,6 +43,5 @@ Es: `python3 test.py simple-sem.fcfg "every dog bites a bone"`.
 Inserire `import pdb; pdb.set_trace()` nel codice. Scrivere `step(s)` per andare avanti ed entrare nelle funzioni, `next(n)` per andare avanti senza entrare nelle funzioni. Più dettagli [qui](https://codeburst.io/how-i-use-python-debugger-to-fix-code-279f11f75866)
 
 ## Appunti
-`SEM` all'interno delle regole lessicali regola la semantica dei simpboli terminali definite secondo le regole del lambda calcolo. (Vedi pacco 7 slide 41 Ro)
-
-Non stampa un cazzo in output, c'Ã¨ qualcosa che non va
+- Vedere come definire "maschile" e le persone dei verbi nella semantica
+- Come classificare i pronomi? SOno come i nomi propri, quelli comuni o un'altra cosa ancora?
