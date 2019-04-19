@@ -43,5 +43,5 @@ Es: `python3 test.py simple-sem.fcfg "every dog bites a bone"`.
 Inserire `import pdb; pdb.set_trace()` nel codice. Scrivere `step(s)` per andare avanti ed entrare nelle funzioni, `next(n)` per andare avanti senza entrare nelle funzioni. Più dettagli [qui](https://codeburst.io/how-i-use-python-debugger-to-fix-code-279f11f75866)
 
 ## Appunti
-- Vedere come definire "maschile" e le persone dei verbi nella semantica
-- Come classificare i pronomi? SOno come i nomi propri, quelli comuni o un'altra cosa ancora?
+- Su master funziona "tu hai amici"
+- Su reification sperimentiamo la reificazione
