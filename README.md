@@ -45,3 +45,10 @@ Inserire `import pdb; pdb.set_trace()` nel codice. Scrivere `step(s)` per andare
 ## Appunti
 - Su master funziona "tu hai amici"
 - Su reification sperimentiamo la reificazione
+
+## Abbreviazioni
+- AG: agent
+- GND: gender [m,f]
+- PER: person [1,2,3]
+- AGR: aggregation [PER,NUM,GND]
+- PAT: patient
