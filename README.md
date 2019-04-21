@@ -44,7 +44,7 @@ Inserire `import pdb; pdb.set_trace()` nel codice. Scrivere `step(s)` per andare
 
 ## Appunti
 - Su master funziona "tu hai amici"
-- Su reification sperimentiamo la reificazione
+- Su reification: riguardare lambda calcolo del Pado per capire differenza tra variabili maiuscole e minuscole
 
 ## Abbreviazioni
 - AG: agent
