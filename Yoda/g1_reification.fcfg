@@ -10,6 +10,7 @@ S[SEM = <?subj(?v(?obj))>] -> AG[AGR=?a,SEM=?subj] VP[AGR=?a,SEM=?v] PAT[SEM=?ob
 AG[AGR=?a,SEM=?s] -> NP[AGR=?a,SEM=?s]
 PAT[AGR=?a,SEM=?s] -> NP[AGR=?a,SEM=?s]
 VP[AGR=?a,SEM=?s,TNS=?t] -> V[AGR=?a,SEM=?s,TNS=?t]
+ADV[SEM=?adv] -> ADV[SEM=?adv] ADV[SEM=?adv]
 
 NP[AGR=?a,SEM=<?det(?nom)>] -> Det[AGR=?a,SEM=?det]  Nom[AGR=?a,SEM=?nom]
 NP[AGR=?a,SEM=?nom] -> Nom[AGR=?a,SEM=?nom]
@@ -27,7 +28,7 @@ PRON[-LOC,AGR=[PER=2,NUM=sg],SEM=<\P.P(tu)>] -> 'tu' | 'Tu'
 
 N[AGR=[PER=2,NUM=pl,GND=m],SEM=<\x.amico(x)>] -> 'amici'
 
-V[AGR=[PER=2,NUM=sg],SEM=<\X x.X(\y.avere(x,y))>,TNS=pres] -> 'hai'
+V[AGR=[PER=2,NUM=sg],SEM=<\y x.exists e.(avere(e) & agent(e,x) & patient(e,y)))>,TNS=pres] -> 'hai'
 V[AGR=[PER=1,NUM=sg],SEM=<\X x.X(\y.avere(x,y))>,TNS=pres] -> 'ho'
 
 
