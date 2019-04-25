@@ -2,3 +2,5 @@ S->NP VP
 NP->Det Nom
 NP->PropN
 Nom->N
+N->dio
+N->fa
