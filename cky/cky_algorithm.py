@@ -9,14 +9,20 @@ def cky_parse(words,grammar_dict):
 			table[a,b] = []
 	#cky-algorithm beginning
 	for j in range(1, len(words)+1):
-		table[j-1,j] = find_lex_rule(words[j], grammar_dict)
+		print("j: " + str(j))
+		table[j-1,j-1] = find_lex_rule(words[j-1], grammar_dict)
+		print(table)
 		for i in range(j-2, -1, -1): #third argument "-1" used as decrement var
-			for k in range(i+1, j-1):
-				b = table[i,k]
-				c = table[k,j]
-				rhs = B + " " + C
-				if (rhs in grammar_dict):
-					table[i,j].append(grammar_dict[rhs])
+			print ("i: " + str(i))
+			for k in range(i+1, j): #j: because range does not include last elem (j-1)
+				print ("k: " + str(k))
+				for z in range (len(table[i,k])):
+					b = table[i,k][z]
+					for x in range (len(table[k,j-1])):
+						c = table[k,j-1]
+						rhs = b + " " + c
+						if (rhs in grammar_dict):
+							table[i,j-1].append(grammar_dict[rhs])
 	return table
 
 def find_lex_rule(word,grammar_dict):

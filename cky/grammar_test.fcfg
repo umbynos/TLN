@@ -1,6 +1,7 @@
 S->NP VP
-NP->Det Nom
-NP->PropN
-Nom->N
-N->dio
-N->fa
+VP->VP ADV
+VP->V NP
+NP->paolo
+NP->francesca
+V->ama
+ADV->dolcemente
