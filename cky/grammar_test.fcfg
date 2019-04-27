@@ -1,7 +1,23 @@
 S->NP VP
 VP->VP ADV
 VP->V NP
+PP->Prep NP
+NP->NP PP
+NP->ADJ NP
+VP->AUX V
 NP->paolo
 NP->francesca
 V->ama
 ADV->dolcemente
+NP->tu
+V->hai
+NP->amici
+ADV->li
+V->avrai
+ADJ->novecento
+NP->anni
+Prep->di
+NP->eta
+NP->noi
+AUX->siamo
+V->illuminati
