@@ -28,40 +28,49 @@ def cky_parse(words,grammar_dict):
 def find_lex_rule(word,grammar_dict):
 	return grammar_dict[word]
 
+#create_dict will create a dictionary, it uses rhs as key and lhs as value 
 def create_dict(grammar_file):
 	file = open(grammar_file,"r")
 	grammar_dict = {}
 	for line in file:
-		grammar_dict[(line.split("->")[1]).strip('\n')] = (line.split("->")[0])
+		lhs = line.split("->")[0]
+		rhs = line.split("->")[1]
+		grammar_dict[rhs.strip('\n')] = lhs
 	return grammar_dict
 
 def main():
-	grammar = sys.argv[1]
+	grammar_file = sys.argv[1]
 	sentence = sys.argv[2]
-	grammar_dict = create_dict(grammar)
+	grammar_dict = create_dict(grammar_file)
 	table = cky_parse(sentence.split(), grammar_dict)
 	print(table)
-	if table[0][len(sentence.split())-1][0].split("->")[0] == 'S':
-		tree = translate_table(table)
-	#print(table[0][len(sentence.split())-1][0].split("->")[0]) #debug
+	lhs_start = table[0][len(sentence.split())-1][0].split("->")[0]
+	if lhs_start == 'S': #check if the sentence is syntactically correct
+		#contains something like this: "S->NP(0, 0, 0) VP(1, 5, 0)"
+		starting_grammar_rule = table[0][len(table[0])-1][0]
+		tree = table_to_tree(table, starting_grammar_rule)
+		print()
+		tree.print_leaves()
+		print()
 
-def translate_table(table):
-	#grammar rule contains something like this: "S->NP(0, 0, 0) VP(1, 5, 0)"
-	grammar_rule = table[0][len(table[0])-1][0]
-	#insert rhs of actual grammar rule as root in a binary tree
-	tree = BinaryTree(grammar_rule.split("->")[0])
-	# contains the coordinates (in the table) of the first lhs of actual grammar rule 
-	coord_left = re.findall('\((.*?)\)', grammar_rule)[0].split(", ")
-	left_grammar_rule = table[int(coord_left[0]),int(coord_left[1])][int(coord_left[2])]
-	tree.insert_left(left_grammar_rule.split("->")[0])
-
-	coord_right = re.findall('\((.*?)\)', grammar_rule)[1].split(", ")
-	right_grammar_rule = table[int(coord_right[0]),int(coord_right[1])][int(coord_right[2])].split("->")[0]
-	tree.insert_right(right_grammar_rule)
-	tree.dfs()
-		
-	#return tree
+def table_to_tree(table, grammar_rule):
+	lhs = grammar_rule.split("->")[0]
+	rhs = grammar_rule.split("->")[1]
+	#insert lhs of actual grammar rule as root in a binary tree
+	tree = BinaryTree(lhs)
+	if re.search('\((.*?)\)', rhs): #check if the rhs contains the coordinates -> then it's not a terminal
+		#contains the coordinates (in the table) of the first lhs of actual grammar rule
+		coord_left = re.findall('\((.*?)\)', grammar_rule)[0].split(", ")
+		left_grammar_rule = table[int(coord_left[0]),int(coord_left[1])][int(coord_left[2])]
+		tree.insert_left(table_to_tree(table, left_grammar_rule)) #recursive call
+		#contains the coordinates (in the table) of the second lhs of actual grammar rule
+		coord_right = re.findall('\((.*?)\)', grammar_rule)[1].split(", ")
+		right_grammar_rule = table[int(coord_right[0]),int(coord_right[1])][int(coord_right[2])]
+		tree.insert_right(table_to_tree(table, right_grammar_rule)) #recursive call
+	else:
+		#insertion of the word into the tree in case there is a word
+		tree.insert_leaf(rhs)
+	return tree
 
 if __name__== "__main__":
 	main()
-
