@@ -30,7 +30,7 @@ class BinaryTree:
 
 	def search_left(self, value_to_search):
 		if self.left_child.get_value() != value_to_search:
-			self.left_child.search_left(value_to_search)
+			return self.left_child.search_left(value_to_search)
 		return self.get_left_child()
 
 	def dfs(self):
