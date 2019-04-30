@@ -4,7 +4,6 @@ VP->V NP
 PP->Prep NP
 NP->NP PP
 NP->ADJ NP
-VP->AUX V
 NP->paolo
 NP->francesca
 V->ama
@@ -19,5 +18,5 @@ NP->anni
 Prep->di
 NP->eta
 NP->noi
-AUX->siamo
-V->illuminati
+V->siamo
+NP->illuminati

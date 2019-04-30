@@ -52,6 +52,8 @@ def main():
 		print()
 		tree.print_leaves()
 		print()
+		yodify(tree)
+		tree.print_leaves()
 
 def table_to_tree(table, grammar_rule):
 	lhs = grammar_rule.split("->")[0]
@@ -71,6 +73,16 @@ def table_to_tree(table, grammar_rule):
 		#insertion of the word into the tree in case there is a word
 		tree.insert_leaf(rhs)
 	return tree
+
+def yodify(binary_tree):
+	subject = binary_tree.get_left_child()
+	x = binary_tree.get_right_child()
+	v = x.search_left('V')
+	binary_tree.insert_left(x)
+	yoda = BinaryTree('YODA')
+	yoda.insert_left(subject)
+	yoda.insert_right(v)
+	binary_tree.insert_right(yoda)
 
 if __name__== "__main__":
 	main()
