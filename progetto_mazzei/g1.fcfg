@@ -2,29 +2,30 @@ S->NP VP
 VP->VP ADV
 VP->V NP
 PP->PREP NP
+PP->PREP V
 NP->NP PP
 NP->ADJ NP
 NP->DET NP
 NP->paolo
 NP->francesca
-V->ama
-ADV->dolcemente
 NP->tu
-V->hai
 NP->amici
-ADV->li
-V->avrai
-ADJ->novecento
 NP->anni
-PREP->di
 NP->eta
 NP->noi
-V->siamo
 NP->illuminati
-ADJ->molte
 NP->cose
-PREP->da
-NP->imparare
-V->distruggiamo
-DET->i
 NP->sith
+V->ama
+V->hai
+V->avrai
+V->siamo
+V->imparare
+V->distruggiamo
+ADV->dolcemente
+ADV->li
+ADJ->novecento
+ADJ->molte
+PREP->di
+PREP->da
+DET->i
