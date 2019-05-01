@@ -1,0 +1,48 @@
+% start S
+############################
+# Grammar Rules
+#############################
+
+S[SEM = <?subj(?vp)>] -> AG[AGR=?a,SEM=?subj] VP[AGR=?a,SEM=?vp]
+S[SEM = <?subj(?v(?obj))>] -> AG[AGR=?a,SEM=?subj] VP[AGR=?a,SEM=?v] PAT[SEM=?obj]
+S[SEM = <?subj(?v(?obj))>] -> AG[AGR=?a,SEM=?subj] VP[AGR=?a,SEM=?v] PAT[SEM=?obj] ADV[SEM=?adv]
+
+AG[AGR=?a,SEM=?s] -> NP[AGR=?a,SEM=?s]
+PAT[AGR=?a,SEM=?s] -> NP[AGR=?a,SEM=?s]
+VP[AGR=?a,SEM=?s,TNS=?t] -> V[AGR=?a,SEM=?s,TNS=?t]
+ADV[SEM=?adv] -> ADV[SEM=?adv] ADV[SEM=?adv]
+
+NP[AGR=?a,SEM=<?det(?nom)>] -> Det[AGR=?a,SEM=?det]  Nom[AGR=?a,SEM=?nom]
+NP[AGR=?a,SEM=?nom] -> Nom[AGR=?a,SEM=?nom]
+NP[LOC=?l,AGR=?a,SEM=?np] -> PropN[LOC=?l,AGR=?a,SEM=?np]
+NP[LOC=?l,AGR=?a,SEM=?np] -> PRON[LOC=?l,AGR=?a,SEM=?np]
+
+Nom[AGR=?a,SEM=?nom] -> N[AGR=?a,SEM=?nom]
+
+#############################
+# Lexical Rules
+#############################
+
+PropN[-LOC,AGR=[PER=3,NUM=sg,GND=f],SEM=<\P.P(irene)>] -> 'Irene'
+PRON[-LOC,AGR=[PER=2,NUM=sg],SEM=<\P.P(tu)>] -> 'tu' | 'Tu'
+
+N[AGR=[PER=2,NUM=pl,GND=m],SEM=<\x.amico(x)>] -> 'amici'
+
+V[AGR=[PER=2,NUM=sg],SEM=<\y x.exists e.(avere(e) & agent(e,x) & patient(e,y)))>,TNS=pres] -> 'hai'
+V[AGR=[PER=1,NUM=sg],SEM=<\X x.X(\y.avere(x,y))>,TNS=pres] -> 'ho'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
