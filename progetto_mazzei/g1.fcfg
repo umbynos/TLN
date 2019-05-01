@@ -1,9 +1,10 @@
 S->NP VP
 VP->VP ADV
 VP->V NP
-PP->Prep NP
+PP->PREP NP
 NP->NP PP
 NP->ADJ NP
+NP->DET NP
 NP->paolo
 NP->francesca
 V->ama
@@ -15,8 +16,15 @@ ADV->li
 V->avrai
 ADJ->novecento
 NP->anni
-Prep->di
+PREP->di
 NP->eta
 NP->noi
 V->siamo
 NP->illuminati
+ADJ->molte
+NP->cose
+PREP->da
+NP->imparare
+V->distruggiamo
+DET->i
+NP->sith

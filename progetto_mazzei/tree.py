@@ -1,4 +1,4 @@
-class BinaryTree:
+class Tree:
 	def __init__(self, value):
 		self.value = value
 		self.left_child = None
@@ -12,7 +12,7 @@ class BinaryTree:
 	def insert_left(self,binary_tree):
 		self.left_child = binary_tree
 
-	def get_left_child(self):
+	def take_left_child(self):
 		l_c = self.left_child
 		self.left_child = None
 		return l_c
@@ -20,7 +20,7 @@ class BinaryTree:
 	def insert_right(self,binary_tree):
 		self.right_child = binary_tree
 
-	def get_right_child(self):
+	def take_right_child(self):
 		r_c = self.right_child
 		self.right_child = None
 		return r_c
@@ -31,7 +31,7 @@ class BinaryTree:
 	def search_left(self, value_to_search):
 		if self.left_child.get_value() != value_to_search:
 			return self.left_child.search_left(value_to_search)
-		return self.get_left_child()
+		return self.take_left_child()
 
 	def dfs(self):
 		print(self.value)
