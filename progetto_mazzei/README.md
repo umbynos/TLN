@@ -16,4 +16,4 @@ Bisogna consegnare il codice e una breve relazione (max 10 pagine) almeno **due 
 Attenzione: gli esercizi si possono fare in gruppi da 2.
 
 ## How to
-Per eseguire `python3 cky_algorithm.py g1.fcfg "<frase da parsificare>"`.
+Per eseguire `python3 yodify.py g1.fcfg "<frase da parsificare>"`.
