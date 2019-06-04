@@ -30,6 +30,7 @@
 import sys
 from node_structure import Node
 from itertools import islice
+from nltk.corpus import wordnet as wn
 
 def main():
 	# Saving the file in an array structure. Each element is a node_structure
@@ -43,8 +44,27 @@ def main():
 		node = Node(fst_word, snd_word, similarity)
 		words_array.append(node)
 	file.close()
-	for x in words_array:
-		x.print_node()
+	s1, s2 = words_to_best_senses(words_array[0].get_fst_word(),words_array[0].get_snd_word())
+	print(s1, s2)
+
+# It takes two words and it returns the senses with the highest Wu & Palmer similarity
+def words_to_best_senses(fst_word, snd_word):
+	fst_word_synset = wn.synsets(fst_word)
+	snd_word_synset = wn.synsets(snd_word)
+	fst_word_sense = ""
+	snd_word_sense = ""
+	wup_sim = 0 # LASCIAMO COSì E USIAMO WUP O PASSIAMO PER ARGOMENTO LA FORMULA CHE VOGLIAMO USARE???
+	for s1 in fst_word_synset:
+		for s2 in snd_word_synset:
+			if (s1.wup_similarity(s2) != None and s1.wup_similarity(s2) > wup_sim): # None check: some similarities are missing
+				wup_sim = s1.wup_similarity(s2)
+				fst_word_sense = s1
+				snd_word_sense = s2
+	return s1, s2
+
+
+#def wu_and_palmer(sense1, sense2):
+	# print(w1.wup_similarity(w2)) quella di wordnet
 
 if __name__== "__main__":
 	main()
