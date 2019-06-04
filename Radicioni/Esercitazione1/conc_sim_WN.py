@@ -27,14 +27,16 @@
 # formula: sensi
 # Quindi per disambiguare si prendono i sensi con la massima similarita
 
+import sys
 from node_structure import Node
+from itertools import islice
 
 def main():
-	# Saving the file in an array structure. Each element is a NodeStructure
+	# Saving the file in an array structure. Each element is a node_structure
 	words_file = sys.argv[1] # The file is given by argument
 	file = open(words_file,"r")
 	words_array = []
-	for line in file: # partire da seconda, la prima e' un'introduzione
+	for line in islice(file, 1, None): # don't read the first line: it contains an introduction
 		fst_word = line.split("\t")[0]
 		snd_word = line.split("\t")[1]
 		similarity = line.split("\t")[2]
@@ -42,4 +44,7 @@ def main():
 		words_array.append(node)
 	file.close()
 	for x in words_array:
-		print(x)
+		x.print_node()
+
+if __name__== "__main__":
+	main()
