@@ -1,0 +1,35 @@
+S->NP VP
+VP->VP ADV
+VP->V NP
+VP->V PP
+PP->PREP NP
+PP->PREP V
+NP->NP PP
+NP->ADJ NP
+NP->DET NP
+NP->anakin
+NP->padme
+NP->tu
+NP->amici
+NP->anni
+NP->eta
+NP->noi
+NP->illuminati
+NP->cose
+NP->sith
+V->assoluti
+V->ama
+V->hai
+V->avrai
+V->siamo
+V->imparare
+V->distruggiamo
+V->vive
+ADV->dolcemente
+ADV->li
+ADJ->novecento
+ADJ->molte
+PREP->di
+PREP->da
+DET->i
+DET->un
