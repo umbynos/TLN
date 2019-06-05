@@ -45,8 +45,8 @@ def main():
 		words_array.append(node)
 	file.close()
 	s1, s2 = words_to_best_senses(words_array[5].get_fst_word(),words_array[5].get_snd_word())
-	print("chiamo wu_and_palmer")
-	wu_and_palmer(s1, s2)
+	print("Wu & Palmer:", wu_and_palmer(s1, s2))
+	print("Shortest path:", shortest_path(s1, s2))
 
 # It takes two words and it returns the senses with the highest Wu & Palmer similarity
 def words_to_best_senses(fst_word, snd_word):
@@ -63,18 +63,35 @@ def words_to_best_senses(fst_word, snd_word):
 				snd_word_sense = s2
 	return s1, s2
 
+#def spearman(): # NOTA DA FARE SU TUTTO IL FILE, NON SULLE SINGOLE RIGHE
 
 def wu_and_palmer(sense1, sense2):
 	# LCS: Lowest Common Subsumer. It is the lower common ancestor between sense1 and sense2, id est the lowest common hypernym
-	lcs = sense1.lowest_common_hypernyms(sense2, simulate_root=True) # VA BENE O DOBBIAMO CALCOLARCELO NOI???
+	lcs = sense1.lowest_common_hypernyms(sense2, simulate_root=True) # VA BENE O DOBBIAMO CALCOLARCELO NOI??? PRIMA DI FARLO MANDEREI UNA MAIL
 	# simulate_root=True: some taxonomies do not share a single root which disallows this metric from working for synsets that are not connected
 	# This flag (False by default) creates a fake root that connects all the taxonomies
-	print("LCS:", lcs)
 	cs = 2*lcs[0].min_depth()/(sense1.min_depth()+sense2.min_depth())
 	# min_depth() returns the length of the shortest hypernym path from this synset to the root
-	print("Valore di WN:", sense1.wup_similarity(sense2))
-	print("valore nostro:", cs)
+	print("Valore di WN per wup:", sense1.wup_similarity(sense2))
+	return cs
 	# VALORI RESTITUITI NON UGUALI: ALCUNI MOLTO DIVERSI, ALTRI POCO
+
+# shortest_path() returns the shortest path length from sense1 to sense2 (the parmeters)
+def shortest_path(sense1,sense2):
+	return 2*depthMax()-sense1.shortest_path_distance(sense2, simulate_root=True)
+	
+# depthMax() returns the maximum depth of WordNet's structure
+def depthMax():
+	max_hyp_path = 0
+	max_all = 0
+	for synset in wn.all_synsets():
+		for hyp_path in synset.hypernym_paths():
+			if(len(hyp_path) > max_hyp_path):
+				max_hyp_path = len(hyp_path)
+		if(max_hyp_path > max_all):
+			max_all = max_hyp_path
+	return max_all
+	# max(max(len(hyp_path) for hyp_path in ss.hypernym_paths()) for ss in wn.all_synsets()) ERA COSI!! ALLUCINANTE!!
 
 if __name__== "__main__":
 	main()
