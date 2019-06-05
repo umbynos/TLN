@@ -25,4 +25,4 @@ Compreso nell'intervallo [0,1]: 0 completamente dissimile; 1 identita
 ### NOTE
 - L' input è dato come coppia di termini, mentre nelle formule vengono richiesti i sensi. Per disambiguare si prendano i sensi con la massima similarita
 - Sfruttare la struttura ad albero di WordNet per calcolare la vicinanza semantica
-- Documentazione WordNet: https://wordnet.princeton.edu/documentation/wnintro3wn
+- Documentazione WordNet: https://wordnet.princeton.edu/documentation
