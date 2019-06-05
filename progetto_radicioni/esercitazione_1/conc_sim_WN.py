@@ -44,8 +44,9 @@ def main():
 		node = Node(fst_word, snd_word, similarity)
 		words_array.append(node)
 	file.close()
-	s1, s2 = words_to_best_senses(words_array[0].get_fst_word(),words_array[0].get_snd_word())
-	print(s1, s2)
+	s1, s2 = words_to_best_senses(words_array[5].get_fst_word(),words_array[5].get_snd_word())
+	print("chiamo wu_and_palmer")
+	wu_and_palmer(s1, s2)
 
 # It takes two words and it returns the senses with the highest Wu & Palmer similarity
 def words_to_best_senses(fst_word, snd_word):
@@ -63,8 +64,17 @@ def words_to_best_senses(fst_word, snd_word):
 	return s1, s2
 
 
-#def wu_and_palmer(sense1, sense2):
-	# print(w1.wup_similarity(w2)) quella di wordnet
+def wu_and_palmer(sense1, sense2):
+	# LCS: Lowest Common Subsumer. It is the lower common ancestor between sense1 and sense2, id est the lowest common hypernym
+	lcs = sense1.lowest_common_hypernyms(sense2, simulate_root=True) # VA BENE O DOBBIAMO CALCOLARCELO NOI???
+	# simulate_root=True: some taxonomies do not share a single root which disallows this metric from working for synsets that are not connected
+	# This flag (False by default) creates a fake root that connects all the taxonomies
+	print("LCS:", lcs)
+	cs = 2*lcs[0].min_depth()/(sense1.min_depth()+sense2.min_depth())
+	# min_depth() returns the length of the shortest hypernym path from this synset to the root
+	print("Valore di WN:", sense1.wup_similarity(sense2))
+	print("valore nostro:", cs)
+	# VALORI RESTITUITI NON UGUALI: ALCUNI MOLTO DIVERSI, ALTRI POCO
 
 if __name__== "__main__":
 	main()
