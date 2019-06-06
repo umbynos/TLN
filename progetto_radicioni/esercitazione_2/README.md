@@ -1,5 +1,6 @@
 # Appunti
 Es 2 su *WSD* (Word Sense Disambiguation)
+
 Algo di Lesk usato per questo
 
 ## Testo es2
@@ -13,7 +14,9 @@ Installare pip3 `sudo apt install python3-pip`
 Installare nltk `pip3 install nltk`
 
 ## Come eseguire
-Lanciare *wsd.py* `python3 wsd.py`
+Lanciare *wsd.py* 
+
+`python3 wsd.py`
 
 ## Utils
 https://www.nltk.org/_modules/nltk/wsd.html
