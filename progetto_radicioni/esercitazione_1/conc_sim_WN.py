@@ -31,6 +31,7 @@ import sys
 from node_structure import Node
 from itertools import islice
 from nltk.corpus import wordnet as wn
+import math
 
 def main():
 	# Saving the file in an array structure. Each element is a node_structure
@@ -46,7 +47,16 @@ def main():
 	file.close()
 	s1, s2 = words_to_best_senses(words_array[5].get_fst_word(),words_array[5].get_snd_word())
 	print("Wu & Palmer:", wu_and_palmer(s1, s2))
-	print("Shortest path:", shortest_path(s1, s2))
+	print("Shortest path:", shortest_path(s1, s2)) # CONFRONTARE CON QUELLO DELLA LIBRERIA
+	print("Leakcock Chodorow:", leakcock_chodorow(s1, s2)) # CONFRONTARE CON QUELLO DELLA LIBRERIA
+	##############################################
+	# DA SINGOLO AD ARRAY #
+	##############################################
+	# come salviamo sense?
+	# altri campi in node_structure? Forse è meglio, tanto li riempi subito e tutti
+	# metterli al posto di word? cercando una parola che vada bene per entrambi. MAH, poi non sai cos'hai
+	# creare 2 strutture differenti? Pare eccessivo: devi ricopiare il valore dato all'inizio
+	# NOTA: node_structure come nome non va bene: sono inseriti in un array, non sono collegati fra di loro!!!!!!!!!!!!!
 
 # It takes two words and it returns the senses with the highest Wu & Palmer similarity
 def words_to_best_senses(fst_word, snd_word):
@@ -79,7 +89,15 @@ def wu_and_palmer(sense1, sense2):
 # shortest_path() returns the shortest path length from sense1 to sense2 (the parmeters)
 def shortest_path(sense1,sense2):
 	return 2*depthMax()-sense1.shortest_path_distance(sense2, simulate_root=True)
-	
+
+# leakock_chodorow() returns the Leakcock Chodorow Similarity
+def leakcock_chodorow(sense1, sense2):
+	len = sense1.shortest_path_distance(sense2, simulate_root=True)
+	if(len == 0):
+		return -math.log((len+1)/(2*depthMax()+1))
+	else:
+		return -math.log(len/2*depthMax())
+
 # depthMax() returns the maximum depth of WordNet's structure
 def depthMax():
 	max_hyp_path = 0
