@@ -32,6 +32,7 @@ from node_structure import Node
 from itertools import islice
 from nltk.corpus import wordnet as wn
 import math
+import numpy as np
 
 def main():
 	# Saving the file in an array structure. Each element is a node_structure
@@ -67,7 +68,7 @@ def main():
 	for i in range(len(words_array)):
 		word1 = words_array[i].get_fst_word()
 		word2 = words_array[i].get_snd_word()
-		wu_and_palmer_array.append(wu_and_palmer(word1,word2))
+		wu_and_palmer_array.append(float(wu_and_palmer(word1,word2)))
 		print("i,wu_and_palmer_array:", i,wu_and_palmer_array[i])
 	# Creating array with Short Path Similarity for each entry of words_array
 	shortest_path_array = []
@@ -83,8 +84,11 @@ def main():
 		word2 = words_array[i].get_snd_word()
 		leakcock_chodorow_array.append(leakcock_chodorow(word1,word2))
 		print("i,leakcock_chodorow_array:", i,leakcock_chodorow_array[i])
-
-#def spearman(): # NOTA DA FARE SU TUTTO IL FILE, NON SULLE SINGOLE RIGHE
+	# Correlation indexes
+	similarities_array = []
+	for elem in words_array:
+		similarities_array.append(float(elem.get_similarity()))
+	spearman(similarities_array, wu_and_palmer_array)
 
 # QUESTI 3 METODI CI PIACCIONO COSI O PREFERIAMO CREARNE UNO SOLO A CUI SI PASSANO LE DUE PAROLE ED UN PARAMETRO CHE INDENTIFICA UNO DEI TRE METODI?
 # wu_and_palmer takes two words and returns the Wu & Palmer Similarity considering the two senses that give the maximum similarity
@@ -104,6 +108,7 @@ def wu_and_palmer(word1, word2):
 		        # removing this setting and it should be tested later on
 				new_cs = 2*(lcs[0].max_depth()+1) / ((s1.max_depth()+1) + (s2.max_depth()+1))
 				# Get the longest path from the LCS to the root, with correction: add one because the calculations include both the start and end nodes
+				# max_depth(): if there are more possibilities, it is taken the one with the longest minimum distance from the root
 				if(new_cs > cs):
 					cs = new_cs
 					sense1 = s1
@@ -187,6 +192,13 @@ def depthMax(): # CONTROLLARNE LA CORRETTEZZA
 			max_all = max_hyp_path
 	return max_all
 	# max(max(len(hyp_path) for hyp_path in ss.hypernym_paths()) for ss in wn.all_synsets()) ERA COSI!! ALLUCINANTE!!
+
+# spearman() returns the Spearman's correlation indexes
+def spearman(similarities_array, wu_and_palmer_array):
+	#std_dev per entrambi (denominatore)
+	#cov per entrambi (numeratore)
+	 print(np.cov(similarities_array, wu_and_palmer_array)) # NO DEVI PASSARGLI IL RANGO!!!!!!
+
 
 if __name__== "__main__":
 	main()
