@@ -9,16 +9,15 @@ def simplifiedLesk(word,sentence): #word->termine polisemico; sentence->contesto
 	best_sense = most_frequent_sense(word) # il primo elencato in wordnet
 	max_overlap = 0
 	context = word_set(sentence)
-	print(context)
+	print("Context: " + str(context))
 	for sense in senses(word):
 		signature = {i for i in word_tokenize(sense.definition() + ' '.join(sense.examples())) if i not in stop}#? set of words in the gloss and examples of sense
-		print(signature)
+		print(str(sense) + " -> " + str(signature))
 		overlap = compute_overlap(signature, context) #returns the number of words in common between two sets, ignoring function words or other words on a stop list
-		print(overlap)
+		print("Overlap: " + str(overlap))
 		if (overlap > max_overlap):
 			max_overlap = overlap
 			best_sense = sense
-	print(best_sense)
 	return best_sense
 
 def most_frequent_sense(word):
