@@ -33,6 +33,7 @@ from itertools import islice
 from nltk.corpus import wordnet as wn
 import math
 import numpy as np
+import pandas as pd
 
 def main():
 	# Saving the file in an array structure. Each element is a node_structure
@@ -44,7 +45,7 @@ def main():
 		snd_word = line.split("\t")[1]
 		similarity = line.split("\t")[2]
 		node = Node(fst_word, snd_word, similarity)
-		words_array.append(node)
+		words_array.append(node) # TRASFORMARE IN MATRICE?
 	file.close()
 	global depth_max
 	depth_max = depthMax()
@@ -88,7 +89,9 @@ def main():
 	similarities_array = []
 	for elem in words_array:
 		similarities_array.append(float(elem.get_similarity()))
-	spearman(similarities_array, wu_and_palmer_array)
+	print("Pearson, WUP: ", pearson(similarities_array, wu_and_palmer_array))
+	print("Pearson, SP: ", pearson(similarities_array, shortest_path_array))
+	print("Pearson, LC: ", pearson(similarities_array, leakcock_chodorow_array))
 
 # QUESTI 3 METODI CI PIACCIONO COSI O PREFERIAMO CREARNE UNO SOLO A CUI SI PASSANO LE DUE PAROLE ED UN PARAMETRO CHE INDENTIFICA UNO DEI TRE METODI?
 # wu_and_palmer takes two words and returns the Wu & Palmer Similarity considering the two senses that give the maximum similarity
@@ -96,7 +99,7 @@ def wu_and_palmer(word1, word2):
 	synset1 = wn.synsets(word1)
 	synset2 = wn.synsets(word2)
 	cs = 0
-	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase
+	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase #RITORNARE -1
 		for s1 in synset1:
 			for s2 in synset2:	
 				# LCS: Lowest Common Subsumer. It is the lower common ancestor between sense1 and sense2, id est the lowest common hypernym
@@ -106,7 +109,7 @@ def wu_and_palmer(word1, word2):
 				# Note that to preserve behavior from NLTK2 we set use_min_depth=True
 		        # It is possible that more accurate results could be obtained by
 		        # removing this setting and it should be tested later on
-				new_cs = 2*(lcs[0].max_depth()+1) / ((s1.max_depth()+1) + (s2.max_depth()+1))
+				new_cs = 2*(lcs[0].max_depth()+1) / ((s1.max_depth()+1) + (s2.max_depth()+1)) # CHIEDERE AGLI ALTRI PER IL +1
 				# Get the longest path from the LCS to the root, with correction: add one because the calculations include both the start and end nodes
 				# max_depth(): if there are more possibilities, it is taken the one with the longest minimum distance from the root
 				if(new_cs > cs):
@@ -115,7 +118,6 @@ def wu_and_palmer(word1, word2):
 					sense2 = s2
 		print("wu_and_palmer WD: ", sense1.wup_similarity(sense2, simulate_root=True))
 	return cs
-	# VALORI RESTITUITI NON UGUALI: ALCUNI MOLTO DIVERSI, ALTRI POCO
 
 # shortest_path() returns the shortest path length from word1 to word2 considering the two senses that give the maximum similarity
 def shortest_path(word1,word2):
@@ -125,7 +127,7 @@ def shortest_path(word1,word2):
 	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase
 		for s1 in synset1:
 			for s2 in synset2:
-				new_sim = 2*depth_max-s1.shortest_path_distance(s2, simulate_root=True)
+				new_sim = 2*depth_max-s1.shortest_path_distance(s2, simulate_root=True) # DOBBIAMO IMPLEMENTARLO NOI??
 				if(new_sim > sim):
 					sim = new_sim
 					#sense1 = s1
@@ -142,10 +144,14 @@ def leakcock_chodorow(word1, word2):
 	found = False # the similarity is computed only if the parameters have at least one sense in common with the same POS
 	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase
 		for s1 in synset1:
+			need_root = s1._needs_root()
+			#print("depth", s1._wordnet_corpus_reader._max_depth[s1._pos])
 			for s2 in synset2:
 				length = s1.shortest_path_distance(s2, simulate_root=True)
+				#print("version", s1._wordnet_corpus_reader.get_version())
+				#print("need_root", need_root)
 				if(length == 0):
-					new_sim = abs(math.log((length+1)/(2*depth_max+1)))
+					new_sim = abs(math.log((length+1)/(2*depth_max+1))) # 
 				else:
 					new_sim =  abs(math.log(length/2*depth_max))
 				if(new_sim>sim and s1._pos==s2._pos):
@@ -194,11 +200,24 @@ def depthMax(): # CONTROLLARNE LA CORRETTEZZA
 	# max(max(len(hyp_path) for hyp_path in ss.hypernym_paths()) for ss in wn.all_synsets()) ERA COSI!! ALLUCINANTE!!
 
 # spearman() returns the Spearman's correlation indexes
-def spearman(similarities_array, wu_and_palmer_array):
+#def spearman(similarities_array, wu_and_palmer_array):
 	#std_dev per entrambi (denominatore)
 	#cov per entrambi (numeratore)
-	 print(np.cov(similarities_array, wu_and_palmer_array)) # NO DEVI PASSARGLI IL RANGO!!!!!!
+	#similarities_rank = np.linalg.matrix_rank(similarities_array)
+#	similarities_rank = pd.rank(similarities_array)
+	#wu_and_palmer_rank = np.linalg.matrix_rank(wu_and_palmer_array)
+#	wu_and_palmer_rank = pd.rank(wu_and_palmer_array)
+#	print("similarities_rank, wu_and_palmer_rank: ", similarities_rank, wu_and_palmer_rank)
+#	print(np.cov(similarities_rank, wu_and_palmer_rank))
 
+def pearson(fst_array, snd_array):
+	arr1 = np.asarray(fst_array)
+	arr2 = np.asarray(snd_array)
+	std_dev_sim = np.std(fst_array)
+	std_dev_wup = np.std(snd_array)
+	std1 = arr1.std()
+	std2 = arr2.std()
+	return ((arr1*arr2).mean()-arr1.mean()*arr2.mean())/(std1*std2)
 
 if __name__== "__main__":
 	main()
