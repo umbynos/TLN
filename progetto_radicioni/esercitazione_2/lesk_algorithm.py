@@ -12,7 +12,7 @@ def simplifiedLesk(word,sentence): #word->termine polisemico; sentence->contesto
 	for sense in senses(word):
 		signature = {i for i in word_tokenize(sense.definition() + ' '.join(sense.examples())) if i not in stop}#? set of words in the gloss and examples of sense
 		overlap = compute_overlap(signature, context) #returns the number of words in common between two sets, ignoring function words or other words on a stop list
-		print(str(sense) + 'o:' + str(overlap) + " -> " + str(sense.definition()) + str(sense.examples()))
+		print('\t' + str(sense) + 'o:' + str(overlap) + " -> " + str(sense.definition()) + str(sense.examples()))
 		if (overlap > max_overlap):
 			max_overlap = overlap
 			best_sense = sense
