@@ -49,49 +49,37 @@ def main():
 	file.close()
 	global depth_max
 	depth_max = depthMax()
-	#s1, s2 = words_to_best_senses(words_array[5].get_fst_word(),words_array[5].get_snd_word())
-	#print("Wu & Palmer:", wu_and_palmer(s1, s2))
-	#print("Shortest path:", shortest_path(s1, s2)) # CONFRONTARE CON QUELLO DELLA LIBRERIA
-	#print("Leakcock Chodorow:", leakcock_chodorow(s1, s2)) # CONFRONTARE CON QUELLO DELLA LIBRERIA
-	##############################################
-	# DA SINGOLO AD ARRAY #
-	##############################################
-	# Setting the best senses for each entry of words_array
-#	print("LENGTH:", len(words_array))
-#	for i in range(len(words_array)):
-#		elem = words_array[i]
-#		s1, s2 = words_to_best_senses(elem.get_fst_word(),elem.get_snd_word())
-#		print("i,s1,s2", i,s1,s2)
-#		elem.set_fst_word_sense(s1)
-#		elem.set_snd_word_sense(s2)
 	# Creating array with Wu & Palmer Similarity for each entry of words_array
-	wu_and_palmer_array = []
+	wu_and_palmer_sim_indexes = []
 	for i in range(len(words_array)):
 		word1 = words_array[i].get_fst_word()
 		word2 = words_array[i].get_snd_word()
-		wu_and_palmer_array.append(float(wu_and_palmer(word1,word2)))
-		print("i,wu_and_palmer_array:", i,wu_and_palmer_array[i])
+		wu_and_palmer_sim_indexes.append(float(wu_and_palmer(word1,word2)))
+		print("i,wu_and_palmer_sim_indexes:", i,wu_and_palmer_sim_indexes[i])
 	# Creating array with Short Path Similarity for each entry of words_array
-	shortest_path_array = []
+	shortest_path_sim_indexes = []
 	for i in range(len(words_array)):
 		word1 = words_array[i].get_fst_word()
 		word2 = words_array[i].get_snd_word()
-		shortest_path_array.append(shortest_path(word1,word2))
-		print("i,shortest_path_array:", i,shortest_path_array[i])
+		shortest_path_sim_indexes.append(shortest_path(word1,word2))
+		print("i,shortest_path_sim_indexes:", i,shortest_path_sim_indexes[i])
 	# Creating array with Short Path Similarity for each entry of words_array
-	leakcock_chodorow_array = []
+	leakcock_chodorow_sim_indexes = []
 	for i in range(len(words_array)):
 		word1 = words_array[i].get_fst_word()
 		word2 = words_array[i].get_snd_word()
-		leakcock_chodorow_array.append(leakcock_chodorow(word1,word2))
-		print("i,leakcock_chodorow_array:", i,leakcock_chodorow_array[i])
+		leakcock_chodorow_sim_indexes.append(leakcock_chodorow(word1,word2))
+		print("i,leakcock_chodorow_sim_indexes:", i,leakcock_chodorow_sim_indexes[i])
 	# Correlation indexes
-	similarities_array = []
+	sim_indexes = []
 	for elem in words_array:
-		similarities_array.append(float(elem.get_similarity()))
-	print("Pearson, WUP: ", pearson(similarities_array, wu_and_palmer_array))
-	print("Pearson, SP: ", pearson(similarities_array, shortest_path_array))
-	print("Pearson, LC: ", pearson(similarities_array, leakcock_chodorow_array))
+		sim_indexes.append(float(elem.get_similarity()))
+	print("Pearson, WUP: ", pearson(sim_indexes, wu_and_palmer_sim_indexes))
+	print("Pearson, SP: ", pearson(sim_indexes, shortest_path_sim_indexes))
+	print("Pearson, LC: ", pearson(sim_indexes, leakcock_chodorow_sim_indexes))
+	print("Spearman, WUP: ", spearman(sim_indexes, wu_and_palmer_sim_indexes))
+	print("Spearman, SP: ", spearman(sim_indexes, shortest_path_sim_indexes))
+	print("Spearman, LC: ", spearman(sim_indexes, leakcock_chodorow_sim_indexes))
 
 # QUESTI 3 METODI CI PIACCIONO COSI O PREFERIAMO CREARNE UNO SOLO A CUI SI PASSANO LE DUE PAROLE ED UN PARAMETRO CHE INDENTIFICA UNO DEI TRE METODI?
 # wu_and_palmer takes two words and returns the Wu & Palmer Similarity considering the two senses that give the maximum similarity
@@ -130,9 +118,6 @@ def shortest_path(word1,word2):
 				new_sim = 2*depth_max-s1.shortest_path_distance(s2, simulate_root=True) # DOBBIAMO IMPLEMENTARLO NOI??
 				if(new_sim > sim):
 					sim = new_sim
-					#sense1 = s1
-					#sense2 = s2
-		#print("shortest_path WD: ", sense1.path_similarity(sense2))
 		# NON HO TROVATO IL CORRISPETTIVO IN WN
 	return sim
 
@@ -145,11 +130,8 @@ def leakcock_chodorow(word1, word2):
 	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase
 		for s1 in synset1:
 			need_root = s1._needs_root()
-			#print("depth", s1._wordnet_corpus_reader._max_depth[s1._pos])
 			for s2 in synset2:
 				length = s1.shortest_path_distance(s2, simulate_root=True)
-				#print("version", s1._wordnet_corpus_reader.get_version())
-				#print("need_root", need_root)
 				if(length == 0):
 					new_sim = abs(math.log((length+1)/(2*depth_max+1))) # 
 				else:
@@ -165,26 +147,6 @@ def leakcock_chodorow(word1, word2):
 	else:
 		print(found)
 		return -1
-	
-
-# It takes two words and it returns the senses with the highest Wu & Palmer similarity
-#def words_to_best_senses(fst_word, snd_word):
-#	fst_word_synset = wn.synsets(fst_word)
-#	snd_word_synset = wn.synsets(snd_word)
-#	fst_word_sense = ""
-#	snd_word_sense = ""
-#	found = False
-#	wup_sim = 0 # LASCIAMO COSì E USIAMO WUP O PASSIAMO PER ARGOMENTO LA FORMULA CHE VOGLIAMO USARE???
-#	for s1 in fst_word_synset:
-#		for s2 in snd_word_synset:
-#			if (s1.wup_similarity(s2) != None and s1.wup_similarity(s2) > wup_sim): # None check: some similarities are missing
-#				wup_sim = s1.wup_similarity(s2)
-#				fst_word_sense = s1
-#				snd_word_sense = s2
-#				found = True
-#	if(not found):
-#		return 0,0
-#	return fst_word_sense, snd_word_sense
 
 # depthMax() returns the maximum depth of WordNet's structure
 def depthMax(): # CONTROLLARNE LA CORRETTEZZA
@@ -200,21 +162,16 @@ def depthMax(): # CONTROLLARNE LA CORRETTEZZA
 	# max(max(len(hyp_path) for hyp_path in ss.hypernym_paths()) for ss in wn.all_synsets()) ERA COSI!! ALLUCINANTE!!
 
 # spearman() returns the Spearman's correlation indexes
-#def spearman(similarities_array, wu_and_palmer_array):
-	#std_dev per entrambi (denominatore)
-	#cov per entrambi (numeratore)
-	#similarities_rank = np.linalg.matrix_rank(similarities_array)
-#	similarities_rank = pd.rank(similarities_array)
-	#wu_and_palmer_rank = np.linalg.matrix_rank(wu_and_palmer_array)
-#	wu_and_palmer_rank = pd.rank(wu_and_palmer_array)
-#	print("similarities_rank, wu_and_palmer_rank: ", similarities_rank, wu_and_palmer_rank)
-#	print(np.cov(similarities_rank, wu_and_palmer_rank))
+def spearman(similarities, indexes_sim):
+	similarities.sort()
+	indexes_sim.sort()
+	return pearson(similarities, indexes_sim) # VALORI MOLTO PIU ALTI RISPETTO AGLI ALTRI!!
 
-def pearson(fst_array, snd_array):
-	arr1 = np.asarray(fst_array)
-	arr2 = np.asarray(snd_array)
-	std_dev_sim = np.std(fst_array)
-	std_dev_wup = np.std(snd_array)
+def pearson(fst, snd):
+	arr1 = np.asarray(fst)
+	arr2 = np.asarray(snd)
+	std_dev_sim = np.std(fst)
+	std_dev_wup = np.std(snd)
 	std1 = arr1.std()
 	std2 = arr2.std()
 	return ((arr1*arr2).mean()-arr1.mean()*arr2.mean())/(std1*std2)
