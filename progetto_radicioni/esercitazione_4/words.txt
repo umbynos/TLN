@@ -1,3 +1,4 @@
+word1	word2	similarity	[comment]
 terremoto	scossa
 patrimonio	azione
 ebreo	Gerusalemme
