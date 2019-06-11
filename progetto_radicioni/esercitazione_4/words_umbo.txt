@@ -1,0 +1,101 @@
+word1	word2	similarity	[comment]
+terremoto	scossa	4.0
+patrimonio	azione	0.7
+ebreo	Gerusalemme	1.2
+nuvolosità	previsione	2.7
+dizionario	enciclopedia	4.0
+zecca	museo	1.0
+sedia	sgabello
+spagnolo	umidità	0.0
+lattina	bottiglia	3.5
+mosca	formica	3.7
+mito	satira	2.0
+centro della città	autobus	1.4
+coda	Boeing 747-200	1.2
+opera d'arte	artista	2.9
+NATO	alleanza	2.7
+re	sovrano	4.0
+ritmo	cadenza	3.9
+Alexander Fleming	penicillina	1.9
+flauto	musica	2.0
+airone cenerino	lago	2.0
+viscosità	spruzzo	0.4	[ambito fluidi]
+hardware	case	2.9	[pc]
+anello	fidanzamento	2.5
+latino	tedesco	3.7
+classe operaia	fabbrica	1.7
+Shakespeare	Dickens	3.3
+banconota	prete	0.0
+strumento	lavoro	1.0
+cinghiale nano	suidi	2.9
+suffragio	uscita	0.0
+stella	luminosità	1.8
+trota	chitarra	0.0
+dollaro	milionario	1.4
+cifra	numero	4.0
+burrasca	coperta	1.3
+Obama	Clinton	3.4
+personaggio secondario	film	2.1
+Juventus	Bayern Monaco	3.3
+cambiamento climatico	precipitazione	3.9
+IA	batteria	0.0
+capolavoro	Gioconda	2.3
+crimine	aggressione	2.5
+incoronazione	acqua	0.0
+vocalista	pentagramma	2.2
+spareggio	pallacanestro	2.1
+forze armate	difesa	3.0
+lago	nuvola	1.0	[stesso colore/acqua]
+monastero	doccia	0.0
+lingua madre	lingua	1.7
+porto	incarto	0.0
+demonio	angelo	3.3
+crittogramma	simbolo	4.0
+campus	università	4.0
+libertà	libertà	4.0
+tifone	ciclone	4.0
+manuale	guida turistica	3.1
+Ebola	virus Ebola	4.0
+principessa	biscotto	0
+treno	tram	3.8
+ecosistema	economia	0.2
+regina regnante	regina degli scacchi	3.6
+oro	zinco	3.6
+cursore	patatine fritte	0.0	[bergi!]
+Rio delle Amazzoni	foresta	2.2
+tennis	statistica	0.0
+Bolzano	teorema	1.5	[teorema esistenza degli 0]
+altitudine	conversione	0.0
+barca	albero	1.1	[barca di legno]
+trono	spada	2.3	[got]
+cotone	maglione	1.4
+ciliegia	fragola	3.2	[stesso colore]
+Islam	Corano	2.0
+Neanderthal	sport	0.0
+nepotismo	re	1.4
+personaggio	persona	3.2
+cisterna	vagone	1.3 [entrambi contengono qualcosa]
+Mercurio	Giove	3.4
+bronchite	acetaminofene	1.6	[ambito medico, cura dei bronchi]
+sangue	corpo	2.5
+islamofobia	ISIS	2.0
+uncinetto	uniforme	1.4
+Hadoop	touchscreen	1.2	[ambito dev]
+combustibile fossile	fossile	3.4
+mutante	sociobiologia	2.3
+sorella	fratello	3.8
+matita	storia	0.4
+eczema	dermatite	3.5	[malattie della pelle]
+imperatore	governatore	4.0
+corona	chiave	1.1	[entrambi metallici]
+algebra	operazione	2.0	
+pistone	motore	3.2	[ambito meccanico]
+borsa di studio	retta	2.2	[ambito scolastico]
+libro	manoscritto	4.0
+lantana	bocca di leone	3.2
+buco nero	vuoto	1.3
+Impero Persiano	Ciro	2.7
+editoriale	notizia	3.0
+decorazione	busta	1.9	[ambito di cartoleria]
+squalo balena	aragosta	3.5	[animali marini]
+mais	granturco	4.0
