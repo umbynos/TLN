@@ -1,0 +1,101 @@
+word1	word2	similarity	[comment]
+terremoto	scossa	4.0
+patrimonio	azione	0.5
+ebreo	Gerusalemme	1.7
+nuvolosità	previsione	2.7
+dizionario	enciclopedia	3.9
+zecca	museo	0.5
+sedia	sgabello	3.8
+spagnolo	umidità	0.5
+lattina	bottiglia	2.3
+mosca	formica	3.0
+mito	satira	1.8
+centro della città	autobus	1.2
+coda	Boeing 747-200	2.0	[coda del Boeing]
+opera d'arte	artista	3.5
+NATO	alleanza	3.8
+re	sovrano	4.0
+ritmo	cadenza	4.0
+Alexander Fleming	penicillina	1.9
+flauto	musica	2.4
+airone cenerino	lago	1.2 [l'airone potrebbe trovarsi su un lago]
+viscosità	spruzzo	0.5
+hardware	case	3.0	[il senso di "case" viene disambiguato da "hardware", non è il plurale di "casa"]
+anello	fidanzamento	2.3
+latino	tedesco	1.5
+classe operaia	fabbrica	3.2
+Shakespeare	Dickens	3.2
+banconota	prete	0.2
+strumento	lavoro	2.5
+cinghiale nano	suidi	3.5	[appartengono alla stessa specie]
+suffragio	uscita	0.2
+stella	luminosità	2.5
+trota	chitarra	0.0
+dollaro	milionario	1.5
+cifra	numero	4.0
+burrasca	coperta	2.0	[durante la burrasca ci si rifugia in coperta]
+Obama	Clinton	3.0
+personaggio secondario	film	2.0
+Juventus	Bayern Monaco	3.0
+cambiamento climatico	precipitazione	1.7
+IA	batteria	2.6
+capolavoro	Gioconda	1.7
+crimine	aggressione	3.8
+incoronazione	acqua	0.0
+vocalista	pentagramma	1.5
+spareggio	pallacanestro	1.5
+forze armate	difesa	3.1
+lago	nuvola	1.0
+monastero	doccia	0.0
+lingua madre	lingua	3.2
+porto	incarto	0.2
+demonio	angelo	3.0
+crittogramma	simbolo	3.0
+campus	università	2.2
+libertà	libertà	4.0
+tifone	ciclone	3.7
+manuale	guida turistica	3.2
+Ebola	virus Ebola	4.0
+principessa	biscotto	0.0
+treno	tram	3.5 [decimale: entrambi si muovono grazie all'elettricita']
+ecosistema	economia	1.2
+regina regnante	regina degli scacchi	2.0
+oro	zinco	3.0
+cursore	patatine fritte	0.0
+Rio delle Amazzoni	foresta	2.2
+tennis	statistica	1.2
+Bolzano	teorema	2.2	[teorema di Bolzano]
+altitudine	conversione	1.0
+barca	albero	2.5	[stessa relazione che intercorre tra casa e finestra]
+trono	spada	2.2
+cotone	maglione	2.5
+ciliegia	fragola	3.0
+Islam	Corano	2.5
+Neanderthal	sport	0.0
+nepotismo	re	1.5
+personaggio	persona	1.2
+cisterna	vagone	1.0	[un vagone che trasporta liquidi utilizza una cisterna]
+Mercurio	Giove	3.0
+bronchite	acetaminofene	2.6	[con la bronchite porta la febbre; la febbre si cura con l'acetaminofene (paracetamolo)]
+sangue	corpo	2.0
+islamofobia	ISIS	1.2
+uncinetto	uniforme	0.2
+Hadoop	touchscreen	1.0
+combustibile fossile	fossile	1.1
+mutante	sociobiologia	0.7
+sorella	fratello	3.0
+matita	storia	0.2
+eczema	dermatite	3.9
+imperatore	governatore	3.0
+corona	chiave	0.4	[magari stesso materiale]
+algebra	operazione	2.0
+pistone	motore	2.0
+borsa di studio	retta	1.9 [utilizzare la brsa di studio per pagare una retta]
+libro	manoscritto	3.8
+lantana	bocca di leone	3.0 [mondo vegetale]
+buco nero	vuoto	3.0
+Impero Persiano	Ciro	2.2
+editoriale	notizia	2.2
+decorazione	busta	1.2
+squalo balena	aragosta	3.0
+mais	granturco	4.0
