@@ -40,7 +40,7 @@ def main():
 	words_file = sys.argv[1] # The file is given by argument
 	file = open(words_file,"r")
 	words_array = []
-	for line in islice(file, 1, None): # don't read the first line, start from 1: it contains an introduction
+	for line in islice(file, 1, None): # don't read the first line, start from 1: first line contains an introduction
 		fst_word = line.split("\t")[0]
 		snd_word = line.split("\t")[1]
 		similarity = line.split("\t")[2]

@@ -6,7 +6,7 @@ nuvolosità	previsione	2.7
 dizionario	enciclopedia	3.9
 zecca	museo	0.5
 sedia	sgabello	3.8
-spagnolo	umidità	0.5
+spagnolo	umidità	0.0
 lattina	bottiglia	2.3
 mosca	formica	3.0
 mito	satira	1.8
@@ -18,7 +18,7 @@ re	sovrano	4.0
 ritmo	cadenza	4.0
 Alexander Fleming	penicillina	1.9
 flauto	musica	2.4
-airone cenerino	lago	1.2 [l'airone potrebbe trovarsi su un lago]
+airone cenerino	lago	1.2	[l'airone potrebbe trovarsi su un lago]
 viscosità	spruzzo	0.5
 hardware	case	3.0	[il senso di "case" viene disambiguato da "hardware", non è il plurale di "casa"]
 anello	fidanzamento	2.3
@@ -57,7 +57,7 @@ tifone	ciclone	3.7
 manuale	guida turistica	3.2
 Ebola	virus Ebola	4.0
 principessa	biscotto	0.0
-treno	tram	3.5 [decimale: entrambi si muovono grazie all'elettricita']
+treno	tram	3.5	[decimale: entrambi si muovono grazie all'elettricita']
 ecosistema	economia	1.2
 regina regnante	regina degli scacchi	2.0
 oro	zinco	3.0
@@ -90,9 +90,9 @@ imperatore	governatore	3.0
 corona	chiave	0.4	[magari stesso materiale]
 algebra	operazione	2.0
 pistone	motore	2.0
-borsa di studio	retta	1.9 [utilizzare la brsa di studio per pagare una retta]
+borsa di studio	retta	1.9	[utilizzare la brsa di studio per pagare una retta]
 libro	manoscritto	3.8
-lantana	bocca di leone	3.0 [mondo vegetale]
+lantana	bocca di leone	3.0	[mondo vegetale]
 buco nero	vuoto	3.0
 Impero Persiano	Ciro	2.2
 editoriale	notizia	2.2
