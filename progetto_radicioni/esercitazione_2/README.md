@@ -13,6 +13,14 @@ Algo di Lesk usato per questo
 Installare pip3 `sudo apt install python3-pip`
 Installare nltk `pip3 install nltk`
 
+Installare i corpus stopwords e punkt(la punteggiatura) e wordnet: lanciare `python3` e poi:
+```python
+import nltk
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt')
+```
+
 ## Come eseguire
 Lanciare *wsd.py* 
 
@@ -26,3 +34,7 @@ Il file `lesk_nltk.py` è l'implementazione di lesk standard dentro a nltk -> ut
 Per far funzionare è necessario fare: `import nltk` e poi `nltk.download('wordnet')`
 
 Per provare: `lesk_nltk.lesk(['I', 'went', 'to', 'the', 'bank', 'to', 'deposit', 'money', '.'], 'bank', 'n')` (importare prima lesk_nltk)
+
+##To-Do
+Fare magie con `tag_ph = (semcor.tagged_sents(tag='both')[:50]`
+Cioè capire come comporre le frasi(sono tipo alberi di alberi strani). Fare tentativi con `python3`, `'both'` prende sia i **pos** che la **semantica**. I **pos** servono perchè bisogna disambiguare solo i nomi. 
