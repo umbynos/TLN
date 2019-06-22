@@ -46,7 +46,7 @@ def main():
 	spearman_index = spearman(sim_ro, sim_umbo)
 	print("Spearman:", spearman_index, "\n")
 	# Saving nasari vectors in a structure
-	#nasari_vectors = nasari_to_vectors()
+	nasari_vectors = nasari_to_vectors()
 	sem_eval_vectors = sem_eval_to_vectors()
 	print("SEM EVAL")
 	for elem in sem_eval_vectors:
