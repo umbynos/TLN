@@ -30,9 +30,6 @@
 # Misuriamo in questo caso l’accuratezza sia sui singoli elementi, sia sulle coppie
 # NB: per questa valutazione non è necessario conoscere il BabelNet synset ID corretto, ma è sufficiente valutare sulla base della glossa, se il senso individuato è appropriato.
 
-# ORA DEVI STAMPARE LA GLOSSA CHE CORRISPONDE ALL'ID TROVATO
-# TROVATO PACKAGE ONLINE, MA NON RIESCO A SCARICARLO: http://babelscape.com/doc/pythondoc/modules.html
-
 from itertools import islice
 from scipy import spatial
 import numpy as np
@@ -49,9 +46,13 @@ def main():
 	spearman_index = spearman(sim_ro, sim_umbo)
 	print("Spearman:", spearman_index, "\n")
 	# Saving nasari vectors in a structure
-	nasari_vectors = nasari_to_vectors()
-	sem_eval_vectors = sem_eval_to_vectors()
-	senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
+	#nasari_vectors = nasari_to_vectors()
+	#sem_eval_vectors = sem_eval_to_vectors()
+	#senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
+	print("#############################################")
+	print("GLOSSA")
+	print("#############################################")
+	prova_glossa()
 
 # infer_file returns the array corpora
 # Each element of corpora represents a line of words file and it contains the first and the second words followed by the similarity given in the file
@@ -192,6 +193,50 @@ def found(elem):
 		return False
 	else:
 		return True
+
+
+#import urllib2
+#import urllib
+import json
+import gzip
+
+from io import StringIO
+
+import requests
+
+def prova_glossa():
+	service_url = 'https://babelnet.io/v5/getSynset'
+
+	id = 'bn:14792761n'
+	key  = 'KEY'
+
+	params = {
+		'id' : id,
+		'key'  : key
+	}
+
+	#url = service_url + '?' + urllib.urlencode(params)
+	res = requests.get(service_url, params=params, headers={'Accept-encoding':'gzip'})
+	#request.add_header('Accept-encoding', 'gzip')
+	#response = urllib2.urlopen(request)
+	#res = req.url MIA
+
+	#if response.info().get('Content-Encoding') == 'gzip':
+	if res.headers['Content-Encoding'] == 'gzip':
+		#buf = StringIO( response.read())
+		buf = StringIO(res.text)
+		print("BUF",buf)
+		#f = gzip.GzipFile(fileobj=buf)
+		#data = json.loads(f.read())
+		data = json.loads(buf.getvalue())
+
+		print()
+		# retrieving BabelGloss data
+		glosses = data['glosses']
+		for result in glosses:
+			gloss = result.get('gloss')
+			language = result.get('language')
+			print(language.encode('utf-8') + "\t" + str(gloss.encode('utf-8')))
 
 if __name__== "__main__":
 	main()

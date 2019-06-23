@@ -148,6 +148,14 @@ def leakcock_chodorow(word1, word2):
 		print(found)
 		return -1
 
+# Get a list of lowest synset(s) that both synsets have as a hypernym.
+# USE_MIN_DEPTH=TRUE
+def lowest_common_subsumer(sense1, sense2):
+	# DAL MOMENTO CHE NON è DETTO CHE I DUE SENSI SI TROVINO ALLA STESSA
+	# ALTEZZA, PRENDO TUTTI QUELLI DEL PRIMO E PARTENDO DALL'ULTIMO TROVATO
+	# LI CONFORNTO CON TUTTI QUELLI DEL SECONDO. MI FERMO APPENA TROVO CORRISPONDENZA
+	return 1
+
 # depthMax() returns the maximum depth of WordNet's structure
 def depthMax(): # CONTROLLARNE LA CORRETTEZZA
 	max_hyp_path = 0
