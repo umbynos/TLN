@@ -1,7 +1,6 @@
 # Corpora and Sense Identification
 # Task: Semantic Word Similarity
 
-
 #########################
 # SVOLGIMENTO
 #########################
@@ -31,6 +30,9 @@
 # Misuriamo in questo caso l’accuratezza sia sui singoli elementi, sia sulle coppie
 # NB: per questa valutazione non è necessario conoscere il BabelNet synset ID corretto, ma è sufficiente valutare sulla base della glossa, se il senso individuato è appropriato.
 
+# ORA DEVI STAMPARE LA GLOSSA CHE CORRISPONDE ALL'ID TROVATO
+# TROVATO PACKAGE ONLINE, MA NON RIESCO A SCARICARLO: http://babelscape.com/doc/pythondoc/modules.html
+
 from itertools import islice
 from scipy import spatial
 import numpy as np
@@ -50,13 +52,6 @@ def main():
 	nasari_vectors = nasari_to_vectors()
 	sem_eval_vectors = sem_eval_to_vectors()
 	senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
-
-	######################################
-	# Sense Identification
-	######################################
-	# nota non tutte le coppie sono presenti in mini_NASARI.tsv -> fai un controllo
-	# fare cosine similarity sui vettori NASARI (sono tutti di dimensione 300) 
-	# -> prendi le due parole, prendi due "bn..." da SemEval, controlli se ci sono in nasari, cosine similarity e ti salvi i sensi con risultato più alto stampando glossa
 
 # infer_file returns the array corpora
 # Each element of corpora represents a line of words file and it contains the first and the second words followed by the similarity given in the file
@@ -145,7 +140,7 @@ def pearson(fst, snd):
 	pearson_index = ((arr1*arr2).mean()-arr1.mean()*arr2.mean())/(std1*std2)
 	return pearson_index
 
-# -> prendi le due parole, prendi due "bn..." da SemEval, controlli se ci sono in nasari, cosine similarity e ti salvi i sensi con risultato più alto stampando glossa
+# senseIdentification() returns the cosine similarity for each pair of words that are in the parameter words
 def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 	# For every pair in words file ...
 	for elem_words in words:
@@ -190,9 +185,7 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 		print("coppia", fst_word,snd_word)
 		print("sensi", fst_word_sense,snd_word_sense)
 		print("cosine similarity", cos_sim)
-
-		# salvo la cosine similarity maggiore insieme ai sensi che l'hanno fatta calcolare
-		# cerco la glossa e stampo tutto
+		print()
 
 def found(elem):
 	if elem is None:
