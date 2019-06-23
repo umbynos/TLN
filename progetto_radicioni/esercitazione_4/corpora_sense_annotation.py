@@ -45,7 +45,22 @@ def main():
 	print("Pearson:", pearson_index, "\n")
 	spearman_index = spearman(sim_ro, sim_umbo)
 	print("Spearman:", spearman_index, "\n")
+	# Saving nasari vectors in a structure
+	nasari_vectors = nasari_to_vectors()
+	sem_eval_vectors = sem_eval_to_vectors()
+	print("SEM EVAL")
+	for elem in sem_eval_vectors:
+		print(elem)
 
+	######################################
+	# Sense Identification
+	######################################
+	# nota non tutte le coppie sono presenti in mini_NASARI.tsv -> fai un controllo
+	# fare cosine similarity sui vettori NASARI (sono tutti di dimensione 300) 
+	# -> prendi le due parole, prendi due "bn..." da SemEval, controlli se ci sono in nasari, cosine similarity e ti salvi i sensi con risultato più alto stampando glossa
+
+# infer_file returns the array corpora
+# Each element of corpora represents a line of words file and it contains the first and the second words followed by the similarity given in the file
 def infer_file(file):
 	file = open(file,"r")
 	corpora = []
@@ -60,6 +75,36 @@ def infer_file(file):
 		corpora.append(elem)
 	file.close()
 	return corpora
+
+# nasari_to_vectors() returns nasari_vectors
+# Each element of nasari_vector represents a line of the mini nasari file
+def nasari_to_vectors():
+	file = open("mini_NASARI.tsv","r")
+	nasari_vectors = []
+	for line in file:
+		elem = []
+		for i in range (301):
+			elem.append(line.split("\t")[i].strip('\n'))
+		nasari_vectors.append(elem)
+	file.close()
+	return nasari_vectors
+
+# sem_eval_to_vectors() returns sem_eval_vectors
+# Each element represents a word followed by its BabelNet synsets
+def sem_eval_to_vectors():
+	file = open("SemEval17_IT_senses2synsets.txt","r")
+	sem_eval_vectors = []
+	elem = []
+	for line in file:
+		if "#" in line:
+			if(len(elem)>0): # we aren't in the first line
+				sem_eval_vectors.append(elem)
+				elem = []
+			elem.append(line.strip('\n'))
+		else:
+			elem.append(line.strip('\n'))
+	file.close()
+	return sem_eval_vectors
 
 def infer_sim(corpora):
 	sim = []
