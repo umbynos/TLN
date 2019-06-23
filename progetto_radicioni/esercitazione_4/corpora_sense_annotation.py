@@ -32,6 +32,7 @@
 # NB: per questa valutazione non è necessario conoscere il BabelNet synset ID corretto, ma è sufficiente valutare sulla base della glossa, se il senso individuato è appropriato.
 
 from itertools import islice
+from scipy import spatial
 import numpy as np
 
 def main():
@@ -48,9 +49,7 @@ def main():
 	# Saving nasari vectors in a structure
 	nasari_vectors = nasari_to_vectors()
 	sem_eval_vectors = sem_eval_to_vectors()
-	print("SEM EVAL")
-	for elem in sem_eval_vectors:
-		print(elem)
+	senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
 
 	######################################
 	# Sense Identification
@@ -145,6 +144,61 @@ def pearson(fst, snd):
 	std2 = arr2.std()
 	pearson_index = ((arr1*arr2).mean()-arr1.mean()*arr2.mean())/(std1*std2)
 	return pearson_index
+
+# -> prendi le due parole, prendi due "bn..." da SemEval, controlli se ci sono in nasari, cosine similarity e ti salvi i sensi con risultato più alto stampando glossa
+def senseIdentification(words, nasari_vectors, sem_eval_vectors):
+	# For every pair in words file ...
+	for elem_words in words:
+		fst_word = elem_words[0]
+		snd_word = elem_words[1]
+		fst_word_synset = None
+		snd_word_synset = None
+		fst_word_vector = None
+		snd_word_vector = None
+		fst_vector_int = []
+		snd_vector_int = []
+		cos_sim = 0
+		fst_word_sense = None
+		snd_word_sense = None
+		# ... the BabelNet synset of each word (presents in SemEval file) is taken...
+		for elem_sem_eval in sem_eval_vectors: # SE HAI TROVATO ENTRAMBI PUOI SMETTERE
+			if fst_word in elem_sem_eval[0]:
+				fst_word_synset = elem_sem_eval
+			if snd_word in elem_sem_eval[0]:
+				snd_word_synset = elem_sem_eval
+		# ... for each BeblNet sysnet found ...
+		if(found(fst_word_synset) and found(snd_word_synset)):
+			for i in range(1, len(fst_word_synset)): # 1...len-1
+				for j in range(1, len(snd_word_synset)):
+					# ... a NASARI vector is searched ...
+					for elem_nasari in nasari_vectors: # SE HAI TROVATO ENTRAMBI PUOI SMETTERE
+						if fst_word_synset[i] in elem_nasari[0]:
+							fst_word_vector = elem_nasari
+						if snd_word_synset[j] in elem_nasari[0]:
+							snd_word_vector = elem_nasari
+					# ... if for both the senses a NASARI vector is found ...
+					if(found(fst_word_vector) and found(snd_word_vector)):
+						# ... their cosine similarity is computed
+						for k in range(1, len(fst_word_vector)):
+							fst_vector_int.append(float(fst_word_vector[k]))
+							snd_vector_int.append(float(snd_word_vector[k]))
+						new_cos_sim = 1 - spatial.distance.cosine(fst_vector_int, snd_vector_int)
+						if new_cos_sim>cos_sim:
+							cos_sim = new_cos_sim
+							fst_word_sense = fst_word_synset[i]
+							snd_word_sense = snd_word_synset[j]
+		print("coppia", fst_word,snd_word)
+		print("sensi", fst_word_sense,snd_word_sense)
+		print("cosine similarity", cos_sim)
+
+		# salvo la cosine similarity maggiore insieme ai sensi che l'hanno fatta calcolare
+		# cerco la glossa e stampo tutto
+
+def found(elem):
+	if elem is None:
+		return False
+	else:
+		return True
 
 if __name__== "__main__":
 	main()
