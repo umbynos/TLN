@@ -13,12 +13,13 @@ Algo di Lesk usato per questo
 Installare pip3 `sudo apt install python3-pip`
 Installare nltk `pip3 install nltk`
 
-Installare i corpus stopwords e punkt(la punteggiatura) e wordnet: lanciare `python3` e poi:
+Installare i corpus stopwords, punkt(la punteggiatura), wordnet e semcor: lanciare `python3` e poi:
 ```python
 import nltk
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('punkt')
+nltk.download('semcor')
 ```
 
 ## Come eseguire
