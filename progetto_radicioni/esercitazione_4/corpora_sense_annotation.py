@@ -198,8 +198,10 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 							fst_vector_number.append(float(fst_word_vector[k]))
 							snd_vector_number.append(float(snd_word_vector[k]))
 						new_cos_sim = cosine_similarity(fst_vector_number, snd_vector_number)
+						fst_vector_number.clear()
+						snd_vector_number.clear()
 						if new_cos_sim>cos_sim:
-							final_senses = []
+							final_senses.clear()
 							fst_word_sense = fst_word_synset[i]
 							final_senses.append(fst_word_sense)
 							snd_word_sense = snd_word_synset[j]
