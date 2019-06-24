@@ -207,8 +207,8 @@ import requests
 def prova_glossa():
 	service_url = 'https://babelnet.io/v5/getSynset'
 
-	id = 'bn:14792761n'
-	key  = 'KEY'
+	id = 'bn:00050954n'
+	key  = 'aa3561e2-0643-4541-90bd-b39b44fe1dca'
 
 	params = {
 		'id' : id,
@@ -236,7 +236,7 @@ def prova_glossa():
 		for result in glosses:
 			gloss = result.get('gloss')
 			language = result.get('language')
-			print(language.encode('utf-8') + "\t" + str(gloss.encode('utf-8')))
+			print(str(language.encode('utf-8')) + "\t" + str(gloss.encode('utf-8')))
 
 if __name__== "__main__":
 	main()
