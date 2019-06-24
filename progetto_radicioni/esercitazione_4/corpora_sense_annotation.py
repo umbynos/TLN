@@ -37,6 +37,7 @@ import numpy as np
 import json
 import gzip
 import requests
+import math
 
 def main():
 	corpora_ro = infer_file("words_ro.txt")
@@ -147,6 +148,16 @@ def pearson(fst, snd):
 	pearson_index = ((arr1*arr2).mean()-arr1.mean()*arr2.mean())/(std1*std2)
 	return pearson_index
 
+def cosine_similarity(v1,v2):
+    #"compute cosine similarity of v1 to v2: (v1 dot v2)/{||v1||*||v2||)"
+    sumxx, sumxy, sumyy = 0, 0, 0
+    for i in range(len(v1)):
+        x = v1[i]; y = v2[i]
+        sumxx += x*x
+        sumyy += y*y
+        sumxy += x*y
+    return sumxy/math.sqrt(sumxx*sumyy)
+
 # senseIdentification() returns the cosine similarity for each pair of words that are in the parameter words
 def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 	best_senses = []
@@ -159,8 +170,8 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 		snd_word_synset = None
 		fst_word_vector = None
 		snd_word_vector = None
-		fst_vector_int = []
-		snd_vector_int = []
+		fst_vector_number = []
+		snd_vector_number = []
 		cos_sim = 0
 		fst_word_sense = None
 		snd_word_sense = None
@@ -186,7 +197,7 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 						for k in range(1, len(fst_word_vector)):
 							fst_vector_number.append(float(fst_word_vector[k]))
 							snd_vector_number.append(float(snd_word_vector[k]))
-						new_cos_sim = 1 - spatial.distance.cosine(fst_vector_number, snd_vector_number)
+						new_cos_sim = cosine_similarity(fst_vector_number, snd_vector_number)
 						if new_cos_sim>cos_sim:
 							final_senses = []
 							fst_word_sense = fst_word_synset[i]
@@ -197,13 +208,13 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 							#final_senses.append(cos_sim)
 		if final_senses:
 			best_senses.append(final_senses)
+			print("fst_word", fst_word)
+			print("snd_word", snd_word)
+			print("cosine", cos_sim)
 	return best_senses
 
 def found(elem):
-	if elem is None:
-		return False
-	else:
-		return True
+	return elem
 
 def find_gloss(bn_id):
 	service_url = 'https://babelnet.io/v5/getSynset'
