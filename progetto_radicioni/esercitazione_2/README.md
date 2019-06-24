@@ -30,6 +30,9 @@ Lanciare *wsd.py*
 ## Utils
 https://www.nltk.org/_modules/nltk/wsd.html
 
+Documentazione sui Tree di nltk:
+https://www.nltk.org/api/nltk.html#nltk.tree.Tree
+
 ## Test
 Il file `lesk_nltk.py` è l'implementazione di lesk standard dentro a nltk -> utile per prendere spunto.
 Per far funzionare è necessario fare: `import nltk` e poi `nltk.download('wordnet')`
