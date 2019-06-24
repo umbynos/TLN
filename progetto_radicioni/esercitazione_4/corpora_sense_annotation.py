@@ -32,7 +32,11 @@
 
 from itertools import islice
 from scipy import spatial
+from io import StringIO
 import numpy as np
+import json
+import gzip
+import requests
 
 def main():
 	corpora_ro = infer_file("words_ro.txt")
@@ -46,13 +50,15 @@ def main():
 	spearman_index = spearman(sim_ro, sim_umbo)
 	print("Spearman:", spearman_index, "\n")
 	# Saving nasari vectors in a structure
-	#nasari_vectors = nasari_to_vectors()
-	#sem_eval_vectors = sem_eval_to_vectors()
-	#senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
-	print("#############################################")
-	print("GLOSSA")
-	print("#############################################")
-	prova_glossa()
+	nasari_vectors = nasari_to_vectors()
+	sem_eval_vectors = sem_eval_to_vectors()
+	best_senses = senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
+	for elem in best_senses:
+		print("sense first word:", elem[0])
+		find_gloss(elem[0])
+		print("sense second word:", elem[1])
+		find_gloss(elem[1])
+		print()
 
 # infer_file returns the array corpora
 # Each element of corpora represents a line of words file and it contains the first and the second words followed by the similarity given in the file
@@ -143,8 +149,10 @@ def pearson(fst, snd):
 
 # senseIdentification() returns the cosine similarity for each pair of words that are in the parameter words
 def senseIdentification(words, nasari_vectors, sem_eval_vectors):
+	best_senses = []
 	# For every pair in words file ...
 	for elem_words in words:
+		final_senses = []
 		fst_word = elem_words[0]
 		snd_word = elem_words[1]
 		fst_word_synset = None
@@ -176,17 +184,20 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 					if(found(fst_word_vector) and found(snd_word_vector)):
 						# ... their cosine similarity is computed
 						for k in range(1, len(fst_word_vector)):
-							fst_vector_int.append(float(fst_word_vector[k]))
-							snd_vector_int.append(float(snd_word_vector[k]))
-						new_cos_sim = 1 - spatial.distance.cosine(fst_vector_int, snd_vector_int)
+							fst_vector_number.append(float(fst_word_vector[k]))
+							snd_vector_number.append(float(snd_word_vector[k]))
+						new_cos_sim = 1 - spatial.distance.cosine(fst_vector_number, snd_vector_number)
 						if new_cos_sim>cos_sim:
-							cos_sim = new_cos_sim
+							final_senses = []
 							fst_word_sense = fst_word_synset[i]
+							final_senses.append(fst_word_sense)
 							snd_word_sense = snd_word_synset[j]
-		print("coppia", fst_word,snd_word)
-		print("sensi", fst_word_sense,snd_word_sense)
-		print("cosine similarity", cos_sim)
-		print()
+							final_senses.append(snd_word_sense)
+							cos_sim = new_cos_sim
+							#final_senses.append(cos_sim)
+		if final_senses:
+			best_senses.append(final_senses)
+	return best_senses
 
 def found(elem):
 	if elem is None:
@@ -194,44 +205,21 @@ def found(elem):
 	else:
 		return True
 
-
-#import urllib2
-#import urllib
-import json
-import gzip
-
-from io import StringIO
-
-import requests
-
-def prova_glossa():
+def find_gloss(bn_id):
 	service_url = 'https://babelnet.io/v5/getSynset'
 
-	id = 'bn:00050954n'
+	id = bn_id
 	key  = 'aa3561e2-0643-4541-90bd-b39b44fe1dca'
 
 	params = {
 		'id' : id,
 		'key'  : key
 	}
-
-	#url = service_url + '?' + urllib.urlencode(params)
 	res = requests.get(service_url, params=params, headers={'Accept-encoding':'gzip'})
-	#request.add_header('Accept-encoding', 'gzip')
-	#response = urllib2.urlopen(request)
-	#res = req.url MIA
-
-	#if response.info().get('Content-Encoding') == 'gzip':
 	if res.headers['Content-Encoding'] == 'gzip':
-		#buf = StringIO( response.read())
 		buf = StringIO(res.text)
-		print("BUF",buf)
-		#f = gzip.GzipFile(fileobj=buf)
-		#data = json.loads(f.read())
 		data = json.loads(buf.getvalue())
-
-		print()
-		# retrieving BabelGloss data
+		# it saves all the definitions
 		glosses = data['glosses']
 		for result in glosses:
 			gloss = result.get('gloss')
