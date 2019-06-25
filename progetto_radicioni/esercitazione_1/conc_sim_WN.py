@@ -47,8 +47,10 @@ def main():
 		node = Node(fst_word, snd_word, similarity)
 		words_array.append(node) # TRASFORMARE IN MATRICE?
 	file.close()
+	# Depth of WordNet structure
 	global depth_max
 	depth_max = depthMax()
+	# METTIAMO POI TUTTO IN UN CILCLO UNICO
 	# Creating array with Wu & Palmer Similarity for each entry of words_array
 	wu_and_palmer_sim_indexes = []
 	for i in range(len(words_array)):
@@ -151,10 +153,25 @@ def leakcock_chodorow(word1, word2):
 # Get a list of lowest synset(s) that both synsets have as a hypernym.
 # USE_MIN_DEPTH=TRUE
 def lowest_common_subsumer(sense1, sense2):
-	# DAL MOMENTO CHE NON è DETTO CHE I DUE SENSI SI TROVINO ALLA STESSA
-	# ALTEZZA, PRENDO TUTTI QUELLI DEL PRIMO E PARTENDO DALL'ULTIMO TROVATO
-	# LI CONFORNTO CON TUTTI QUELLI DEL SECONDO. MI FERMO APPENA TROVO CORRISPONDENZA
+	paths1 = hypernym_paths(sense1)
+	paths2 = hypernym_paths(sense2)
+	for path1 in paths1:
+		for path2 in paths2:
+			# partiamo dal fondo; confrontiamo ogni elemento delle due liste; se troviamo lo stesso elemento e il suo indice è maggiore di quello che avevamo lo salviamo e aggiorniamo l'indice
+			# vedere quale indice prendere (di quale lista in base a come è fatto sul sito)
 	return 1
+
+# hypernym_paths(sense) return paths list: a list of lists, each list gives the node sequence from a root to sense
+def hypernym_paths(sense):
+	paths = []
+	hypernyms = sense.hypernym()
+	if len(hypernyms) == 0:
+		paths = [[sense]]
+	for hypernym in hypernyms:
+		for ancestor_list in hypernym.hypernym_paths():
+			ancestor_list.append(sense)
+			paths.append(ancestor_list)
+	return paths
 
 # depthMax() returns the maximum depth of WordNet's structure
 def depthMax(): # CONTROLLARNE LA CORRETTEZZA
@@ -172,7 +189,7 @@ def depthMax(): # CONTROLLARNE LA CORRETTEZZA
 # spearman() returns the Spearman's correlation indexes
 def spearman(similarities, indexes_sim):
 	similarities.sort()
-	indexes_sim.sort()
+	indexes_sim.sort() # PROVARE A STAMPARE PER VEDERE COME ORDINA
 	return pearson(similarities, indexes_sim) # VALORI MOLTO PIU ALTI RISPETTO AGLI ALTRI!!
 
 def pearson(fst, snd):
