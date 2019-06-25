@@ -31,7 +31,6 @@
 # NB: per questa valutazione non è necessario conoscere il BabelNet synset ID corretto, ma è sufficiente valutare sulla base della glossa, se il senso individuato è appropriato.
 
 from itertools import islice
-from scipy import spatial
 from io import StringIO
 import numpy as np
 import json
@@ -55,11 +54,11 @@ def main():
 	sem_eval_vectors = sem_eval_to_vectors()
 	best_senses = senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
 	for elem in best_senses:
-		print("sense first word:", elem[0])
-		find_gloss(elem[0])
-		print("sense second word:", elem[1])
-		find_gloss(elem[1])
-		print()
+	 	print("sense first word:", elem[0])
+	 	find_gloss(elem[0])
+	 	print("sense second word:", elem[1])
+	 	find_gloss(elem[1])
+	 	print()
 
 # infer_file returns the array corpora
 # Each element of corpora represents a line of words file and it contains the first and the second words followed by the similarity given in the file
@@ -210,9 +209,6 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 							#final_senses.append(cos_sim)
 		if final_senses:
 			best_senses.append(final_senses)
-			print("fst_word", fst_word)
-			print("snd_word", snd_word)
-			print("cosine", cos_sim)
 	return best_senses
 
 def found(elem):
@@ -232,7 +228,7 @@ def find_gloss(bn_id):
 	if res.headers['Content-Encoding'] == 'gzip':
 		buf = StringIO(res.text)
 		data = json.loads(buf.getvalue())
-		# it saves all the definitions
+		# finding all the glosses
 		glosses = data['glosses']
 		for result in glosses:
 			gloss = result.get('gloss')
