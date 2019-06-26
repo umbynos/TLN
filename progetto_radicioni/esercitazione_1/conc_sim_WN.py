@@ -48,66 +48,95 @@ def main():
 		words_array.append(node) # TRASFORMARE IN MATRICE?
 	file.close()
 	# Depth of WordNet structure
-	global depth_max
-	depth_max = depthMax()
+	# global depth_max
+	# depth_max = depthMax()
 	# METTIAMO POI TUTTO IN UN CILCLO UNICO
 	# Creating array with Wu & Palmer Similarity for each entry of words_array
 	wu_and_palmer_sim_indexes = []
 	for i in range(len(words_array)):
 		word1 = words_array[i].get_fst_word()
 		word2 = words_array[i].get_snd_word()
+		print("words:",word1,word2)
 		wu_and_palmer_sim_indexes.append(float(wu_and_palmer(word1,word2)))
-		print("i,wu_and_palmer_sim_indexes:", i,wu_and_palmer_sim_indexes[i])
+		print("wu_and_palmer nostro:", wu_and_palmer_sim_indexes[i])
+		print()
 	# Creating array with Short Path Similarity for each entry of words_array
-	shortest_path_sim_indexes = []
-	for i in range(len(words_array)):
-		word1 = words_array[i].get_fst_word()
-		word2 = words_array[i].get_snd_word()
-		shortest_path_sim_indexes.append(shortest_path(word1,word2))
-		print("i,shortest_path_sim_indexes:", i,shortest_path_sim_indexes[i])
-	# Creating array with Short Path Similarity for each entry of words_array
-	leakcock_chodorow_sim_indexes = []
-	for i in range(len(words_array)):
-		word1 = words_array[i].get_fst_word()
-		word2 = words_array[i].get_snd_word()
-		leakcock_chodorow_sim_indexes.append(leakcock_chodorow(word1,word2))
-		print("i,leakcock_chodorow_sim_indexes:", i,leakcock_chodorow_sim_indexes[i])
-	# Correlation indexes
-	sim_indexes = []
-	for elem in words_array:
-		sim_indexes.append(float(elem.get_similarity()))
-	print("Pearson, WUP: ", pearson(sim_indexes, wu_and_palmer_sim_indexes))
-	print("Pearson, SP: ", pearson(sim_indexes, shortest_path_sim_indexes))
-	print("Pearson, LC: ", pearson(sim_indexes, leakcock_chodorow_sim_indexes))
-	print("Spearman, WUP: ", spearman(sim_indexes, wu_and_palmer_sim_indexes))
-	print("Spearman, SP: ", spearman(sim_indexes, shortest_path_sim_indexes))
-	print("Spearman, LC: ", spearman(sim_indexes, leakcock_chodorow_sim_indexes))
+	# shortest_path_sim_indexes = []
+	# for i in range(len(words_array)):
+	# 	word1 = words_array[i].get_fst_word()
+	# 	word2 = words_array[i].get_snd_word()
+	# 	shortest_path_sim_indexes.append(shortest_path(word1,word2))
+	# 	print("i,shortest_path_sim_indexes:", i,shortest_path_sim_indexes[i])
+	# # Creating array with Short Path Similarity for each entry of words_array
+	# leakcock_chodorow_sim_indexes = []
+	# for i in range(len(words_array)):
+	# 	word1 = words_array[i].get_fst_word()
+	# 	word2 = words_array[i].get_snd_word()
+	# 	leakcock_chodorow_sim_indexes.append(leakcock_chodorow(word1,word2))
+	# 	print("i,leakcock_chodorow_sim_indexes:", i,leakcock_chodorow_sim_indexes[i])
+	# # Correlation indexes
+	# sim_indexes = []
+	# for elem in words_array:
+	# 	sim_indexes.append(float(elem.get_similarity()))
+	# print("Pearson, WUP: ", pearson(sim_indexes, wu_and_palmer_sim_indexes))
+	# print("Pearson, SP: ", pearson(sim_indexes, shortest_path_sim_indexes))
+	# print("Pearson, LC: ", pearson(sim_indexes, leakcock_chodorow_sim_indexes))
+	# print("Spearman, WUP: ", spearman(sim_indexes, wu_and_palmer_sim_indexes))
+	# print("Spearman, SP: ", spearman(sim_indexes, shortest_path_sim_indexes))
+	# print("Spearman, LC: ", spearman(sim_indexes, leakcock_chodorow_sim_indexes))
 
-# QUESTI 3 METODI CI PIACCIONO COSI O PREFERIAMO CREARNE UNO SOLO A CUI SI PASSANO LE DUE PAROLE ED UN PARAMETRO CHE INDENTIFICA UNO DEI TRE METODI?
 # wu_and_palmer takes two words and returns the Wu & Palmer Similarity considering the two senses that give the maximum similarity
 def wu_and_palmer(word1, word2):
 	synset1 = wn.synsets(word1)
 	synset2 = wn.synsets(word2)
 	cs = 0
+	sense1 = None
+	sense2 = None
 	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase #RITORNARE -1
 		for s1 in synset1:
 			for s2 in synset2:	
 				# LCS: Lowest Common Subsumer. It is the lower common ancestor between sense1 and sense2, id est the lowest common hypernym
-				lcs = s1.lowest_common_hypernyms(s2, simulate_root=True, use_min_depth=True) # VA BENE O DOBBIAMO CALCOLARCELO NOI??? PRIMA DI FARLO MANDEREI UNA MAIL
-				# simulate_root=True: fake root that connect the taxonomies that do not share a single root
-				# use_min_depth=True: USATO PERCHE USATO NELLA LIBRERIA DI WN. SENZA NON TUTTI SONO UGUALI. LO TENIAMO? SPIEGAZIONE:
-				# Note that to preserve behavior from NLTK2 we set use_min_depth=True
-		        # It is possible that more accurate results could be obtained by
-		        # removing this setting and it should be tested later on
-				new_cs = 2*(lcs[0].max_depth()+1) / ((s1.max_depth()+1) + (s2.max_depth()+1)) # CHIEDERE AGLI ALTRI PER IL +1
-				# Get the longest path from the LCS to the root, with correction: add one because the calculations include both the start and end nodes
-				# max_depth(): if there are more possibilities, it is taken the one with the longest minimum distance from the root
-				if(new_cs > cs):
-					cs = new_cs
-					sense1 = s1
-					sense2 = s2
-		print("wu_and_palmer WD: ", sense1.wup_similarity(sense2, simulate_root=True))
-	return cs
+				lcs = lowest_common_subsumer(s1, s2)
+				if lcs: # not all senses have a root in common
+					new_cs = 2*(lcs.max_depth()+1) / ((s1.max_depth()+1) + (s2.max_depth()+1)) # CHIEDERE AGLI ALTRI PER IL +1
+					# Get the longest path from the LCS to the root, with correction: add one because the calculations include both the start and end nodes
+					# max_depth(): if there are more possibilities, it is taken the one with the longest minimum distance from the root
+					# MAX_DEPTH DOBBIAMO IMPLEMENTARLO NOI????????''
+					if(new_cs > cs):
+						cs = new_cs
+						sense1 = s1
+						sense2 = s2
+		if sense1 and sense2: # not all senses have a root in common
+			print("wu_and_palmer WD: ", sense1.wup_similarity(sense2))
+	return cs # QUALCHE RISULTATO è UN FILO DIVERSO (+-0.3). SCEGLIERE MEGLIO L'IPERONIMO COMUNE?
+
+# Get a list of lowest synset(s) that both synsets have as a hypernym. # NON UNA LISTA. UNO SOLO..TANTO CI BASTA
+# USE_MIN_DEPTH=TRUE
+def lowest_common_subsumer(sense1, sense2):
+	paths1 = hypernym_paths(sense1)
+	paths2 = hypernym_paths(sense2)
+	common_hypernym = None
+	position = -1
+	for path1 in paths1:
+		for path2 in paths2:
+			for i in range(len(path1)-1, -1, -1):
+				for j in range(len(path2)-1, -1, -1):
+					if path1[i]==path2[j] and (i>position or j>position):
+						common_hypernym = path1[i]
+						position = max(i, j)
+	return common_hypernym
+
+# hypernym_paths(sense) return paths list: a list of lists, each list gives the node sequence from a root to sense
+def hypernym_paths(sense):
+	paths = []
+	hypernyms = sense.hypernyms()
+	if len(hypernyms) == 0:
+		paths = [[sense]]
+	for hypernym in hypernyms:
+		for ancestor_list in hypernym.hypernym_paths():
+			ancestor_list.append(sense)
+			paths.append(ancestor_list)
+	return paths
 
 # shortest_path() returns the shortest path length from word1 to word2 considering the two senses that give the maximum similarity
 def shortest_path(word1,word2):
@@ -150,31 +179,8 @@ def leakcock_chodorow(word1, word2):
 		print(found)
 		return -1
 
-# Get a list of lowest synset(s) that both synsets have as a hypernym.
-# USE_MIN_DEPTH=TRUE
-def lowest_common_subsumer(sense1, sense2):
-	paths1 = hypernym_paths(sense1)
-	paths2 = hypernym_paths(sense2)
-	for path1 in paths1:
-		for path2 in paths2:
-			# partiamo dal fondo; confrontiamo ogni elemento delle due liste; se troviamo lo stesso elemento e il suo indice è maggiore di quello che avevamo lo salviamo e aggiorniamo l'indice
-			# vedere quale indice prendere (di quale lista in base a come è fatto sul sito)
-	return 1
-
-# hypernym_paths(sense) return paths list: a list of lists, each list gives the node sequence from a root to sense
-def hypernym_paths(sense):
-	paths = []
-	hypernyms = sense.hypernym()
-	if len(hypernyms) == 0:
-		paths = [[sense]]
-	for hypernym in hypernyms:
-		for ancestor_list in hypernym.hypernym_paths():
-			ancestor_list.append(sense)
-			paths.append(ancestor_list)
-	return paths
-
 # depthMax() returns the maximum depth of WordNet's structure
-def depthMax(): # CONTROLLARNE LA CORRETTEZZA
+def depthMax(): # CONTROLLARNE LA CORRETTEZZA. USARE IL NOSTRO HYPERNYM_PATHS?????
 	max_hyp_path = 0
 	max_all = 0
 	for synset in wn.all_synsets():
