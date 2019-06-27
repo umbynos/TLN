@@ -48,25 +48,20 @@ def main():
 		words_array.append(node) # TRASFORMARE IN MATRICE?
 	file.close()
 	# Depth of WordNet structure
-	# global depth_max
-	# depth_max = depthMax()
+	global depth_max
+	depth_max = depthMax()
 	# METTIAMO POI TUTTO IN UN CILCLO UNICO
-	# Creating array with Wu & Palmer Similarity for each entry of words_array
-	wu_and_palmer_sim_indexes = []
+	wu_and_palmer_sim_indexes = [] # List with Wu & Palmer Similarity for each entry of words_array
+	shortest_path_sim_indexes = [] # List with Short Path Similarity for each entry of words_array
 	for i in range(len(words_array)):
 		word1 = words_array[i].get_fst_word()
 		word2 = words_array[i].get_snd_word()
 		print("words:",word1,word2)
 		wu_and_palmer_sim_indexes.append(float(wu_and_palmer(word1,word2)))
 		print("wu_and_palmer nostro:", wu_and_palmer_sim_indexes[i])
+		shortest_path_sim_indexes.append(shortest_path(word1,word2))
+		print("shortest_path:", shortest_path_sim_indexes[i])
 		print()
-	# Creating array with Short Path Similarity for each entry of words_array
-	# shortest_path_sim_indexes = []
-	# for i in range(len(words_array)):
-	# 	word1 = words_array[i].get_fst_word()
-	# 	word2 = words_array[i].get_snd_word()
-	# 	shortest_path_sim_indexes.append(shortest_path(word1,word2))
-	# 	print("i,shortest_path_sim_indexes:", i,shortest_path_sim_indexes[i])
 	# # Creating array with Short Path Similarity for each entry of words_array
 	# leakcock_chodorow_sim_indexes = []
 	# for i in range(len(words_array)):
@@ -101,7 +96,7 @@ def wu_and_palmer(word1, word2):
 					new_cs = 2*(lcs.max_depth()+1) / ((s1.max_depth()+1) + (s2.max_depth()+1)) # CHIEDERE AGLI ALTRI PER IL +1
 					# Get the longest path from the LCS to the root, with correction: add one because the calculations include both the start and end nodes
 					# max_depth(): if there are more possibilities, it is taken the one with the longest minimum distance from the root
-					# MAX_DEPTH DOBBIAMO IMPLEMENTARLO NOI????????''
+					# MAX_DEPTH DOBBIAMO IMPLEMENTARLO NOI???????? POSSIAMO SALVARLO QUANDO CALCOLIAMO LCS
 					if(new_cs > cs):
 						cs = new_cs
 						sense1 = s1
@@ -111,7 +106,6 @@ def wu_and_palmer(word1, word2):
 	return cs # QUALCHE RISULTATO è UN FILO DIVERSO (+-0.3). SCEGLIERE MEGLIO L'IPERONIMO COMUNE?
 
 # Get a list of lowest synset(s) that both synsets have as a hypernym. # NON UNA LISTA. UNO SOLO..TANTO CI BASTA
-# USE_MIN_DEPTH=TRUE
 def lowest_common_subsumer(sense1, sense2):
 	paths1 = hypernym_paths(sense1)
 	paths2 = hypernym_paths(sense2)
@@ -142,15 +136,32 @@ def hypernym_paths(sense):
 def shortest_path(word1,word2):
 	synset1 = wn.synsets(word1)
 	synset2 = wn.synsets(word2)
-	sim = 0
+	sim = None
 	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase
 		for s1 in synset1:
 			for s2 in synset2:
-				new_sim = 2*depth_max-s1.shortest_path_distance(s2, simulate_root=True) # DOBBIAMO IMPLEMENTARLO NOI??
-				if(new_sim > sim):
-					sim = new_sim
+				shortest_path_distance = lowest_common_subsumer_shortest_path(s1,s2)
+				if shortest_path_distance:
+					new_sim = 2*depth_max-shortest_path_distance
+					if not sim or new_sim<sim: # not sim: first assignment, sim is None
+						sim = new_sim
 		# NON HO TROVATO IL CORRISPETTIVO IN WN
 	return sim
+
+# PENSO CHE TROVI LO STESSO RISULTATO DELL'ALTRO. UNIRLI E FARE SWITCH?
+def lowest_common_subsumer_shortest_path(sense1, sense2):
+	paths1 = hypernym_paths(sense1)
+	paths2 = hypernym_paths(sense2)
+	best_len_path = None
+	for path1 in paths1:
+		for path2 in paths2:
+			for i in range(len(path1)-1, -1, -1):
+				for j in range(len(path2)-1, -1, -1):
+					if path1[i]==path2[j]:
+						len_path = (len(path1)-1)-i + (len(path2)-1)-j
+						if not best_len_path or len_path<best_len_path: # not best_len_path: first assignment, best_first_path is None
+							best_len_path = len_path
+	return best_len_path
 
 # leakock_chodorow() returns the Leakcock Chodorow Similarity considering the two senses that give the maximum similarity
 def leakcock_chodorow(word1, word2):
