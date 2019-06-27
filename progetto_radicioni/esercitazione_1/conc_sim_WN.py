@@ -67,14 +67,14 @@ def main():
 		print()
 	# Correlation indexes
 	sim_indexes = []
-	# for elem in words_array:
-	#  	sim_indexes.append(float(elem.get_similarity()))
-	# print("Pearson, WUP: ", pearson(sim_indexes, wu_and_palmer_sim_indexes))
-	# print("Pearson, SP: ", pearson(sim_indexes, shortest_path_sim_indexes))
-	# # print("Pearson, LC: ", pearson(sim_indexes, leacock_chodorow_sim_indexes))
-	# print("Spearman, WUP: ", spearman(sim_indexes, wu_and_palmer_sim_indexes))
-	# print("Spearman, SP: ", spearman(sim_indexes, shortest_path_sim_indexes))
-	# # print("Spearman, LC: ", spearman(sim_indexes, leacock_chodorow_sim_indexes))
+	for elem in words_array:
+	 	sim_indexes.append(float(elem.get_similarity()))
+	print("Pearson, WUP: ", pearson(sim_indexes, wu_and_palmer_sim_indexes))
+	print("Pearson, SP: ", pearson(sim_indexes, shortest_path_sim_indexes))
+	print("Pearson, LC: ", pearson(sim_indexes, leacock_chodorow_sim_indexes))
+	print("Spearman, WUP: ", spearman(sim_indexes, wu_and_palmer_sim_indexes))
+	print("Spearman, SP: ", spearman(sim_indexes, shortest_path_sim_indexes))
+	print("Spearman, LC: ", spearman(sim_indexes, leacock_chodorow_sim_indexes))
 
 # wu_and_palmer takes two words and returns the Wu & Palmer Similarity considering the two senses that give the maximum similarity
 def wu_and_palmer(word1, word2):
@@ -133,26 +133,23 @@ def hypernym_paths(sense):
 def shortest_path(word1,word2):
 	synset1 = wn.synsets(word1)
 	synset2 = wn.synsets(word2)
-	# senso1 = None
-	# senso2 = None
 	sim = None
 	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase
 		for s1 in synset1:
 			for s2 in synset2:
-				shortest_path_distance = lowest_common_subsumer_shortest_path(s1,s2)
+				shortest_path_distance = shortest_path_aux(s1,s2)
 				if shortest_path_distance:
 					new_sim = 2*depth_max-shortest_path_distance
 					if not sim or new_sim<sim: # not sim: first assignment, sim is None
 						sim = new_sim
-						# senso1 = s1
-						# senso2 = s2
 		# NON HO TROVATO IL CORRISPETTIVO IN WN
-	# if senso1 and senso2:
-	# 	print("sensi shortest_path",s1,s2)
-	return sim
+	if sim:
+		return sim
+	else:
+		return 0
 
 # CONTROLLATO, NON CONSIDERA GLI STESSI DELL'ALTRO. NON SAPREI COME UNIRLI. CAMBIARE NOME
-def lowest_common_subsumer_shortest_path(sense1, sense2):
+def shortest_path_aux(sense1, sense2):
 	paths1 = hypernym_paths(sense1)
 	paths2 = hypernym_paths(sense2)
 	best_len_path = None
@@ -191,14 +188,14 @@ def leacock_chodorow(word1, word2):
 		return sim
 	else:
 		print(found)
-		return -1
+		return 0
 
 # depthMax() returns the maximum depth of WordNet's structure
 def depthMax(): # CONTROLLARNE LA CORRETTEZZA. USARE IL NOSTRO HYPERNYM_PATHS?????
 	max_hyp_path = 0
 	max_all = 0
 	for synset in wn.all_synsets():
-		for hyp_path in synset.hypernym_paths():
+		for hyp_path in hypernym_paths(synset):
 			if(len(hyp_path) > max_hyp_path):
 				max_hyp_path = len(hyp_path)
 		if(max_hyp_path > max_all):
@@ -212,16 +209,6 @@ def spearman(similarities, indexes_sim):
 	return pearson(similarities, indexes_sim) # VALORI MOLTO PIU ALTI RISPETTO AGLI ALTRI!!
 
 def pearson(fst, snd):
-	# if no similiraity is found, the elem are removed
-	print("len fst", len(fst))
-	print("len snd", len(snd))
-	for i in range(len(fst)):
-		for j in range(len(snd)):
-			print("fst, i",fst[i],i)
-			print("snd, j",snd[j],j)
-			if fst[i] == None or snd[j] == None:
-				fst.pop(i)
-				snd.pop(j)
 	arr1 = np.asarray(fst)
 	arr2 = np.asarray(snd)
 	std1 = arr1.std()
