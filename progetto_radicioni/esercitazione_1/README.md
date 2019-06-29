@@ -1,7 +1,3 @@
-
-# Da Moodle
-Il materiale in questa directory è disponibile all'URL http://www.cs.technion.ac.il/~gabr/resources/data/wordsim353/
-
 # Conceptual similarity with WordNet
 
 ### INPUT
@@ -19,10 +15,13 @@ Compreso nell'intervallo [0,1]: 0 completamente dissimile; 1 identita
 - Shortest Path
 - Leakcock & Chodorow
 #### Per ciascuna misura di similarita calcolare:
-- gli indici di correlazioine di Spearman
-- gli indici di correlazioine di Pearson confrontando il risultato ottenuto con quello presente all'interno del file
+- Gli indici di correlazioine di Spearman
+- Gli indici di correlazioine di Pearson confrontando il risultato ottenuto con quello presente all'interno del file
 
 ### NOTE
 - L' input è dato come coppia di termini, mentre nelle formule vengono richiesti i sensi. Per disambiguare si prendano i sensi con la massima similarita
 - Sfruttare la struttura ad albero di WordNet per calcolare la vicinanza semantica
 - Documentazione WordNet: https://wordnet.princeton.edu/documentation
+
+### Esecuzione
+'python3 conc_sim_WN.py WordSim353.tab'
