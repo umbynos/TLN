@@ -20,6 +20,7 @@ def main():
 	# Depth of WordNet structure
 	global depth_max
 	depth_max = depthMax()
+	# Computing similarities
 	wu_and_palmer_sim_indexes = [] # List with Wu & Palmer Similarity for each entry of words_array
 	shortest_path_sim_indexes = [] # List with Shortest Path Similarity for each entry of words_array
 	leacock_chodorow_sim_indexes = [] # List with Leacock Chodorow Similarity for each entry of words_array
@@ -27,10 +28,13 @@ def main():
 		word1 = words_array[i].get_fst_word()
 		word2 = words_array[i].get_snd_word()
 		print("words:",word1,word2)
+		# Wu & Palmer Similarity
 		wu_and_palmer_sim_indexes.append(float(wu_and_palmer(word1,word2)))
 		print("wu_and_palmer nostro:", wu_and_palmer_sim_indexes[i])
+		# Shortest Path Similarity
 		shortest_path_sim_indexes.append(shortest_path(word1,word2))
 		print("shortest_path:", shortest_path_sim_indexes[i])
+		# Leacock CHodorow Similarity
 		leacock_chodorow_sim_indexes.append(leacock_chodorow(word1,word2))
 		print("leacock_chodorow nostro:",leacock_chodorow_sim_indexes[i])
 		print()
@@ -74,10 +78,10 @@ def wu_and_palmer(word1, word2):
 						sense1 = s1
 						sense2 = s2
 		if sense1 and sense2: # not all senses have a root in common
-			print("wu_and_palmer WD: ", sense1.wup_similarity(sense2))
+			print("wu_and_palmer WN: ", sense1.wup_similarity(sense2))
 	return cs # QUALCHE RISULTATO è UN FILO DIVERSO (+-0.3). SCEGLIERE MEGLIO L'IPERONIMO COMUNE?
 
-# Get a list of lowest synset(s) that both synsets have as a hypernym. # NON UNA LISTA. UNO SOLO..TANTO CI BASTA
+# Get a list of lowest synset(s) that both synsets have as a hypernym
 def lowest_common_subsumer(sense1, sense2):
 	paths1 = hypernym_paths(sense1)
 	paths2 = hypernym_paths(sense2)
@@ -92,7 +96,7 @@ def lowest_common_subsumer(sense1, sense2):
 						position = max(i, j)
 	return common_hypernym
 
-# hypernym_paths(sense) return paths list: a list of lists, each list gives the node sequence from a root to sense
+# hypernym_paths(sense) returns paths list: a list of lists, each list gives the node sequence from a root to sense
 def hypernym_paths(sense):
 	paths = []
 	hypernyms = sense.hypernyms()
@@ -114,7 +118,7 @@ def shortest_path(word1, word2):
 		for s1 in synset1:
 			for s2 in synset2:
 				shortest_path_distance = shortest_path_aux(s1,s2)
-				if shortest_path_distance:
+				if shortest_path_distance != -1:
 					new_sim = 2*depth_max-shortest_path_distance
 					if not sim or new_sim<sim: # not sim: first assignment, sim is None
 						sim = new_sim
@@ -137,7 +141,10 @@ def shortest_path_aux(sense1, sense2):
 						len_path = (len(path1)-1)-i + (len(path2)-1)-j
 						if not best_len_path or len_path<best_len_path: # not best_len_path: first assignment, best_first_path is None
 							best_len_path = len_path
-	return best_len_path
+	if best_len_path:
+		return best_len_path
+	else:
+		return -1
 
 # leacock_chodorow() returns the Leacock Chodorow Similarity considering the two senses that give the maximum similarity
 # If no senses are found, the similarity is considered to be zero
@@ -149,18 +156,19 @@ def leacock_chodorow(word1, word2):
 	if(len(synset1)>0 and len(synset2)>0): # some words in the file WordSim353.tab are not present in WordNet DataBase
 		for s1 in synset1:
 			for s2 in synset2:
-				length = s1.shortest_path_distance(s2, simulate_root=True)
-				if(length == 0):
-					new_sim = abs(math.log((length+1)/(2.0*depth_max+1))) # 
-				else:
-					new_sim =  abs(math.log((length+1)/(2.0*depth_max)))
-				if(new_sim>sim and s1._pos==s2._pos):
-					sim = new_sim
-					sense1 = s1
-					sense2 = s2
-					found = True
+				length = shortest_path_aux(s1, s2)
+				if length != -1:
+					if(length == 0):
+						new_sim = abs(math.log((length+1)/(2.0*depth_max+1)))
+					else:
+						new_sim =  abs(math.log((length+1)/(2.0*depth_max)))
+					if(new_sim>sim and s1._pos==s2._pos):
+						sim = new_sim
+						sense1 = s1
+						sense2 = s2
+						found = True
 	if(found):
-		print("leakock_chodorow WD: ", sense1.lch_similarity(sense2, simulate_root=False))
+		print("leakock_chodorow WN: ", sense1.lch_similarity(sense2, simulate_root=False))
 		return sim
 	else:
 		return 0
