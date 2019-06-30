@@ -1,5 +1,5 @@
 import sys
-from node_structure import Node
+from word_sim_structure import WordSim
 from itertools import islice
 from nltk.corpus import wordnet as wn
 import math
@@ -14,8 +14,8 @@ def main():
 		fst_word = line.split("\t")[0]
 		snd_word = line.split("\t")[1]
 		similarity = line.split("\t")[2]
-		node = Node(fst_word, snd_word, similarity)
-		words_array.append(node)
+		word_sim = WordSim(fst_word, snd_word, similarity)
+		words_array.append(word_sim)
 	file.close()
 	# Depth of WordNet structure
 	global depth_max

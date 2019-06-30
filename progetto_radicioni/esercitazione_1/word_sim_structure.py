@@ -1,7 +1,6 @@
-# Node structure containing words and similarity misure
-# NOTA: node_structure come nome non va bene: sono inseriti in un array, non sono collegati fra di loro!!!!!!!!!!!!!
+# Structure containing words and similarity misure
 
-class Node:
+class WordSim:
 	def __init__(self, fst_word, snd_word, similarity):
 		self.fst_word = fst_word
 		self.snd_word = snd_word
@@ -23,7 +22,4 @@ class Node:
 		self.snd_word = snd_word
 
 	def set_similarity(self, similarity):
-		self.similarity = similarity
-
-	def print_node(self):
-		print(self.fst_word, self.snd_word, self.similarity) 
+		self.similarity = similarity 
