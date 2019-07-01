@@ -122,7 +122,8 @@ def shortest_path_sim(word1, word2):
 			for s2 in synset2:
 				tmp_shortest_path = shortest_path(s1, s2)
 				if (sht_path==None or tmp_shortest_path<sht_path) and tmp_shortest_path != -1:
-					sim = 2*depth_max-tmp_shortest_path
+					sht_path = tmp_shortest_path
+					sim = 2*depth_max-sht_path
 	if sim:
 		return sim
 	else:
