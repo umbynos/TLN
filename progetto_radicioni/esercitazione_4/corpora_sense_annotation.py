@@ -36,19 +36,22 @@ import numpy as np
 import json
 import gzip
 import requests
+from nltk.corpus import wordnet as wn
 import math
+import scipy
 
 def main():
 	corpora_ro = infer_file("words_ro.txt")
 	corpora_umbo = infer_file("words_umbo.txt")
 	avg = average(corpora_ro, corpora_umbo)
-	# Computing inter-rater agreement
+	# Computing inter-rater agreement (correlation indexes)
 	sim_ro = infer_sim(corpora_ro)
 	sim_umbo = infer_sim(corpora_umbo)
-	pearson_index = pearson(sim_ro, sim_umbo)
-	print("Pearson:", pearson_index, "\n")
-	spearman_index = spearman(sim_ro, sim_umbo)
-	print("Spearman:", spearman_index, "\n")
+	corr_pearson, p_value_pearson = scipy.stats.pearsonr(sim_ro,sim_umbo)
+	print("Pearson:", corr_pearson, "\n")
+	# corr_pearson_SP, p_value_pearson_SP = scipy.stats.pearsonr(sim,shortest_path_sim)
+	corr_spearman, p_value_spearman = scipy.stats.spearmanr(sim_ro, sim_umbo)
+	print("Spearman:", corr_spearman, "\n")
 	# Saving nasari vectors in a structure
 	nasari_vectors = nasari_to_vectors()
 	sem_eval_vectors = sem_eval_to_vectors()
@@ -129,23 +132,6 @@ def average(fst, snd):
 		print(avg[i])
 	print()
 	return avg
-
-# UGUALI A QUELLI DELL'ES 1. LIBRERIA?????????
-# spearman() returns the Spearman's correlation indexes
-def spearman(fst, snd):
-	fst.sort()
-	snd.sort()
-	return pearson(fst, snd) # VALORI MOLTO PIU ALTI RISPETTO AGLI ALTRI!!
-
-def pearson(fst, snd):
-	arr1 = np.asarray(fst)
-	arr2 = np.asarray(snd)
-	std_dev_sim = np.std(fst)
-	std_dev_wup = np.std(snd)
-	std1 = arr1.std()
-	std2 = arr2.std()
-	pearson_index = ((arr1*arr2).mean()-arr1.mean()*arr2.mean())/(std1*std2)
-	return pearson_index
 
 def cosine_similarity(v1,v2):
     #"compute cosine similarity of v1 to v2: (v1 dot v2)/{||v1||*||v2||)"
