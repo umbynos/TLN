@@ -49,7 +49,6 @@ def main():
 	sim_umbo = infer_sim(corpora_umbo)
 	corr_pearson, p_value_pearson = scipy.stats.pearsonr(sim_ro,sim_umbo)
 	print("Pearson:", corr_pearson, "\n")
-	# corr_pearson_SP, p_value_pearson_SP = scipy.stats.pearsonr(sim,shortest_path_sim)
 	corr_spearman, p_value_spearman = scipy.stats.spearmanr(sim_ro, sim_umbo)
 	print("Spearman:", corr_spearman, "\n")
 	# Saving nasari vectors in a structure
@@ -202,10 +201,8 @@ def found(elem):
 
 def find_gloss(bn_id):
 	service_url = 'https://babelnet.io/v5/getSynset'
-
 	id = bn_id
 	key  = 'aa3561e2-0643-4541-90bd-b39b44fe1dca'
-
 	params = {
 		'id' : id,
 		'key'  : key
