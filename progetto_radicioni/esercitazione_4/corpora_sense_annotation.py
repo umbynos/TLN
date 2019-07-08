@@ -23,12 +23,16 @@ def main():
 	nasari_vectors = nasari_to_vectors()
 	sem_eval_vectors = sem_eval_to_vectors()
 	best_senses = senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
-	for elem in best_senses:
-	 	print("sense first word:", elem[0])
-	 	find_gloss(elem[0])
-	 	print("sense second word:", elem[1])
-	 	find_gloss(elem[1])
-	 	print()
+	gloss_file = open("gloss_file.txt", "a")
+	for i, elem in enumerate(best_senses):
+	 	#print("sense first word:", elem[0])
+	 	#find_gloss(elem[0])
+	 	gloss_file.write("Words: " + str(corpora_ro[i][0]) + " " + str(corpora_ro[i][1]) + "\n")
+	 	gloss_file.write("Gloss first word: " + find_gloss(elem[0]) + "\n")
+	 	gloss_file.write("Gloss second word: " + find_gloss(elem[1]) + "\n\n")
+	 	#print("sense second word:", elem[1])
+	 	#find_gloss(elem[1])
+	 	#print()
 
 # infer_file returns the array corpora
 # Each element of corpora represents a line of words file and it contains the first and the second words followed by the similarity given in the file
@@ -180,11 +184,17 @@ def find_gloss(bn_id):
 		buf = StringIO(res.text)
 		data = json.loads(buf.getvalue())
 		# finding all the glosses
+		# glosses = data['glosses']
+		# for result in glosses:
+		# 	gloss = result.get('gloss')
+		# 	language = result.get('language')
+		# 	print(str(language.encode('utf-8')) + "\t" + str(gloss.encode('utf-8')))
+		# find first gloss
 		glosses = data['glosses']
-		for result in glosses:
-			gloss = result.get('gloss')
-			language = result.get('language')
-			print(str(language.encode('utf-8')) + "\t" + str(gloss.encode('utf-8')))
+		gloss = glosses[0].get('gloss')
+		language = glosses[0].get('language')
+		return (str(language.encode('utf-8')) + "\t" + str(gloss.encode('utf-8'))) # LASCIARE SOLO SECONDA PARTE??
+
 
 if __name__== "__main__":
 	main()
