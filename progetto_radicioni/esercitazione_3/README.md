@@ -2,9 +2,6 @@
 Novel Approach to a Semantically-Aware Representation of Items
 Vectore Space representation
 
-## NOTA
-La parola poterbbe non essere presente all'interno di BabelNet
-
 ## WHAT TO DO
 Riassumere questi 3 documenti utilizzando NASARI
 - Donald-Trump-vs-Barack-Obama-on-Nuclear-Weapons-in-East-Asia.txt (464 parole)
@@ -17,7 +14,7 @@ La salienza di solito si trova calcolando la topic signature (un insieme di sali
 Ogni valore della salienza della topic signature deve essere maggiore di una certa soglia. Dovrebbero esistere delle funzioni che la calcolano (la frequenza non è detto che vada bene).
 La SPECIFICITA LESSICALE può essere utilizzata per individuare i termini più salienti e dare così un valore alle frasi dove sono
 
-## Audio Elisa
+## Audio Elisa + Teoria
 Contenuto dei testi: titolo e paragrafi divisi da righe vuote  
 Ovviamente si cerca di ottenere dei riassunti estrattivi (non astrattivi)  
 Esistono varie misure per fare i riassunti -> relevance criteria
@@ -64,4 +61,9 @@ Magari scrivire qualcosa nella relazione (es: con questa importanza al titolo, i
 NOTA  
 I vettori unified di NASARI non sono molto aggiornati e in più noi ne utilizziamo una versione ristretta  
 Per diminuire il problema, loro hanno fatto un altro giro: per ogni vettore trovato si cercano i vettori delle parole presenti nel vettore nasari della prima passata  
-Così facendo si ottiene una matrice (puoi fare quanti giri vuoi, ma diventa enorme)  
+Così facendo si ottiene una matrice (puoi fare quanti giri vuoi, ma diventa enorme)
+
+## How to
+- Bisogna scaricare le stopwords (solo la prima volta):  
+`import nltk`  
+`nltk.download('stopwords')`
