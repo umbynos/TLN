@@ -28,8 +28,11 @@ def main():
 	 	#print("sense first word:", elem[0])
 	 	#find_gloss(elem[0])
 	 	gloss_file.write("Words: " + str(corpora_ro[i][0]) + " " + str(corpora_ro[i][1]) + "\n")
-	 	gloss_file.write("Gloss first word: " + find_gloss(elem[0]) + "\n")
-	 	gloss_file.write("Gloss second word: " + find_gloss(elem[1]) + "\n\n")
+	 	if elem != -1:
+		 	gloss_file.write("Gloss first word: " + find_gloss(elem[0]) + "\n")
+		 	gloss_file.write("Gloss second word: " + find_gloss(elem[1]) + "\n\n")
+	 	else:
+	 		gloss_file.write("Senses not found" + "\n\n")
 	 	#print("sense second word:", elem[1])
 	 	#find_gloss(elem[1])
 	 	#print()
@@ -166,6 +169,8 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 							#final_senses.append(cos_sim)
 		if final_senses:
 			best_senses.append(final_senses)
+		else:
+			best_senses.append(-1)
 	return best_senses
 
 def found(elem):
@@ -191,9 +196,12 @@ def find_gloss(bn_id):
 		# 	print(str(language.encode('utf-8')) + "\t" + str(gloss.encode('utf-8')))
 		# find first gloss
 		glosses = data['glosses']
-		gloss = glosses[0].get('gloss')
-		language = glosses[0].get('language')
-		return (str(language.encode('utf-8')) + "\t" + str(gloss.encode('utf-8'))) # LASCIARE SOLO SECONDA PARTE??
+		if len(glosses)>0:
+			gloss = glosses[0].get('gloss')
+			language = glosses[0].get('language')
+			return (str(language.encode('utf-8')) + "\t" + str(gloss.encode('utf-8'))) # LASCIARE SOLO SECONDA PARTE??
+		else:
+			return("No gloss found")
 
 
 if __name__== "__main__":
