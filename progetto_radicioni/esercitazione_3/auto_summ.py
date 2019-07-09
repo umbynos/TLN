@@ -2,7 +2,6 @@
 
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
-from itertools import islice
 import string
 
 
@@ -21,18 +20,29 @@ def main():
         file.readline()
     title = file.readline()
     title_set = {word for word in title.split() if word not in stop_words}
-    # save sentences: list of sets. Each sets contains non stop words included in the sentence
-    sentences = []
+    # save sentences: list of sets. Each set contains non stop words included in the sentence
+    sentences_words = []
     for line in file:
         if line != "\n":
             for sentence in sent_tokenize(line):
-                sentences.append({word for word in sentence.split() if word not in stop_words})
+                sentences_words.append({word for word in sentence.split() if word not in stop_words})
     # poi sostituisco le parole con i vettori nasari
+    sentences_vectors = []
+    vectors_set = {}
+    for sentence in sentences_words:
+        for word in sentence:
+            vectors_set.add(word_to_vectors(word))
+        sentences_vectors.append(vectors_set)
     # mi servono raggruppati per poter fare i confronti
 
 
 # creates NASARI vectors
 def word_to_vectors(word):
+    # forse: se la parola è nei sinonimi di un vettore, allora ci associ tutti i sinonimi di quel vettore
+    return 1
+
+
+def find_bn_id(word):
     return 1
 
 
