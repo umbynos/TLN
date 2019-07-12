@@ -34,7 +34,8 @@ def main():
             for sentence in sent_tokenize(line):
                 sentences_words_dict.append(words_to_vectors(sentence, stop_words, nasari_dict))
     # Relevance criteria: metodo del titolo
-    print("")
+    # per ogni parola del titolo la confronto con ogni parola di ogni frase
+    # durante il confronto sommiamo la weighted_overlap
     # weighted_overlap: cerchiamo le parole e i suoi sinonimi (-> key e valore) del titolo nelle frasi e calcoliamo overlap
     # trovare un modo per sapere da quali frasi vengono le parole
 

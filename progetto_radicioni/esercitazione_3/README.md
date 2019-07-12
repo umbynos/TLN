@@ -76,6 +76,7 @@ della frase
 - nella frase non vengono assegnati tutti i valori
 (surface c'è, ma resta vuoto): non viene inserito in
 nasari_dict
+- espansione: diversa. Vedere loro svoglimento (ci sono i commenti)
 
 ## NOTE
 - il titolo e le frasi sono dentro a dei set: 
