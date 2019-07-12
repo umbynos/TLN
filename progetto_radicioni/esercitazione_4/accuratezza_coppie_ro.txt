@@ -1,40 +1,40 @@
 terremoto	scossa	1
 patrimonio	azione	0
 ebreo	Gerusalemme	1
-nuvolosit‡	previsione	1
+nuvolosit√†	previsione	1
 dizionario	enciclopedia	1
 zecca	museo	1
 sedia	sgabello	1
-spagnolo	umidit‡	0	[spagonolo: persona nata in spagna]
+spagnolo	umidit√†	0	[spagonolo: persona nata in spagna]
 lattina	bottiglia	1
 mosca	formica	1
 mito	satira	1
-centro della citt‡	autobus	-1
-coda	Boeing 747-200
-opera d'arte	artista
-NATO	alleanza
-re	sovrano
-ritmo	cadenza
-Alexander Fleming	penicillina
-flauto	musica
-airone cenerino	lago
-viscosit‡	spruzzo
-hardware	case
-anello	fidanzamento
-latino	tedesco
-classe operaia	fabbrica
-Shakespeare	Dickens
-banconota	prete
-strumento	lavoro
-cinghiale nano	suidi
-suffragio	uscita
-stella	luminosit‡
-trota	chitarra
-dollaro	milionario
-cifra	numero
-burrasca	coperta
-Obama	Clinton
-personaggio secondario	film
+centro della citt√†	autobus	-1
+coda	Boeing 747-200	1
+opera d'arte	artista	1
+NATO	alleanza	1
+re	sovrano	0	[re: reggene di una monarchia]
+ritmo	cadenza	1
+Alexander Fleming	penicillina	1
+flauto	musica	0	[flauto: strumento musicale]
+airone cenerino	lago	0	[lago]
+viscosit√†	spruzzo	1
+hardware	case	0
+anello	fidanzamento	0	[fidanzamento]
+latino	tedesco	1
+classe operaia	fabbrica	1
+Shakespeare	Dickens	1
+banconota	prete	0
+strumento	lavoro	1
+cinghiale nano	suidi	1
+suffragio	uscita	0	[uscita: punto di uscita di un luogo]
+stella	luminosit√†	[stella: astro]
+trota	chitarra	1
+dollaro	milionario	0	[dollaro americano]
+cifra	numero	1
+burrasca	coperta	1
+Obama	Clinton	1
+personaggio secondario	film	0	[film]
 Juventus	Bayern Monaco
 cambiamento climatico	precipitazione
 IA	batteria
@@ -50,8 +50,8 @@ lingua madre	lingua
 porto	incarto
 demonio	angelo
 crittogramma	simbolo
-campus	universit‡
-libert‡	libert‡
+campus	universit√†
+libert√†	libert√†
 tifone	ciclone
 manuale	guida turistica
 Ebola	virus Ebola

@@ -22,3 +22,53 @@ mito	0	[persona famosa]
 satira	1
 centro della città	-1
 autobus	-1
+coda	0	[fila di persone]
+Boeing 747-200	1
+opera d'arte	1
+artista	1
+NATO	1
+alleanza	1
+re	0	[reggente di una monarchia]
+sovrano	1
+ritmo	1
+cadenza	1
+Alexander Fleming	1
+penicillina	1
+flauto	0	[lo strumento musicale]
+musica	1
+airone cenerino	1
+lago	0	[lago]
+viscosità	1
+spruzzo	1
+hardware	0
+case	0	[plurale di casa]
+anello	1
+fidanzamento	0
+latino	1
+tedesco	1
+classe operaia	1
+fabbrica	1
+Shakespeare	1
+Dickens	1
+banconota	1
+prete	0
+strumento	0	[strumento musicale]
+lavoro	1
+cinghiale nano	1
+suidi	1
+suffragio	1
+uscita	0	[punto di uscita di un luogo]
+stella	0	[astro]
+luminosità	1
+trota	1
+chitarra	1
+dollaro	0	[in america]
+milionario	1
+cifra	1
+numero	1
+burrasca	1
+coperta	0	[oggetto utilizzato per coprirsi]
+Obama	1
+Clinton	1
+personaggio secondario	1
+film	0
