@@ -67,3 +67,21 @@ Così facendo si ottiene una matrice (puoi fare quanti giri vuoi, ma diventa eno
 - Bisogna scaricare le stopwords (solo la prima volta):  
 `import nltk`  
 `nltk.download('stopwords')`
+
+## Appunti
+- il vettore di ogni parola del titolo deve essere
+confrontato (cioè calcolare l'overlap) con i vettori delle parole all'interno
+della frase
+- sapere come si calcola weighted_overlap
+- nella frase non vengono assegnati tutti i valori
+(surface c'è, ma resta vuoto): non viene inserito in
+nasari_dict
+
+## NOTE
+- il titolo e le frasi sono dentro a dei set: 
+tanto la chiave è unica
+
+## Strutture dati
+- Abbiamo utilizzato dei dizionari per collezionare le
+parole del titolo e delle frasi per evitare di estendere
+tutti i vettori presenti all'intenro del file nasari
