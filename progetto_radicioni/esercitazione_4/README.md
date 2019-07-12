@@ -39,3 +39,7 @@ Valutiamo il risultato ottenuto (cioè la coppia dei sensi identificati, e la re
 stabilendo se i sensi in questione sono quelli idealmente selezionati da noi stessi nel momento dell’annotazione [a mano]
 Misuriamo in questo caso l’accuratezza sia sui singoli elementi, sia sulle coppie
 NB: per questa valutazione non è necessario conoscere il BabelNet synset ID corretto, ma è sufficiente valutare sulla base della glossa, se il senso individuato è appropriato.
+
+### Ultima parte
+- File che analizza una parola per volta: parola tab valore invio
+- FIle che analizza la coppia: parola1 tab parola2 tab valore invio
