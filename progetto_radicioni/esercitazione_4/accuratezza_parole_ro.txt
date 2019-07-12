@@ -1,0 +1,24 @@
+terremoto	1
+scossa	1
+patrimonio	1
+azione	0
+ebreo	1
+Gerusalemme	1
+nuvolosità	1
+previsione	1
+dizionario	1
+enciclopedia	1
+zecca	0	[l'animale]
+museo	1
+sedia	1
+sgabello	1
+spagnolo	0	[persona nata in spagna]
+umidità	1
+lattina	1
+bottiglia	1
+mosca	1
+formica	1
+mito	0	[persona famosa]
+satira	1
+centro della città	-1
+autobus	-1
