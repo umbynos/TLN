@@ -37,8 +37,25 @@ def main():
                 sentences.append(sentence)
     # Relevance criteria: title method
     cohesions = []
-    for sentence_dict in sentences_words_dict:
-        cohesions.append(title_cohesion(title_dict, sentence_dict))
+    for i, sentence_dict in enumerate(sentences_words_dict):
+        cohesions.append((title_cohesion(title_dict, sentence_dict), i))
+    # MODIFICARE LA COESIONE CON IL TITOLO?????
+    # Summarization
+    # Compression rates
+    comp_rate1 = 0.1
+    comp_rate2 = 0.2
+    comp_rate3 = 0.3
+    summary = []
+    # sort cohesions based on title_cohesion
+    cohesions.sort(key=lambda x:x[0], reverse=True)
+    # save most important sentences
+    for sentence in cohesions:
+        if len(summary) <= comp_rate1 * len(cohesions):
+            summary.append(sentence[1])
+    summary.sort()
+    print("Summary")
+    for i in range(len(summary)):
+        print(sentences[i])
 
 
 # assign nasari vectors to each words found
