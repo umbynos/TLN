@@ -35,66 +35,66 @@ cifra	numero	1
 burrasca	coperta	1
 Obama	Clinton	1
 personaggio secondario	film	0	[film]
-Juventus	Bayern Monaco
-cambiamento climatico	precipitazione
-IA	batteria
-capolavoro	Gioconda
-crimine	aggressione
-incoronazione	acqua
-vocalista	pentagramma
-spareggio	pallacanestro
-forze armate	difesa
-lago	nuvola
-monastero	doccia
-lingua madre	lingua
-porto	incarto
-demonio	angelo
-crittogramma	simbolo
-campus	università
-libertà	libertà
-tifone	ciclone
-manuale	guida turistica
-Ebola	virus Ebola
-principessa	biscotto
-treno	tram
-ecosistema	economia
-regina regnante	regina degli scacchi
+Juventus	Bayern Monaco	1
+cambiamento climatico	precipitazione	1
+IA	batteria	0 [IA: intelligenza artificiale]
+capolavoro	Gioconda	1
+crimine	aggressione	1
+incoronazione	acqua	-1
+vocalista	pentagramma	-1
+spareggio	pallacanestro	1
+forze armate	difesa	1
+lago	nuvola	1
+monastero	doccia	1
+lingua madre	lingua	1
+porto	incarto	0	[porto: luogo in cui attraccano le navi]
+demonio	angelo	1
+crittogramma	simbolo	0	[simbolo: non simbolismo]
+campus	università	1
+libertà	libertà	1
+tifone	ciclone	1
+manuale	guida turistica	0	[guida turistica]
+Ebola	virus Ebola	1
+principessa	biscotto	1
+treno	tram	-1
+ecosistema	economia	1
+regina regnante	regina degli scacchi	-1
 oro	zinco
-cursore	patatine fritte
-Rio delle Amazzoni	foresta
-tennis	statistica
-Bolzano	teorema
-altitudine	conversione
-barca	albero
-trono	spada
-cotone	maglione
-ciliegia	fragola
-Islam	Corano
-Neanderthal	sport
-nepotismo	re
-personaggio	persona
-cisterna	vagone
-Mercurio	Giove
-bronchite	acetaminofene
-sangue	corpo
-islamofobia	ISIS
-uncinetto	uniforme
-Hadoop	touchscreen
-combustibile fossile	fossile
-mutante	sociobiologia
-sorella	fratello
-matita	storia
-eczema	dermatite
-imperatore	governatore
-corona	chiave
-algebra	operazione
-pistone	motore
-borsa di studio	retta
-libro	manoscritto
-lantana	bocca di leone
-buco nero	vuoto
-Impero Persiano	Ciro
-editoriale	notizia
-decorazione	busta
-squalo balena	aragosta
-mais	granturco
+cursore	patatine fritte	0	[patatine fritte: cibo]
+Rio delle Amazzoni	foresta	1
+tennis	statistica	1
+Bolzano	teorema	0	[teorema matematico]
+altitudine	conversione	0	[altitudine: misura geografica, conversione: abbracciare una teoria prima rinnegata]
+barca	albero	1
+trono	spada	1
+cotone	maglione	1
+ciliegia	fragola	0	[frutta]
+Islam	Corano	-1
+Neanderthal	sport	-1
+nepotismo	re	0	[re: monarca]
+personaggio	persona	0	[persona]
+cisterna	vagone	1
+Mercurio	Giove	0	[pianeti]
+bronchite	acetaminofene	1
+sangue	corpo	-1
+islamofobia	ISIS	1
+uncinetto	uniforme	0	[uniforme]
+Hadoop	touchscreen	1
+combustibile fossile	fossile	1
+mutante	sociobiologia	0	[mutante: essere che può cambiare la propria forma]
+sorella	fratello	0
+matita	storia	0	[matita]
+eczema	dermatite	1
+imperatore	governatore	0	[imperatore generico]
+corona	chiave	0
+algebra	operazione	0	[operazione matematica]
+pistone	motore	1
+borsa di studio	retta	0	[borsa di studio]
+libro	manoscritto	1	[libro]
+lantana	bocca di leone	1
+buco nero	vuoto	1
+Impero Persiano	Ciro	1
+editoriale	notizia	0	[notizia]
+decorazione	busta	0	[busta]
+squalo balena	aragosta	1
+mais	granturco	1

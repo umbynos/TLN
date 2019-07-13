@@ -90,7 +90,7 @@ imperatore	governatore	3.0
 corona	chiave	0.4	[magari stesso materiale]
 algebra	operazione	2.0
 pistone	motore	2.0
-borsa di studio	retta	1.9	[utilizzare la brsa di studio per pagare una retta]
+borsa di studio	retta	1.9	[utilizzare la borsa di studio per pagare una retta]
 libro	manoscritto	3.8
 lantana	bocca di leone	3.0	[mondo vegetale]
 buco nero	vuoto	3.0

@@ -72,3 +72,129 @@ Obama	1
 Clinton	1
 personaggio secondario	1
 film	0
+Juventus	1
+Bayern Monaco	1
+cambiamento climatico	1
+precipitazione	1
+IA	0	[intelligenza artificiale]
+batteria	-1
+capolavoro	1
+Gioconda	1
+crimine	1
+aggressione	1
+incoronazione	-1
+acqua	-1
+vocalista	-1
+pentagramma	-1
+spareggio	1
+pallacanestro	1
+forze armate	1
+difesa	0	[difesa personale]
+lago	1
+nuvola	1
+monastero	1
+doccia	1
+lingua madre	1
+lingua	0	[organo]
+porto	0	[luogo in cui attraccano le navi]
+incarto	1
+demonio	1
+angelo	1
+crittogramma	1
+simbolo	0	[non simbolismo]
+campus	1
+università	1
+libertà	1
+libertà	1
+tifone	1
+ciclone	1
+manuale	1
+guida turistica	0
+Ebola	1
+virus Ebola	1
+principessa	1
+biscotto	1
+treno	-1
+tram	-1
+ecosistema	1
+economia	1
+regina regnante	-1
+regina degli scacchi	-1
+oro	1
+zinco	1
+cursore	1
+patatine fritte	0	[cibo]
+Rio delle Amazzoni	1
+foresta	1
+tennis	1
+statistica	1
+Bolzano	1
+teorema	0	[teorema matematico]
+altitudine	0	[misura geografica]
+conversione	0	[abbracciare una teoria prima rinnegata]
+barca	1
+albero	0	[pianta]
+trono	1
+spada	1
+cotone	0	[materiale grezzo]
+maglione	1
+ciliegia	0	[frutto]
+fragola	0	[frutto]
+Islam	1
+Corano	-1
+Neanderthal	-1
+sport	-1
+nepotismo	1
+re	0	[monarca]
+personaggio	1
+persona	0
+cisterna	1
+vagone	1
+Mercurio	0	[pianeta]
+Giove	0	[pianeta]
+bronchite	1
+acetaminofene	1
+sangue	-1
+corpo	-1
+islamofobia	1
+ISIS	1
+uncinetto	1
+uniforme	0
+Hadoop	1
+touchscreen	1
+combustibile fossile	1
+fossile	1
+mutante	0	[essere che può cambiare la propria forma]
+sociobiologia	1
+sorella	0
+fratello	0
+matita	0
+storia	1
+eczema	1
+dermatite	1
+imperatore	0	[imperatore generico]
+governatore	1
+corona	0
+chiave	0	[oggetto]
+algebra	1
+operazione	1
+pistone	1
+motore	1
+borsa di studio	0
+retta	0	[linea]
+libro	0
+manoscritto	1
+lantana	1
+bocca di leone	1
+buco numero	1
+vuoto	0	[concetto generale]
+Impero Persiano	1
+Ciro	1
+editoriale	1
+notizia	0
+decorazione	1
+busta	0
+squalo balena	1
+aragosta	1
+mais	1
+granturco	1
