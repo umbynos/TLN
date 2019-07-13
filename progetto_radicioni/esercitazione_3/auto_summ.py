@@ -29,15 +29,16 @@ def main():
     title_dict = words_to_vectors(title, stop_words, nasari_dict)
     # create a dictionary containing as keys the normalized words in sentences
     sentences_words_dict = []
+    sentences = []
     for line in file:
         if line != "\n":
             for sentence in sent_tokenize(line):
                 sentences_words_dict.append(words_to_vectors(sentence, stop_words, nasari_dict))
-    # Relevance criteria: metodo del titolo
-    # per ogni parola del titolo la confronto con ogni parola di ogni frase
-    # durante il confronto sommiamo la weighted_overlap
-    # weighted_overlap: cerchiamo le parole e i suoi sinonimi (-> key e valore) del titolo nelle frasi e calcoliamo overlap
-    # trovare un modo per sapere da quali frasi vengono le parole
+                sentences.append(sentence)
+    # Relevance criteria: title method
+    cohesions = []
+    for sentence_dict in sentences_words_dict:
+        cohesions.append(title_cohesion(title_dict, sentence_dict))
 
 
 # assign nasari vectors to each words found
@@ -84,6 +85,36 @@ def increase_dict(dict, nasari_dict):
                 # value is now a key
                 if value.split("_")[0] in nasari_dict:
                     dict[key].extend(nasari_dict[value.split("_")[0]])
+
+
+def title_cohesion(title_dict, sentence_dict):
+    wo = 0
+    for word_title in title_dict:
+        for word_sentence in sentence_dict:
+            wo += weigheted_overlap(title_dict[word_title],sentence_dict[word_sentence])
+    return wo
+
+
+def weigheted_overlap(vector1, vector2):
+    overlap = []
+    numerator = 0
+    denominator = 0
+    for definition1 in vector1:
+        word1 = definition1.split("_")[0]
+        value1 = float(definition1.split("_")[1])
+        for definition2 in vector2:
+            word2 = definition2.split("_")[0]
+            value2 = float(definition2.split("_")[1])
+            if word1 == word2:
+                overlap.append([word1, value1, value2])
+    for (word, value1, value2) in overlap:
+        numerator += (value1+value2)**(-1)
+    for i in range(1, len(overlap)):
+        denominator += (2*i)**(-1)
+    if denominator == 0:
+        return 0
+    else:
+        return numerator / denominator
 
 
 if __name__ == "__main__":
