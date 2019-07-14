@@ -9,33 +9,50 @@ import math
 import scipy
 
 def main():
-	corpora_ro = infer_file("words_ro.txt")
-	corpora_umbo = infer_file("words_umbo.txt")
-	avg = average(corpora_ro, corpora_umbo)
-	# Computing inter-rater agreement (correlation indexes)
-	sim_ro = infer_sim(corpora_ro)
-	sim_umbo = infer_sim(corpora_umbo)
-	corr_pearson, p_value_pearson = scipy.stats.pearsonr(sim_ro,sim_umbo)
-	print("Pearson:", corr_pearson, "\n")
-	corr_spearman, p_value_spearman = scipy.stats.spearmanr(sim_ro, sim_umbo)
-	print("Spearman:", corr_spearman, "\n")
-	# Saving nasari vectors in a structure
-	nasari_vectors = nasari_to_vectors()
-	sem_eval_vectors = sem_eval_to_vectors()
-	best_senses = senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
-	gloss_file = open("gloss_file.txt", "a")
-	for i, elem in enumerate(best_senses):
-	 	#print("sense first word:", elem[0])
-	 	#find_gloss(elem[0])
-	 	gloss_file.write("Words: " + str(corpora_ro[i][0]) + " " + str(corpora_ro[i][1]) + "\n")
-	 	if elem != -1:
-		 	gloss_file.write("Gloss first word: " + find_gloss(elem[0]) + "\n")
-		 	gloss_file.write("Gloss second word: " + find_gloss(elem[1]) + "\n\n")
-	 	else:
-	 		gloss_file.write("Senses not found" + "\n\n")
-	 	#print("sense second word:", elem[1])
-	 	#find_gloss(elem[1])
-	 	#print()
+	# corpora_ro = infer_file("words_ro.txt")
+	# corpora_umbo = infer_file("words_umbo.txt")
+	# avg = average(corpora_ro, corpora_umbo)
+	# # Computing inter-rater agreement (correlation indexes)
+	# sim_ro = infer_sim(corpora_ro)
+	# sim_umbo = infer_sim(corpora_umbo)
+	# corr_pearson, p_value_pearson = scipy.stats.pearsonr(sim_ro,sim_umbo)
+	# print("Pearson:", corr_pearson, "\n")
+	# corr_spearman, p_value_spearman = scipy.stats.spearmanr(sim_ro, sim_umbo)
+	# print("Spearman:", corr_spearman, "\n")
+	# # Saving nasari vectors in a structure
+	# nasari_vectors = nasari_to_vectors()
+	# sem_eval_vectors = sem_eval_to_vectors()
+	# best_senses = senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
+	# gloss_file = open("gloss_file.txt", "a")
+	# for i, elem in enumerate(best_senses):
+	#  	#print("sense first word:", elem[0])
+	#  	#find_gloss(elem[0])
+	#  	gloss_file.write("Words: " + str(corpora_ro[i][0]) + " " + str(corpora_ro[i][1]) + "\n")
+	#  	if elem != -1:
+	# 	 	gloss_file.write("Gloss first word: " + find_gloss(elem[0]) + "\n")
+	# 	 	gloss_file.write("Gloss second word: " + find_gloss(elem[1]) + "\n\n")
+	#  	else:
+	#  		gloss_file.write("Senses not found" + "\n\n")
+	#  	#print("sense second word:", elem[1])
+	#  	#find_gloss(elem[1])
+	#  	#print()
+	# Accuracy of the glosses found
+	# save accuracy values for single words
+	accuracy_words_ro = infer_accuracy_words_file("accuratezza_parole_ro.txt")
+	accuracy = []
+	for elem in accuracy_words_ro:
+		accuracy.append(int(elem[1]))
+	# compute total accuracy
+	accuracy_words = compute_accuracy(accuracy)
+	print("accuracy", accuracy_words)
+	# save accuracy values for couple words
+	accuracy_couple_ro = infer_file("accuratezza_coppie_ro.txt")
+	accuracy.clear
+	for elem in accuracy_couple_ro:
+		accuracy.append(int(elem[2]))
+	# compute total accuracy
+	accuracy_words = compute_accuracy(accuracy)
+	print("accuracy", accuracy_words)
 
 # infer_file returns the array corpora
 # Each element of corpora represents a line of words file and it contains the first and the second words followed by the similarity given in the file
@@ -50,6 +67,19 @@ def infer_file(file):
 		elem.append(fst_word)
 		elem.append(snd_word)
 		elem.append(similarity)
+		corpora.append(elem)
+	file.close()
+	return corpora
+
+def infer_accuracy_words_file(file):
+	file = open(file,"r")
+	corpora = []
+	for line in islice(file, 1, None): # don't read the first line, start from 1: first line contains an introduction
+		fst_word = line.split("\t")[0]
+		accuracy = line.split("\t")[1].strip('\n')
+		elem = []
+		elem.append(fst_word)
+		elem.append(accuracy)
 		corpora.append(elem)
 	file.close()
 	return corpora
@@ -202,6 +232,18 @@ def find_gloss(bn_id):
 			return (str(language.encode('utf-8')) + "\t" + str(gloss.encode('utf-8'))) # LASCIARE SOLO SECONDA PARTE??
 		else:
 			return("No gloss found")
+
+def compute_accuracy(accuracies):
+	# accuracy does not consider -1 values
+	new_accuracy = []
+	for elem in accuracies:
+		if elem != -1:
+			new_accuracy.append(elem)
+	num = sum(new_accuracy)
+	print("num", num)
+	den = len(new_accuracy)
+	print("den", den)
+	return num / den
 
 
 if __name__== "__main__":

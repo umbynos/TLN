@@ -1,3 +1,4 @@
+word1	word2	accuracy	[comment]
 terremoto	scossa	1
 patrimonio	azione	0
 ebreo	Gerusalemme	1
@@ -28,7 +29,7 @@ banconota	prete	0
 strumento	lavoro	1
 cinghiale nano	suidi	1
 suffragio	uscita	0	[uscita: punto di uscita di un luogo]
-stella	luminosità	[stella: astro]
+stella	luminosità	0	[stella: astro]
 trota	chitarra	1
 dollaro	milionario	0	[dollaro americano]
 cifra	numero	1
@@ -37,7 +38,7 @@ Obama	Clinton	1
 personaggio secondario	film	0	[film]
 Juventus	Bayern Monaco	1
 cambiamento climatico	precipitazione	1
-IA	batteria	0 [IA: intelligenza artificiale]
+IA	batteria	0	[IA: intelligenza artificiale]
 capolavoro	Gioconda	1
 crimine	aggressione	1
 incoronazione	acqua	-1
@@ -59,7 +60,7 @@ principessa	biscotto	1
 treno	tram	-1
 ecosistema	economia	1
 regina regnante	regina degli scacchi	-1
-oro	zinco
+oro	zinco	1
 cursore	patatine fritte	0	[patatine fritte: cibo]
 Rio delle Amazzoni	foresta	1
 tennis	statistica	1
