@@ -17,7 +17,7 @@ def main():
     smartphone_file = "data/People-Arent-Upgrading-Smartphones-as-Quickly-and-That-Is-Bad-for-Apple.txt"
     moon_file = "data/The-Last-Man-on-the-Moon--Eugene-Cernan-gives-a-compelling-account.txt"
     # open file
-    file = open(trump_file, "r", encoding="utf8")
+    file = open(moon_file, "r", encoding="utf8")
     # list of stopwords and punctuation
     stop_words = stopwords.words('english') + list(string.punctuation)
     # save title in title_set: it contains a set of non stop words included in the title
@@ -48,12 +48,12 @@ def main():
     # sort cohesions based on title_cohesion
     cohesions.sort(key=lambda x:x[0], reverse=True)
     # save most important sentences
-    for sentence in cohesions:
-        if len(summary) <= comp_rate1 * len(cohesions):
-            summary.append(sentence[1])
+    for sent in cohesions:
+        if len(summary) <= comp_rate3 * len(cohesions):
+            summary.append(sent[1])
     summary.sort()
     print("Summary")
-    for i in range(len(summary)):
+    for i in summary:
         print(sentences[i])
 
 
