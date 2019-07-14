@@ -38,21 +38,27 @@ def main():
 	#  	#print()
 	# Accuracy of the glosses found
 	# save accuracy values for single words
-	accuracy_words_ro = infer_accuracy_words_file("accuratezza_parole_ro.txt")
+	accuracy_words_ro = infer_accuracy_words_file("accuracy_word_ro.txt")
+	accuracy_words_umbo = infer_accuracy_words_file("accuracy_word_umbo.txt")
 	accuracy = []
 	for elem in accuracy_words_ro:
+		accuracy.append(int(elem[1]))
+	for elem in accuracy_words_umbo:
 		accuracy.append(int(elem[1]))
 	# compute total accuracy
 	accuracy_words = compute_accuracy(accuracy)
 	print("accuracy", accuracy_words)
 	# save accuracy values for couple words
-	accuracy_couple_ro = infer_file("accuratezza_coppie_ro.txt")
-	accuracy.clear
-	for elem in accuracy_couple_ro:
-		accuracy.append(int(elem[2]))
-	# compute total accuracy
-	accuracy_words = compute_accuracy(accuracy)
-	print("accuracy", accuracy_words)
+	# accuracy_couples_ro = infer_file("accuracy_couple_ro.txt")
+	# accuracy_couples_umbo = infer_file("accuracy_couple_umbo.txt")
+	# accuracy.clear
+	# for elem in accuracy_couples_ro:
+	# 	accuracy.append(int(elem[2]))
+	# for elem in accuracy_couples_umbo:
+	# 	accuracy.append(int(elem[2]))
+	# # compute total accuracy
+	# accuracy_couples = compute_accuracy(accuracy)
+	# print("accuracy", accuracy_couples)
 
 # infer_file returns the array corpora
 # Each element of corpora represents a line of words file and it contains the first and the second words followed by the similarity given in the file

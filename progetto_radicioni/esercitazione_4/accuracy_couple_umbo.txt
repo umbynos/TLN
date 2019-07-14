@@ -1,3 +1,4 @@
+word1	word2	accuracy	[comment]
 terremoto	scossa	1
 patrimonio	azione	0
 ebreo	Gerusalemme	1
