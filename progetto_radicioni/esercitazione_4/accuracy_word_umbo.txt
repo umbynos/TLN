@@ -6,7 +6,7 @@ azione	0
 ebreo	1
 Gerusalemme	1
 nuvolosità	1
-previsione	0   [previsione metereologica]
+previsione	0	[previsione metereologica]
 dizionario	1
 enciclopedia	1
 zecca	0	[l'animale]
@@ -32,7 +32,7 @@ alleanza	1
 re	0	[reggente di una monarchia]
 sovrano	1
 ritmo	1
-cadenza	0   [non credevo collegato a musica]
+cadenza	0	[non credevo collegato a musica]
 Alexander Fleming	1
 penicillina	1
 flauto	0	[strumento musicale]
@@ -40,7 +40,7 @@ musica	1
 airone cenerino	1
 lago	0	[lago]
 viscosità	1
-spruzzo 1
+spruzzo	1
 hardware	0
 case	0	[contenitore]
 anello	1
@@ -54,9 +54,9 @@ Dickens	1
 banconota	1
 prete	0
 strumento	1
-lavoro	0   [lavoro collegato a professione]
+lavoro	0	[lavoro collegato a professione]
 cinghiale nano	1
-suidi	0   [¯\_(ツ)_/¯]
+suidi	0	[¯\_(ツ)_/¯]
 suffragio	1
 uscita	0	[punto di uscita di un luogo]
 stella	0	[astro]
@@ -118,7 +118,7 @@ biscotto	1
 treno	-1
 tram	-1
 ecosistema	1
-economia	0   [campo di studi]
+economia	0	[campo di studi]
 regina regnante	-1
 regina degli scacchi	-1
 oro	1
@@ -127,8 +127,8 @@ cursore	1
 patatine fritte	0	[cibo]
 Rio delle Amazzoni	1
 foresta	1
-tennis	0   [sport, not game]
-statistica	0   [disciplina matematica]
+tennis	0	[sport, not game]
+statistica	0	[disciplina matematica]
 Bolzano	1
 teorema	0	[teorema matematico]
 altitudine	1
@@ -148,20 +148,20 @@ sport	-1
 nepotismo	1
 re	0	[monarca]
 personaggio	1
-persona	0 [persona come entità]
+persona	0	[persona come entità]
 cisterna	1
 vagone	1
 Mercurio	0	[pianeta]
 Giove	0	[pianeta]
 bronchite	1
-acetaminofene	0   [¯\_(ツ)_/¯]
+acetaminofene	0	[¯\_(ツ)_/¯]
 sangue	-1
 corpo	-1
 islamofobia	1
 ISIS	1
 uncinetto	1
 uniforme	0
-Hadoop	0   [¯\_(ツ)_/¯]
+Hadoop	0	[¯\_(ツ)_/¯]
 touchscreen	1
 combustibile fossile	1
 fossile	1
@@ -169,16 +169,16 @@ mutante	0	[essere che può cambiare la propria forma]
 sociobiologia	1
 sorella	1
 fratello	1
-matita	0   [oggetto per disegnare]
+matita	0	[oggetto per disegnare]
 storia	1
 eczema	1
 dermatite	1
 imperatore	0	[imperatore generico]
 governatore	1
-corona	0   [oggetto usato dai re]
+corona	0	[oggetto usato dai re]
 chiave	0	[oggetto]
 algebra	1
-operazione	0   [riferito alla matematica]
+operazione	0	[riferito alla matematica]
 pistone	1
 motore	1
 borsa di studio	0

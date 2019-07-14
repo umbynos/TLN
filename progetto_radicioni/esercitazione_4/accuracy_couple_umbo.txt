@@ -11,7 +11,7 @@ lattina	bottiglia	1
 mosca	formica	1
 mito	satira	1
 centro della città	autobus	-1
-coda	Boeing 747-200	0   [coda animale]
+coda	Boeing 747-200	0	[coda animale]
 opera d'arte	artista	1
 NATO	alleanza	1
 re	sovrano	0	[re: reggene di una monarchia]
@@ -20,16 +20,16 @@ Alexander Fleming	penicillina	1
 flauto	musica	0	[flauto: strumento musicale]
 airone cenerino	lago	0	[lago]
 viscosità	spruzzo	1
-hardware	case	0   [case: contenitore]
+hardware	case	0	[case: contenitore]
 anello	fidanzamento	0	[fidanzamento]
 latino	tedesco	1
 classe operaia	fabbrica	1
 Shakespeare	Dickens	1
 banconota	prete	0
-strumento	lavoro	0   [lavoro collegato a professione]
+strumento	lavoro	0	[lavoro collegato a professione]
 cinghiale nano	suidi	1
 suffragio	uscita	0	[uscita: punto di uscita di un luogo]
-stella	luminosità	[stella: astro]
+stella	luminosità	1	[stella: astro]
 trota	chitarra	1
 dollaro	milionario	0	[dollaro americano]
 cifra	numero	1
@@ -38,7 +38,7 @@ Obama	Clinton	1
 personaggio secondario	film	0	[film]
 Juventus	Bayern Monaco	1
 cambiamento climatico	precipitazione	1
-IA	batteria	0 [IA: intelligenza artificiale]
+IA	batteria	0	[IA: intelligenza artificiale]
 capolavoro	Gioconda	1
 crimine	aggressione	1
 incoronazione	acqua	-1
@@ -58,9 +58,9 @@ manuale	guida turistica	1
 Ebola	virus Ebola	1
 principessa	biscotto	1
 treno	tram	-1
-ecosistema	economia	0   [economia: campo di studi]
+ecosistema	economia	0	[economia: campo di studi]
 regina regnante	regina degli scacchi	-1
-oro	zinco
+oro	zinco	1
 cursore	patatine fritte	0	[patatine fritte: cibo]
 Rio delle Amazzoni	foresta	1
 tennis	statistica	0
@@ -87,7 +87,7 @@ sorella	fratello	1
 matita	storia	0	[matita]
 eczema	dermatite	1
 imperatore	governatore	1
-corona	chiave	0   [oggetto usato dai re]
+corona	chiave	0	[oggetto usato dai re]
 algebra	operazione	0	[operazione matematica]
 pistone	motore	1
 borsa di studio	retta	1	[borsa di studio]
