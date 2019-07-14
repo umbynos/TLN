@@ -1,0 +1,200 @@
+terremoto	1
+scossa	1
+patrimonio	1
+azione	0
+ebreo	1
+Gerusalemme	1
+nuvolosità	1
+previsione	0   [previsione metereologica]
+dizionario	1
+enciclopedia	1
+zecca	0	[l'animale]
+museo	1
+sedia	1
+sgabello	1
+spagnolo	0	[lingua]
+umidità	1
+lattina	1
+bottiglia	1
+mosca	1
+formica	1
+mito	1
+satira	1
+centro della città	-1
+autobus	-1
+coda	0	[coda animale]
+Boeing 747-200	1
+opera d'arte	1
+artista	1
+NATO	1
+alleanza	1
+re	0	[reggente di una monarchia]
+sovrano	1
+ritmo	1
+cadenza	0   [non credevo collegato a musica]
+Alexander Fleming	1
+penicillina	1
+flauto	0	[strumento musicale]
+musica	1
+airone cenerino	1
+lago	0	[lago]
+viscosità	1
+spruzzo 1
+hardware	0
+case	0	[contenitore]
+anello	1
+fidanzamento	0
+latino	1
+tedesco	1
+classe operaia	1
+fabbrica	1
+Shakespeare	1
+Dickens	1
+banconota	1
+prete	0
+strumento	1
+lavoro	0   [lavoro collegato a professione]
+cinghiale nano	1
+suidi	0   [¯\_(ツ)_/¯]
+suffragio	1
+uscita	0	[punto di uscita di un luogo]
+stella	0	[astro]
+luminosità	1
+trota	1
+chitarra	1
+dollaro	0	[in america]
+milionario	1
+cifra	1
+numero	1
+burrasca	1
+coperta	1
+Obama	1
+Clinton	1
+personaggio secondario	1
+film	0
+Juventus	1
+Bayern Monaco	1
+cambiamento climatico	1
+precipitazione	1
+IA	0	[intelligenza artificiale]
+batteria	-1
+capolavoro	1
+Gioconda	1
+crimine	1
+aggressione	1
+incoronazione	-1
+acqua	-1
+vocalista	-1
+pentagramma	-1
+spareggio	1
+pallacanestro	1
+forze armate	1
+difesa	1
+lago	1
+nuvola	1
+monastero	1
+doccia	1
+lingua madre	1
+lingua	1
+porto	0	[luogo in cui attraccano le navi]
+incarto	1
+demonio	1
+angelo	1
+crittogramma	1
+simbolo	0	[non simbolismo]
+campus	1
+università	1
+libertà	1
+libertà	1
+tifone	1
+ciclone	1
+manuale	1
+guida turistica	1
+Ebola	1
+virus Ebola	1
+principessa	1
+biscotto	1
+treno	-1
+tram	-1
+ecosistema	1
+economia	0   [campo di studi]
+regina regnante	-1
+regina degli scacchi	-1
+oro	1
+zinco	1
+cursore	1
+patatine fritte	0	[cibo]
+Rio delle Amazzoni	1
+foresta	1
+tennis	0   [sport, not game]
+statistica	0   [disciplina matematica]
+Bolzano	1
+teorema	0	[teorema matematico]
+altitudine	1
+conversione	1
+barca	1
+albero	1
+trono	1
+spada	1
+cotone	1
+maglione	1
+ciliegia	0	[frutto]
+fragola	0	[frutto]
+Islam	1
+Corano	-1
+Neanderthal	-1
+sport	-1
+nepotismo	1
+re	0	[monarca]
+personaggio	1
+persona	0 [persona come entità]
+cisterna	1
+vagone	1
+Mercurio	0	[pianeta]
+Giove	0	[pianeta]
+bronchite	1
+acetaminofene	0   [¯\_(ツ)_/¯]
+sangue	-1
+corpo	-1
+islamofobia	1
+ISIS	1
+uncinetto	1
+uniforme	0
+Hadoop	0   [¯\_(ツ)_/¯]
+touchscreen	1
+combustibile fossile	1
+fossile	1
+mutante	0	[essere che può cambiare la propria forma]
+sociobiologia	1
+sorella	1
+fratello	1
+matita	0   [oggetto per disegnare]
+storia	1
+eczema	1
+dermatite	1
+imperatore	0	[imperatore generico]
+governatore	1
+corona	0   [oggetto usato dai re]
+chiave	0	[oggetto]
+algebra	1
+operazione	0   [riferito alla matematica]
+pistone	1
+motore	1
+borsa di studio	0
+retta	1	[linea]
+libro	0
+manoscritto	1
+lantana	1
+bocca di leone	1
+buco numero	1
+vuoto	1
+Impero Persiano	1
+Ciro	1
+editoriale	1
+notizia	0
+decorazione	1
+busta	0
+squalo balena	1
+aragosta	1
+mais	1
+granturco	1
