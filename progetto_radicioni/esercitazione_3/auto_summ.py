@@ -4,7 +4,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
 from nltk.stem import WordNetLemmatizer
 import string
-import copy
 
 
 # reads file starting from line 5 (title, then paragraphs)
@@ -18,7 +17,7 @@ def main():
     smartphone_file = "data/People-Arent-Upgrading-Smartphones-as-Quickly-and-That-Is-Bad-for-Apple.txt"
     moon_file = "data/The-Last-Man-on-the-Moon--Eugene-Cernan-gives-a-compelling-account.txt"
     # open file
-    file = open(moon_file, "r", encoding="utf8")
+    file = open(trump_file, "r", encoding="utf8")
     # list of stopwords and punctuation
     stop_words = stopwords.words('english') + list(string.punctuation)
     # save title in title_set: it contains a set of non stop words included in the title
@@ -26,14 +25,14 @@ def main():
         file.readline()
     title = file.readline()
     # create a dictionary containing as keys the normalized words in title
-    title_dict = words_to_vectors(title, stop_words, nasari_dict)
+    title_dict = words_to_dict(title, stop_words, nasari_dict)
     # create a dictionary containing as keys the normalized words in sentences
     sentences_words_dict = []
     sentences = []
     for line in file:
         if line != "\n":
             for sentence in sent_tokenize(line):
-                sentences_words_dict.append(words_to_vectors(sentence, stop_words, nasari_dict))
+                sentences_words_dict.append(words_to_dict(sentence, stop_words, nasari_dict))
                 sentences.append(sentence)
     # Relevance criteria: title method
     cohesions = []
@@ -59,7 +58,7 @@ def main():
 
 
 # assign nasari vectors to each words found
-def words_to_vectors(sentence, stop_words, nasari_dict):
+def words_to_dict(sentence, stop_words, nasari_dict):
     dictionary = {}
     # normalize words (morpheme and lower case)
     lemmatizer = WordNetLemmatizer()
@@ -72,8 +71,8 @@ def words_to_vectors(sentence, stop_words, nasari_dict):
     # initialize title_dict values
     init_dict(dictionary, nasari_dict)
     # increase title_dict adding value from
-    increase_dict(dictionary, nasari_dict)
-    return dictionary
+    increased_dict = increase_dict(dictionary, nasari_dict)
+    return increased_dict
 
 
 # get of dd-small-nasari-15.txt file
@@ -94,14 +93,25 @@ def init_dict(dict, nasari_dict):
                 dict[key].append(value)
 
 
-# increase dict adding vectors of old values
+# increase dict adding new keys and new values, normalizing the weights
 def increase_dict(dict, nasari_dict):
+    dict_new = dict.copy()
     for key in dict:
-        if key in nasari_dict:
-            for value in nasari_dict[key]:
-                # value is now a key
-                if value.split("_")[0] in nasari_dict:
-                    dict[key].extend(nasari_dict[value.split("_")[0]])
+        for key2 in dict[key]:
+            key2_k = key2.split('_')[0]
+            weight = float(key2.split('_')[1])
+            # search the values in nasari dict using key2_k as key
+            key2_values = nasari_dict[key2_k] if key2_k in nasari_dict else []
+            # init vector to append later
+            new_values = []
+            for value in key2_values:
+                num = weight * float(value.split('_')[1])
+                den = sum(float(weight.split('_')[1]) for weight in key2_values)
+                new_weight = num / den
+                new_values.append(value.split('_')[0] + '_' + str(new_weight))
+            # add entry to the dict to return
+            dict_new[key2_k] = new_values
+    return dict_new
 
 
 def title_cohesion(title_dict, sentence_dict):
