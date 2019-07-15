@@ -14,7 +14,7 @@ class WordSim:
 
 	def get_similarity(self):
 		return self.similarity
-#
+
 	def set_fst_word(self, fst_word):
 		self.fst_word = fst_word
 

@@ -33,7 +33,7 @@ def main():
 		print("wu_and_palmer nostro:", wu_and_palmer_sim[i])
 		# Shortest Path Similarity
 		shortest_path_sim.append(sht_path_sim(word1,word2))
-		print("shortest_path_sim:", shortest_path_sim[i])
+		print("shortest_path_sim nostra:", shortest_path_sim[i])
 		# Leacock CHodorow Similarity
 		leacock_chodorow_sim.append(leacock_chodorow(word1,word2))
 		print("leacock_chodorow nostro:",leacock_chodorow_sim[i])
@@ -77,7 +77,7 @@ def wu_and_palmer(word1, word2):
 						res2 = s2
 		if res1 and res2: # not all synsets have a root in common
 			print("wu_and_palmer WN: ", res1.wup_similarity(res2))
-	return cs # QUALCHE RISULTATO è UN FILO DIVERSO (+-0.3). SCEGLIERE MEGLIO L'IPERONIMO COMUNE?
+	return cs
 
 
 # max_depth(synset) returns the length of the longest hypernym path from this synset to the root
@@ -88,7 +88,7 @@ def max_depth(synset):
 	else:
 		return 1 + max(max_depth(h) for h in hypernyms)
 
-# Get a list of lowest synset(s) that both synsets have as a hypernym
+# returns the lower common ancestor between synset1 and synset2, id est the lowest common hypernym
 def lowest_common_subsumer(synset1, synset2):
 	paths1 = hypernym_paths(synset1)
 	paths2 = hypernym_paths(synset2)
@@ -184,7 +184,7 @@ def leacock_chodorow(word1, word2):
 		return 0
 
 # WN_DepthMax() returns the maximum depth of WordNet's structure
-def WN_DepthMax(): # TI SEMBRA RAGIONEVOLE???????
+def WN_DepthMax():
 	max_hyp_path = 0
 	max_all = 0
 	for synset in wn.all_synsets():
