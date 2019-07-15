@@ -9,33 +9,28 @@ import math
 import scipy
 
 def main():
-	# corpora_ro = infer_file("words_ro.txt")
-	# corpora_umbo = infer_file("words_umbo.txt")
-	# avg = average(corpora_ro, corpora_umbo)
-	# # Computing inter-rater agreement (correlation indexes)
-	# sim_ro = infer_sim(corpora_ro)
-	# sim_umbo = infer_sim(corpora_umbo)
-	# corr_pearson, p_value_pearson = scipy.stats.pearsonr(sim_ro,sim_umbo)
-	# print("Pearson:", corr_pearson, "\n")
-	# corr_spearman, p_value_spearman = scipy.stats.spearmanr(sim_ro, sim_umbo)
-	# print("Spearman:", corr_spearman, "\n")
-	# # Saving nasari vectors in a structure
-	# nasari_vectors = nasari_to_vectors()
-	# sem_eval_vectors = sem_eval_to_vectors()
-	# best_senses = senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
-	# gloss_file = open("gloss_file.txt", "a")
-	# for i, elem in enumerate(best_senses):
-	#  	#print("sense first word:", elem[0])
-	#  	#find_gloss(elem[0])
-	#  	gloss_file.write("Words: " + str(corpora_ro[i][0]) + " " + str(corpora_ro[i][1]) + "\n")
-	#  	if elem != -1:
-	# 	 	gloss_file.write("Gloss first word: " + find_gloss(elem[0]) + "\n")
-	# 	 	gloss_file.write("Gloss second word: " + find_gloss(elem[1]) + "\n\n")
-	#  	else:
-	#  		gloss_file.write("Senses not found" + "\n\n")
-	#  	#print("sense second word:", elem[1])
-	#  	#find_gloss(elem[1])
-	#  	#print()
+	corpora_ro = infer_file("words_ro.txt")
+	corpora_umbo = infer_file("words_umbo.txt")
+	avg = average(corpora_ro, corpora_umbo)
+	# Computing inter-rater agreement (correlation indexes)
+	sim_ro = infer_sim(corpora_ro)
+	sim_umbo = infer_sim(corpora_umbo)
+	corr_pearson, p_value_pearson = scipy.stats.pearsonr(sim_ro,sim_umbo)
+	print("Pearson:", corr_pearson, "\n")
+	corr_spearman, p_value_spearman = scipy.stats.spearmanr(sim_ro, sim_umbo)
+	print("Spearman:", corr_spearman, "\n")
+	# Saving nasari vectors in a structure
+	nasari_vectors = nasari_to_vectors()
+	sem_eval_vectors = sem_eval_to_vectors()
+	best_senses = senseIdentification(corpora_ro, nasari_vectors, sem_eval_vectors)
+	gloss_file = open("gloss_file.txt", "a")
+	for i, elem in enumerate(best_senses):
+	 	gloss_file.write("Words: " + str(corpora_ro[i][0]) + " " + str(corpora_ro[i][1]) + "\n")
+	 	if elem != -1:
+		 	gloss_file.write("Gloss first word: " + find_gloss(elem[0]) + "\n")
+		 	gloss_file.write("Gloss second word: " + find_gloss(elem[1]) + "\n\n")
+	 	else:
+	 		gloss_file.write("Senses not found" + "\n\n")
 	# Accuracy of the glosses found
 	# save accuracy values for single words
 	accuracy_words_ro = infer_accuracy_words_file("accuracy_word_ro.txt")
@@ -137,7 +132,7 @@ def average(fst, snd):
 		elem = []
 		elem.append(fst[i][0])
 		elem.append(fst[i][1])
-		elem.append(round(average, 2)) # SENZA ROUND OGNI TANTO VENIVANO FUORI NUMERI MOLTO MOLTO VICINI, MA LUNGHI
+		elem.append(round(average, 2))
 		avg.append(elem)
 		print(avg[i])
 	print()
@@ -171,7 +166,7 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 		fst_word_sense = None
 		snd_word_sense = None
 		# ... the BabelNet synset of each word (presents in SemEval file) is taken...
-		for elem_sem_eval in sem_eval_vectors: # SE HAI TROVATO ENTRAMBI PUOI SMETTERE
+		for elem_sem_eval in sem_eval_vectors:
 			if fst_word in elem_sem_eval[0]:
 				fst_word_synset = elem_sem_eval
 			if snd_word in elem_sem_eval[0]:
@@ -181,7 +176,7 @@ def senseIdentification(words, nasari_vectors, sem_eval_vectors):
 			for i in range(1, len(fst_word_synset)): # 1...len-1
 				for j in range(1, len(snd_word_synset)):
 					# ... a NASARI vector is searched ...
-					for elem_nasari in nasari_vectors: # SE HAI TROVATO ENTRAMBI PUOI SMETTERE
+					for elem_nasari in nasari_vectors:
 						if fst_word_synset[i] in elem_nasari[0]:
 							fst_word_vector = elem_nasari
 						if snd_word_synset[j] in elem_nasari[0]:
