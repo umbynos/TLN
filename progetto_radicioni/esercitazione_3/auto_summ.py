@@ -38,7 +38,6 @@ def main():
     cohesions = []
     for i, sentence_dict in enumerate(sentences_words_dict):
         cohesions.append((title_cohesion(title_dict, sentence_dict), i))
-    # MODIFICARE LA COESIONE CON IL TITOLO?????
     # Summarization
     # Compression rates
     comp_rate1 = 0.1
