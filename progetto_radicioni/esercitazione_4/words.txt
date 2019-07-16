@@ -1,0 +1,101 @@
+word1	word2	similarity	[comment]
+terremoto	scossa
+patrimonio	azione
+ebreo	Gerusalemme
+nuvolosità	previsione
+dizionario	enciclopedia
+zecca	museo
+sedia	sgabello
+spagnolo	umidità
+lattina	bottiglia
+mosca	formica
+mito	satira
+centro della città	autobus
+coda	Boeing 747-200
+opera d'arte	artista
+NATO	alleanza
+re	sovrano
+ritmo	cadenza
+Alexander Fleming	penicillina
+flauto	musica
+airone cenerino	lago
+viscosità	spruzzo
+hardware	case
+anello	fidanzamento
+latino	tedesco
+classe operaia	fabbrica
+Shakespeare	Dickens
+banconota	prete
+strumento	lavoro
+cinghiale nano	suidi
+suffragio	uscita
+stella	luminosità
+trota	chitarra
+dollaro	milionario
+cifra	numero
+burrasca	coperta
+Obama	Clinton
+personaggio secondario	film
+Juventus	Bayern Monaco
+cambiamento climatico	precipitazione
+IA	batteria
+capolavoro	Gioconda
+crimine	aggressione
+incoronazione	acqua
+vocalista	pentagramma
+spareggio	pallacanestro
+forze armate	difesa
+lago	nuvola
+monastero	doccia
+lingua madre	lingua
+porto	incarto
+demonio	angelo
+crittogramma	simbolo
+campus	università
+libertà	libertà
+tifone	ciclone
+manuale	guida turistica
+Ebola	virus Ebola
+principessa	biscotto
+treno	tram
+ecosistema	economia
+regina regnante	regina degli scacchi
+oro	zinco
+cursore	patatine fritte
+Rio delle Amazzoni	foresta
+tennis	statistica
+Bolzano	teorema
+altitudine	conversione
+barca	albero
+trono	spada
+cotone	maglione
+ciliegia	fragola
+Islam	Corano
+Neanderthal	sport
+nepotismo	re
+personaggio	persona
+cisterna	vagone
+Mercurio	Giove
+bronchite	acetaminofene
+sangue	corpo
+islamofobia	ISIS
+uncinetto	uniforme
+Hadoop	touchscreen
+combustibile fossile	fossile
+mutante	sociobiologia
+sorella	fratello
+matita	storia
+eczema	dermatite
+imperatore	governatore
+corona	chiave
+algebra	operazione
+pistone	motore
+borsa di studio	retta
+libro	manoscritto
+lantana	bocca di leone
+buco nero	vuoto
+Impero Persiano	Ciro
+editoriale	notizia
+decorazione	busta
+squalo balena	aragosta
+mais	granturco

@@ -1,0 +1,786 @@
+Words: terremoto scossa
+Gloss first word: b'EN'	b'Shaking and vibration at the surface of the earth resulting from underground movement along a fault plane of from volcanic activity'
+Gloss second word: b'EN'	b'A small earthquake'
+
+Words: patrimonio azione
+Gloss first word: b'EN'	b"A person's social heritage: previous experience or training"
+Gloss second word: b'EN'	b'A medical procedure involving an incision with instruments; performed to repair damage or arrest disease in a living body'
+
+Words: ebreo Gerusalemme
+Gloss first word: b'EN'	b'A person belonging to the worldwide group claiming descent from Jacob (or converted to it) and connected by cultural or religious ties'
+Gloss second word: b'EN'	b'Capital and largest city of the modern state of Israel (although its status as capital is disputed); it was captured from Jordan in 1967 in the Six Day War; a holy city for Jews and Christians and Muslims; was the capital of an ancient kingdom'
+
+Words: nuvolosità previsione
+Gloss first word: b'EN'	b'A visible mass of water or ice particles suspended at a considerable altitude'
+Gloss second word: b'EN'	b'A statement made about the future'
+
+Words: dizionario enciclopedia
+Gloss first word: b'EN'	b'A reference book containing an alphabetical list of words with information about them'
+Gloss second word: b'EN'	b'A reference work (often in several volumes) containing articles on various topics (often arranged in alphabetical order) dealing with the entire range of human knowledge or with some particular specialty'
+
+Words: zecca museo
+Gloss first word: b'EN'	b'The Palazzo della Zecca is a 16th-century building in Venice which once housed the official government mint, or offices responsible for coining money.'
+Gloss second word: b'EN'	b'A depository for collecting and displaying objects having scientific or historical or artistic value'
+
+Words: sedia sgabello
+Gloss first word: b'EN'	b'A seat for one person, with a support for the back'
+Gloss second word: b'EN'	b'A simple seat without a back or arms'
+
+Words: spagnolo umidità
+Gloss first word: b'EN'	b'Spanish wines are wines produced in Spain.'
+Gloss second word: b'EN'	b'Wetness caused by water'
+
+Words: lattina bottiglia
+Gloss first word: b'EN'	b'A can for holding soft drinks'
+Gloss second word: b'EN'	b'A glass or plastic vessel used for storing drinks or other liquids; typically cylindrical without handles and with a narrow neck that can be plugged or capped'
+
+Words: mosca formica
+Gloss first word: b'EN'	b'Common fly that frequents human habitations and spreads many diseases'
+Gloss second word: b'EN'	b'Social insect living in organized colonies; characteristically the males and fertile queen have wings during breeding season; wingless sterile females are the workers'
+
+Words: mito satira
+Gloss first word: b'EN'	b'A traditional story accepted as history; serves to explain the world view of a people'
+Gloss second word: b'EN'	b"A composition that imitates or misrepresents somebody's style, usually in a humorous way"
+
+Words: centro della città autobus
+Senses not found
+
+Words: coda Boeing 747-200
+Gloss first word: b'EN'	b'The rear part of an aircraft'
+Gloss second word: b'EN'	b'Wide-body airliner, second main production series of the 747'
+
+Words: opera d'arte artista
+Gloss first word: b'EN'	b'Art that is a product of one of the fine arts (especially a painting or sculpture of artistic merit)'
+Gloss second word: b'EN'	b'A person whose creative work shows sensitivity and imagination'
+
+Words: NATO alleanza
+Gloss first word: b'EN'	b'An international organization created in 1949 by the North Atlantic Treaty for purposes of collective security'
+Gloss second word: b'EN'	b'An alliance is a relationship among people, groups, or states that have joined together for mutual benefit or to achieve some common purpose, whether or not explicit agreement has been worked out among them.'
+
+Words: re sovrano
+Gloss first word: b'EN'	b'Star Wars is an American epic space opera franchise, centered on a film series created by George Lucas.'
+Gloss second word: b'EN'	b'A person who rules or commands'
+
+Words: ritmo cadenza
+Gloss first word: b'EN'	b'The basic rhythmic unit in a piece of music'
+Gloss second word: b'EN'	b'A jaunty rhythm in music'
+
+Words: Alexander Fleming penicillina
+Gloss first word: b'EN'	b'Scottish bacteriologist who discovered penicillin (1881-1955)'
+Gloss second word: b'EN'	b'Any of various antibiotics obtained from Penicillium molds (or produced synthetically) and used in the treatment of various infections and diseases'
+
+Words: flauto musica
+Gloss first word: b'EN'	b'Someone who plays the flute'
+Gloss second word: b'EN'	b'A musical work that has been created'
+
+Words: airone cenerino lago
+Gloss first word: b'EN'	b'The grey heron is a long-legged predatory wading bird of the heron family, Ardeidae, native throughout temperate Europe and Asia and also parts of Africa.'
+Gloss second word: b'EN'	b'A long narrow inlet of the sea in Scotland (especially when it is nearly landlocked)'
+
+Words: viscosità spruzzo
+Gloss first word: b'EN'	b'Resistance of a liquid to shear forces (and hence to flow)'
+Gloss second word: b'EN'	b'Water in small drops in the atmosphere; blown from waves or thrown up by a waterfall'
+
+Words: hardware case
+Gloss first word: b'EN'	b'Hardware is the fifth album by the Swiss hard rock band Krokus.'
+Gloss second word: b'EN'	b'A workplace where dairy products (butter and cheese etc.) are produced or sold'
+
+Words: anello fidanzamento
+Gloss first word: b'EN'	b'Jewelry consisting of a circlet of precious metal (often set with jewels) worn on the finger'
+Gloss second word: b'EN'	b'The act of interlocking or meshing'
+
+Words: latino tedesco
+Gloss first word: b'EN'	b'Any dialect of the language of ancient Rome'
+Gloss second word: b'EN'	b'The standard German language; developed historically from West Germanic'
+
+Words: classe operaia fabbrica
+Gloss first word: b'EN'	b'A social class comprising those who do manual labor or work for wages'
+Gloss second word: b'EN'	b'A plant consisting of one or more buildings with facilities for manufacturing'
+
+Words: Shakespeare Dickens
+Gloss first word: b'EN'	b'English poet and dramatist considered one of the greatest English writers (1564-1616)'
+Gloss second word: b'EN'	b'English writer whose novels depicted and criticized social injustice (1812-1870)'
+
+Words: banconota prete
+Gloss first word: b'EN'	b'A piece of paper money (especially one issued by a central bank)'
+Gloss second word: b'EN'	b'Priest is a 1994 British drama film marking the debut of director Antonia Bird.'
+
+Words: strumento lavoro
+Gloss first word: b'EN'	b'A device that requires skill for proper use'
+Gloss second word: b'EN'	b'(physics) a manifestation of energy; the transfer of energy from one physical system to another expressed as the product of a force and the distance through which it moves a body in the direction of that force'
+
+Words: cinghiale nano suidi
+Gloss first word: b'EN'	b'The pygmy hog is a critically endangered suid, previously spread across Bangladesh, Bhutan, India and Nepal, but now only found in India.'
+Gloss second word: b'EN'	b'Pigs; hogs; boars'
+
+Words: suffragio uscita
+Gloss first word: b'EN'	b'A choice that is made by counting the number of people in favor of each alternative'
+Gloss second word: b'EN'	b'On many computer operating systems, a computer process terminates its execution by making an exit system call.'
+
+Words: stella luminosità
+Gloss first word: b'EN'	b'Star Wars is a 1977 American epic space opera film written and directed by George Lucas.'
+Gloss second word: b'EN'	b'In astronomy, luminosity is the total amount of energy emitted by a star, galaxy, or other astronomical object per unit time.'
+
+Words: trota chitarra
+Gloss first word: b'EN'	b'Any of various game and food fishes of cool fresh waters mostly smaller than typical salmons'
+Gloss second word: b'EN'	b'A stringed instrument usually having six strings; played by strumming or plucking'
+
+Words: dollaro milionario
+Gloss first word: b'EN'	b'The basic unit of money in Hong Kong'
+Gloss second word: b'EN'	b'A person whose material wealth is valued at more than a million dollars'
+
+Words: cifra numero
+Gloss first word: b'EN'	b'A symbol used to represent a number'
+Gloss second word: b'EN'	b'A symbol used to represent a number'
+
+Words: burrasca coperta
+Gloss first word: b'EN'	b'An international scale of wind force from 0 (calm air) to 12 (hurricane)'
+Gloss second word: b'EN'	b'The uppermost sheltered deck that runs the entire length of a large vessel'
+
+Words: Obama Clinton
+Gloss first word: b'EN'	b'Barack Hussein Obama II is an American politician who served as the 44th President of the United States from 2009 to 2017.'
+Gloss second word: b'EN'	b'42nd President of the United States (1946-)'
+
+Words: personaggio secondario film
+Gloss first word: b'EN'	b'An imaginary person represented in a work of fiction (play or film or story)'
+Gloss second word: b'EN'	b'A story within a story is a literary device in which one character within a narrative narrates.'
+
+Words: Juventus Bayern Monaco
+Gloss first word: b'EN'	b'Juventus Football Club S.p.A., colloquially known as Juve, is a professional Italian football club in Turin, Piedmont.'
+Gloss second word: b'EN'	b'Fu\xc3\x9fball-Club Bayern M\xc3\xbcnchen e.V., commonly known as FC Bayern M\xc3\xbcnchen, FCB, Bayern Munich, or FC Bayern, is a German sports club based in Munich, Bavaria.'
+
+Words: cambiamento climatico precipitazione
+Gloss first word: b'EN'	b"A change in the world's climate"
+Gloss second word: b'EN'	b'The falling to earth of any form of water (rain or snow or hail or sleet or mist)'
+
+Words: IA batteria
+Gloss first word: b'EN'	b'\xc3\x8d\xc3\xber\xc3\xb3ttabandalag Akraness, commonly known simply as \xc3\x8dA, is an Icelandic sports club founded in 1946 and based in the town of Akranes, west Iceland.'
+Gloss second word: No gloss found
+
+Words: capolavoro Gioconda
+Gloss first word: b'EN'	b'The most outstanding work of a creative artist or craftsman'
+Gloss second word: b'EN'	b'The Mona Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as "the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world".'
+
+Words: crimine aggressione
+Gloss first word: b'EN'	b'(criminal law) an act punishable by law; usually considered an evil act'
+Gloss second word: b'EN'	b'A threatened or attempted physical attack by someone who appears to be able to cause bodily harm if not stopped'
+
+Words: incoronazione acqua
+Senses not found
+
+Words: vocalista pentagramma
+Senses not found
+
+Words: spareggio pallacanestro
+Gloss first word: b'EN'	b'A one-game playoff, sometimes known as a pennant playoff, tiebreaker game or knockout game, is a tiebreaker in certain sports\xe2\x80\x94usually but not always professional\xe2\x80\x94to determine which of two teams, tied in the final standings, will qualify for a post-season tournament.'
+Gloss second word: b'EN'	b'A game played on a court by two opposing teams of 5 players; points are scored by throwing the ball through an elevated horizontal hoop'
+
+Words: forze armate difesa
+Gloss first word: b'EN'	b'The military forces of a nation'
+Gloss second word: b'EN'	b'Military policy is public policy dealing with international security and the military.'
+
+Words: lago nuvola
+Gloss first word: b'EN'	b'A body of (usually fresh) water surrounded by land'
+Gloss second word: b'EN'	b'A visible mass of water or ice particles suspended at a considerable altitude'
+
+Words: monastero doccia
+Gloss first word: b'EN'	b'A religious residence especially for nuns'
+Gloss second word: b'EN'	b'Washing yourself by standing upright under water sprayed from a nozzle'
+
+Words: lingua madre lingua
+Gloss first word: b'EN'	b'The language that a person has spoken from earliest childhood'
+Gloss second word: b'EN'	b'(language) communication by word of mouth'
+
+Words: porto incarto
+Gloss first word: b'EN'	b'The act of moving something from one location to another'
+Gloss second word: b'EN'	b'Any material used especially to protect something'
+
+Words: demonio angelo
+Gloss first word: b'EN'	b'(Judeo-Christian and Islamic religions) chief spirit of evil and adversary of God; tempter of mankind; master of Hell'
+Gloss second word: b'EN'	b'Spiritual being attendant upon God'
+
+Words: crittogramma simbolo
+Gloss first word: b'EN'	b'A piece of writing in code or cipher'
+Gloss second word: b'EN'	b'(philosophy) a philosophical theory of the functions of signs and symbols'
+
+Words: campus università
+Gloss first word: b'EN'	b'A field on which the buildings of a university are situated'
+Gloss second word: b'EN'	b'Establishment where a seat of higher learning is housed, including administrative and living quarters as well as facilities for research and teaching'
+
+Words: libertà libertà
+Gloss first word: b'EN'	b'Freedom of choice'
+Gloss second word: b'EN'	b'Freedom of choice'
+
+Words: tifone ciclone
+Gloss first word: b'EN'	b'A severe tropical cyclone usually with heavy rains and winds moving a 73-136 knots (12 on the Beaufort scale)'
+Gloss second word: b'EN'	b'A severe tropical cyclone usually with heavy rains and winds moving a 73-136 knots (12 on the Beaufort scale)'
+
+Words: manuale guida turistica
+Gloss first word: b'EN'	b'A concise reference book providing specific information about a subject or location'
+Gloss second word: b'EN'	b'Something that offers basic information or instruction'
+
+Words: Ebola virus Ebola
+Gloss first word: b'EN'	b'A filovirus that causes Ebola hemorrhagic fever; carried by animals; can be used as a bioweapon'
+Gloss second word: b'EN'	b'A filovirus that causes Ebola hemorrhagic fever; carried by animals; can be used as a bioweapon'
+
+Words: principessa biscotto
+Gloss first word: b'EN'	b'A female member of a royal family other than the queen (especially the daughter of a sovereign)'
+Gloss second word: b'EN'	b'Small flat ring-shaped cake or cookie'
+
+Words: treno tram
+Senses not found
+
+Words: ecosistema economia
+Gloss first word: b'EN'	b'A system formed by the interaction of a community of organisms with their physical environment'
+Gloss second word: b'EN'	b'The efficient use of resources'
+
+Words: regina regnante regina degli scacchi
+Senses not found
+
+Words: oro zinco
+Gloss first word: b'EN'	b'A soft yellow malleable ductile (trivalent and univalent) metallic element; occurs mainly as nuggets in rocks and alluvial deposits; does not react with most chemicals but is attacked by chlorine and aqua regia'
+Gloss second word: b'EN'	b'A bluish-white lustrous metallic element; brittle at ordinary temperatures but malleable when heated; used in a wide variety of alloys and in galvanizing iron; it occurs naturally as zinc sulphide in zinc blende'
+
+Words: cursore patatine fritte
+Gloss first word: b'EN'	b'(computer science) indicator consisting of a movable spot of light (an icon) on a visual display; moving it allows the user to point to commands or screen positions'
+Gloss second word: b'EN'	b'Fries with That? is a YTV produced sitcom.'
+
+Words: Rio delle Amazzoni foresta
+Gloss first word: b'EN'	b"A major South American river; arises in the Andes and flows eastward into the South Atlantic; the world's 2nd longest river (4000 miles)"
+Gloss second word: b'EN'	b'Woodlands in full leaf'
+
+Words: tennis statistica
+Gloss first word: b'EN'	b'Tennis is a sports game developed and released by Nintendo for the NES.'
+Gloss second word: b'EN'	b'A statistical parameter or population parameter is a quantity that indexes a family of probability distributions.'
+
+Words: Bolzano teorema
+Gloss first word: b'EN'	b'Bolzano Bellunese is an Italian village, hamlet of Belluno, in the Veneto.'
+Gloss second word: b'EN'	b'Teorema is a 1968 Italian art-house film written and directed by Pier Paolo Pasolini and starring Terence Stamp, Laura Betti, Silvana Mangano, Massimo Girotti, and Anne Wiazemsky.'
+
+Words: altitudine conversione
+Gloss first word: b'EN'	b'The perpendicular distance from the base of a geometric figure to the opposite vertex (or side if parallel)'
+Gloss second word: b'EN'	b'(mathematics) a function that changes the position or direction of the axes of a coordinate system'
+
+Words: barca albero
+Gloss first word: b'EN'	b'A sailing ship with 3 (or more) masts'
+Gloss second word: b'EN'	b'A vertical spar for supporting sails'
+
+Words: trono spada
+Gloss first word: b'EN'	b'The chair of state for a monarch, bishop, etc.'
+Gloss second word: b'EN'	b'The type of sword popular during the Migration Period and the Merovingian period of European history, particularly among the Germanic peoples was derived from the Roman era Spatha, and gave rise to the Carolingian or Viking sword type of the 8th to 10th centuries.'
+
+Words: cotone maglione
+Gloss first word: b'EN'	b'Fabric woven from cotton fibers'
+Gloss second word: b'EN'	b'A crocheted or knitted garment covering the upper part of the body'
+
+Words: ciliegia fragola
+Gloss first word: b'EN'	b'Any of numerous trees and shrubs producing a small fleshy round fruit with a single hard stone; many also produce a valuable hardwood'
+Gloss second word: b'EN'	b'Any of various low perennial herbs with many runners and bearing white flowers followed by edible fruits having many small achenes scattered on the surface of an enlarged red pulpy berry'
+
+Words: Islam Corano
+Gloss first word: b'EN'	b'The monotheistic religious system of Muslims founded in Arabia in the 7th century and based on the teachings of Muhammad as laid down in the Koran'
+Gloss second word: No gloss found
+
+Words: Neanderthal sport
+Senses not found
+
+Words: nepotismo re
+Gloss first word: b'EN'	b'Favoritism shown to relatives or close friends by those in power (as by giving them jobs)'
+Gloss second word: b'EN'	b'Star Wars is a 1977 American epic space opera film written and directed by George Lucas.'
+
+Words: personaggio persona
+Gloss first word: b'EN'	b'A supporting character is a character in a narrative that is not focused on by the primary storyline, but appears or is mentioned in the story enough to be more than just a minor character or a cameo appearance.'
+Gloss second word: b'EN'	b'A supporting character is a character in a narrative that is not focused on by the primary storyline, but appears or is mentioned in the story enough to be more than just a minor character or a cameo appearance.'
+
+Words: cisterna vagone
+Gloss first word: b'EN'	b'A large (usually metallic) vessel for holding gases or liquids'
+Gloss second word: b'EN'	b'A wheeled vehicle adapted to the rails of railroad'
+
+Words: Mercurio Giove
+Gloss first word: b'EN'	b'(Roman mythology) god of agriculture and vegetation; counterpart of Greek Cronus'
+Gloss second word: b'EN'	b'(Roman mythology) god of agriculture and vegetation; counterpart of Greek Cronus'
+
+Words: bronchite acetaminofene
+Gloss first word: b'EN'	b'Inflammation of the membranes lining the bronchial tubes'
+Gloss second word: b'EN'	b'An analgesic for mild pain but not for inflammation; also used as an antipyretic; (Datril, Tylenol, Panadol, Phenaphen, Tempra, and Anacin III are trademarks of brands of acetaminophen tablets)'
+
+Words: sangue corpo
+Senses not found
+
+Words: islamofobia ISIS
+Gloss first word: b'EN'	b'Prejudice against Muslims'
+Gloss second word: b'EN'	b'The Islamic State of Iraq and the Levant, also known as the Islamic State of Iraq and Syria or Islamic State of Iraq and al-Sham, Islamic State and by its Arabic language acronym Daesh, is a Salafi jihadist terrorist organisation and former unrecognised proto-state that follows a fundamentalist, Wahhabi, and heterodox doctrine of Sunni Islam.'
+
+Words: uncinetto uniforme
+Gloss first word: b'EN'	b'A needle with a hook on the end; used in crocheting'
+Gloss second word: b'EN'	b"Attire that is typically worn by a horseback rider (especially a woman's attire)"
+
+Words: Hadoop touchscreen
+Gloss first word: b'EN'	b'Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation.'
+Gloss second word: b'EN'	b'A computer display that enables the user to interact with the computer by touching areas on the screen'
+
+Words: combustibile fossile fossile
+Gloss first word: b'EN'	b"Fuel consisting of the remains of organisms preserved in rocks in the earth's crust with high carbon and hydrogen content"
+Gloss second word: b'EN'	b'The remains (or an impression) of a plant or animal that existed in a past geological age and that has been excavated from the soil'
+
+Words: mutante sociobiologia
+Gloss first word: b'EN'	b'(genetics) any event that changes genetic structure; any alteration in the inherited nucleic acid sequence of the genotype of an organism'
+Gloss second word: b'EN'	b'The branch of biology that conducts comparative studies of the social organization of animals (including human beings) with regard to its evolutionary history'
+
+Words: sorella fratello
+Gloss first word: b'EN'	b"A person's brother or sister"
+Gloss second word: b'EN'	b"A person's brother or sister"
+
+Words: matita storia
+Gloss first word: b'EN'	b'A pencil in projective geometry is a family of geometric objects with a common property, for example the set of lines that pass through a given point in a projective plane.'
+Gloss second word: b'EN'	b'The continuum of events occurring in succession leading from the past to the present and even into the future'
+
+Words: eczema dermatite
+Gloss first word: b'EN'	b'Generic term for inflammatory conditions of the skin; particularly with vesiculation in the acute stages'
+Gloss second word: b'EN'	b'Inflammation of the skin; skin becomes itchy and may develop blisters'
+
+Words: imperatore governatore
+Gloss first word: b'EN'	b'Conqueror of Gaul and master of Italy (100-44 BC)'
+Gloss second word: b'EN'	b'A Roman governor was an official either elected or appointed to be the chief administrator of Roman law throughout one or more of the many provinces constituting the Roman Empire.'
+
+Words: corona chiave
+Gloss first word: b'EN'	b'A musical notation (over a note or chord or rest) that indicates it is to be prolonged by an unspecified amount'
+Gloss second word: b'EN'	b'A musical notation written on a staff indicating the pitch of the notes following it'
+
+Words: algebra operazione
+Gloss first word: b'EN'	b'In mathematics, and more specifically in abstract algebra, a *-algebra is a mathematical structure consisting of two involutive rings R and A, where R is commutative and A has the structure of an associative algebra over R. Involutive algebras generalize the idea of a number system equipped with conjugation, for example the complex numbers and complex conjugation, matrices over the complex numbers and conjugate transpose, and linear operators over a Hilbert space and Hermitian adjoints.'
+Gloss second word: b'EN'	b'A medical procedure involving an incision with instruments; performed to repair damage or arrest disease in a living body'
+
+Words: pistone motore
+Gloss first word: b'EN'	b'Mechanical device that has a plunging or thrusting motion'
+Gloss second word: b'EN'	b'Motor that converts thermal energy to mechanical work'
+
+Words: borsa di studio retta
+Gloss first word: b'EN'	b'The treasury of a public institution or religious order'
+Gloss second word: b'EN'	b'A fee paid for instruction (especially for higher education)'
+
+Words: libro manoscritto
+Gloss first word: b'EN'	b'In graph theory, the girth of a graph is the length of a shortest cycle contained in the graph.'
+Gloss second word: b'EN'	b'An unbound manuscript of some ancient classic (as distinguished from a scroll)'
+
+Words: lantana bocca di leone
+Gloss first word: b'EN'	b'A flowering shrub'
+Gloss second word: b'EN'	b'Perennial native to the Mediterranean but widely cultivated for its purple or pink flowers'
+
+Words: buco nero vuoto
+Gloss first word: b'EN'	b'A region of space resulting from the collapse of a star; extremely high gravitational field'
+Gloss second word: b'EN'	b'Cosmic voids are vast spaces between filaments, which contain very few or no galaxies.'
+
+Words: Impero Persiano Ciro
+Gloss first word: b'EN'	b'An empire in southern Asia created by Cyrus the Great in the 6th century BC and destroyed by Alexander the Great in the 4th century BC'
+Gloss second word: b'EN'	b'Kyros or Cyrus, Ecumenical Patriarch of Constantinople from 705 to 712.'
+
+Words: editoriale notizia
+Gloss first word: b'EN'	b'An article giving opinions or perspectives'
+Gloss second word: b'EN'	b'A daily or weekly publication on folded sheets; contains news and articles and advertisements'
+
+Words: decorazione busta
+Gloss first word: b'EN'	b'The act of decorating something (in the hope of making it more attractive)'
+Gloss second word: b'EN'	b'In physics and engineering, the envelope of an oscillating signal is a smooth curve outlining its extremes.'
+
+Words: squalo balena aragosta
+Gloss first word: b'EN'	b'Large spotted shark of warm surface waters worldwide; resembles a whale and feeds chiefly on plankton'
+Gloss second word: b'EN'	b'Palinurus elephas is a spiny lobster, which is commonly caught in the Mediterranean Sea.'
+
+Words: mais granturco
+Gloss first word: b'EN'	b'Tall annual cereal grass bearing kernels on large ears: widely cultivated in America in many varieties; the principal cereal in Mexico and Central and South America since pre-Columbian times'
+Gloss second word: b'EN'	b'Tall annual cereal grass bearing kernels on large ears: widely cultivated in America in many varieties; the principal cereal in Mexico and Central and South America since pre-Columbian times'
+
+Words: terremoto scossa
+Gloss first word: b'EN'	b'Shaking and vibration at the surface of the earth resulting from underground movement along a fault plane of from volcanic activity'
+Gloss second word: b'EN'	b'A small earthquake'
+
+Words: patrimonio azione
+Gloss first word: b'EN'	b"A person's social heritage: previous experience or training"
+Gloss second word: b'EN'	b'A medical procedure involving an incision with instruments; performed to repair damage or arrest disease in a living body'
+
+Words: ebreo Gerusalemme
+Gloss first word: b'EN'	b'A person belonging to the worldwide group claiming descent from Jacob (or converted to it) and connected by cultural or religious ties'
+Gloss second word: b'EN'	b'Capital and largest city of the modern state of Israel (although its status as capital is disputed); it was captured from Jordan in 1967 in the Six Day War; a holy city for Jews and Christians and Muslims; was the capital of an ancient kingdom'
+
+Words: nuvolosità previsione
+Gloss first word: b'EN'	b'A visible mass of water or ice particles suspended at a considerable altitude'
+Gloss second word: b'EN'	b'A statement made about the future'
+
+Words: dizionario enciclopedia
+Gloss first word: b'EN'	b'A reference book containing an alphabetical list of words with information about them'
+Gloss second word: b'EN'	b'A reference work (often in several volumes) containing articles on various topics (often arranged in alphabetical order) dealing with the entire range of human knowledge or with some particular specialty'
+
+Words: zecca museo
+Gloss first word: b'EN'	b'The Palazzo della Zecca is a 16th-century building in Venice which once housed the official government mint, or offices responsible for coining money.'
+Gloss second word: b'EN'	b'A depository for collecting and displaying objects having scientific or historical or artistic value'
+
+Words: sedia sgabello
+Gloss first word: b'EN'	b'A seat for one person, with a support for the back'
+Gloss second word: b'EN'	b'A simple seat without a back or arms'
+
+Words: spagnolo umidità
+Gloss first word: b'EN'	b'Spanish wines are wines produced in Spain.'
+Gloss second word: b'EN'	b'Wetness caused by water'
+
+Words: lattina bottiglia
+Gloss first word: b'EN'	b'A can for holding soft drinks'
+Gloss second word: b'EN'	b'A glass or plastic vessel used for storing drinks or other liquids; typically cylindrical without handles and with a narrow neck that can be plugged or capped'
+
+Words: mosca formica
+Gloss first word: b'EN'	b'Common fly that frequents human habitations and spreads many diseases'
+Gloss second word: b'EN'	b'Social insect living in organized colonies; characteristically the males and fertile queen have wings during breeding season; wingless sterile females are the workers'
+
+Words: mito satira
+Gloss first word: b'EN'	b'A traditional story accepted as history; serves to explain the world view of a people'
+Gloss second word: b'EN'	b"A composition that imitates or misrepresents somebody's style, usually in a humorous way"
+
+Words: centro della città autobus
+Senses not found
+
+Words: coda Boeing 747-200
+Gloss first word: b'EN'	b'The rear part of an aircraft'
+Gloss second word: b'EN'	b'Wide-body airliner, second main production series of the 747'
+
+Words: opera d'arte artista
+Gloss first word: b'EN'	b'Art that is a product of one of the fine arts (especially a painting or sculpture of artistic merit)'
+Gloss second word: b'EN'	b'A person whose creative work shows sensitivity and imagination'
+
+Words: NATO alleanza
+Gloss first word: b'EN'	b'An international organization created in 1949 by the North Atlantic Treaty for purposes of collective security'
+Gloss second word: b'EN'	b'An alliance is a relationship among people, groups, or states that have joined together for mutual benefit or to achieve some common purpose, whether or not explicit agreement has been worked out among them.'
+
+Words: re sovrano
+Gloss first word: b'EN'	b'Star Wars is an American epic space opera franchise, centered on a film series created by George Lucas.'
+Gloss second word: b'EN'	b'A person who rules or commands'
+
+Words: ritmo cadenza
+Gloss first word: b'EN'	b'The basic rhythmic unit in a piece of music'
+Gloss second word: b'EN'	b'A jaunty rhythm in music'
+
+Words: Alexander Fleming penicillina
+Gloss first word: b'EN'	b'Scottish bacteriologist who discovered penicillin (1881-1955)'
+Gloss second word: b'EN'	b'Any of various antibiotics obtained from Penicillium molds (or produced synthetically) and used in the treatment of various infections and diseases'
+
+Words: flauto musica
+Gloss first word: b'EN'	b'Someone who plays the flute'
+Gloss second word: b'EN'	b'A musical work that has been created'
+
+Words: airone cenerino lago
+Gloss first word: b'EN'	b'The grey heron is a long-legged predatory wading bird of the heron family, Ardeidae, native throughout temperate Europe and Asia and also parts of Africa.'
+Gloss second word: b'EN'	b'A long narrow inlet of the sea in Scotland (especially when it is nearly landlocked)'
+
+Words: viscosità spruzzo
+Gloss first word: b'EN'	b'Resistance of a liquid to shear forces (and hence to flow)'
+Gloss second word: b'EN'	b'Water in small drops in the atmosphere; blown from waves or thrown up by a waterfall'
+
+Words: hardware case
+Gloss first word: b'EN'	b'Hardware is the fifth album by the Swiss hard rock band Krokus.'
+Gloss second word: b'EN'	b'A workplace where dairy products (butter and cheese etc.) are produced or sold'
+
+Words: anello fidanzamento
+Gloss first word: b'EN'	b'Jewelry consisting of a circlet of precious metal (often set with jewels) worn on the finger'
+Gloss second word: b'EN'	b'The act of interlocking or meshing'
+
+Words: latino tedesco
+Gloss first word: b'EN'	b'Any dialect of the language of ancient Rome'
+Gloss second word: b'EN'	b'The standard German language; developed historically from West Germanic'
+
+Words: classe operaia fabbrica
+Gloss first word: b'EN'	b'A social class comprising those who do manual labor or work for wages'
+Gloss second word: b'EN'	b'A plant consisting of one or more buildings with facilities for manufacturing'
+
+Words: Shakespeare Dickens
+Gloss first word: b'EN'	b'English poet and dramatist considered one of the greatest English writers (1564-1616)'
+Gloss second word: b'EN'	b'English writer whose novels depicted and criticized social injustice (1812-1870)'
+
+Words: banconota prete
+Gloss first word: b'EN'	b'A piece of paper money (especially one issued by a central bank)'
+Gloss second word: b'EN'	b'Priest is a 1994 British drama film marking the debut of director Antonia Bird.'
+
+Words: strumento lavoro
+Gloss first word: b'EN'	b'A device that requires skill for proper use'
+Gloss second word: b'EN'	b'(physics) a manifestation of energy; the transfer of energy from one physical system to another expressed as the product of a force and the distance through which it moves a body in the direction of that force'
+
+Words: cinghiale nano suidi
+Gloss first word: b'EN'	b'The pygmy hog is a critically endangered suid, previously spread across Bangladesh, Bhutan, India and Nepal, but now only found in India.'
+Gloss second word: b'EN'	b'Pigs; hogs; boars'
+
+Words: suffragio uscita
+Gloss first word: b'EN'	b'A choice that is made by counting the number of people in favor of each alternative'
+Gloss second word: b'EN'	b'On many computer operating systems, a computer process terminates its execution by making an exit system call.'
+
+Words: stella luminosità
+Gloss first word: b'EN'	b'Star Wars is a 1977 American epic space opera film written and directed by George Lucas.'
+Gloss second word: b'EN'	b'In astronomy, luminosity is the total amount of energy emitted by a star, galaxy, or other astronomical object per unit time.'
+
+Words: trota chitarra
+Gloss first word: b'EN'	b'Any of various game and food fishes of cool fresh waters mostly smaller than typical salmons'
+Gloss second word: b'EN'	b'A stringed instrument usually having six strings; played by strumming or plucking'
+
+Words: dollaro milionario
+Gloss first word: b'EN'	b'The basic unit of money in Hong Kong'
+Gloss second word: b'EN'	b'A person whose material wealth is valued at more than a million dollars'
+
+Words: cifra numero
+Gloss first word: b'EN'	b'A symbol used to represent a number'
+Gloss second word: b'EN'	b'A symbol used to represent a number'
+
+Words: burrasca coperta
+Gloss first word: b'EN'	b'An international scale of wind force from 0 (calm air) to 12 (hurricane)'
+Gloss second word: b'EN'	b'The uppermost sheltered deck that runs the entire length of a large vessel'
+
+Words: Obama Clinton
+Gloss first word: b'EN'	b'Barack Hussein Obama II is an American politician who served as the 44th President of the United States from 2009 to 2017.'
+Gloss second word: b'EN'	b'42nd President of the United States (1946-)'
+
+Words: personaggio secondario film
+Gloss first word: b'EN'	b'An imaginary person represented in a work of fiction (play or film or story)'
+Gloss second word: b'EN'	b'A story within a story is a literary device in which one character within a narrative narrates.'
+
+Words: Juventus Bayern Monaco
+Gloss first word: b'EN'	b'Juventus Football Club S.p.A., colloquially known as Juve, is a professional Italian football club in Turin, Piedmont.'
+Gloss second word: b'EN'	b'Fu\xc3\x9fball-Club Bayern M\xc3\xbcnchen e.V., commonly known as FC Bayern M\xc3\xbcnchen, FCB, Bayern Munich, or FC Bayern, is a German sports club based in Munich, Bavaria.'
+
+Words: cambiamento climatico precipitazione
+Gloss first word: b'EN'	b"A change in the world's climate"
+Gloss second word: b'EN'	b'The falling to earth of any form of water (rain or snow or hail or sleet or mist)'
+
+Words: IA batteria
+Gloss first word: b'EN'	b'\xc3\x8d\xc3\xber\xc3\xb3ttabandalag Akraness, commonly known simply as \xc3\x8dA, is an Icelandic sports club founded in 1946 and based in the town of Akranes, west Iceland.'
+Gloss second word: No gloss found
+
+Words: capolavoro Gioconda
+Gloss first word: b'EN'	b'The most outstanding work of a creative artist or craftsman'
+Gloss second word: b'EN'	b'The Mona Lisa is a half-length portrait painting by the Italian Renaissance artist Leonardo da Vinci that has been described as "the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world".'
+
+Words: crimine aggressione
+Gloss first word: b'EN'	b'(criminal law) an act punishable by law; usually considered an evil act'
+Gloss second word: b'EN'	b'A threatened or attempted physical attack by someone who appears to be able to cause bodily harm if not stopped'
+
+Words: incoronazione acqua
+Senses not found
+
+Words: vocalista pentagramma
+Senses not found
+
+Words: spareggio pallacanestro
+Gloss first word: b'EN'	b'A one-game playoff, sometimes known as a pennant playoff, tiebreaker game or knockout game, is a tiebreaker in certain sports\xe2\x80\x94usually but not always professional\xe2\x80\x94to determine which of two teams, tied in the final standings, will qualify for a post-season tournament.'
+Gloss second word: b'EN'	b'A game played on a court by two opposing teams of 5 players; points are scored by throwing the ball through an elevated horizontal hoop'
+
+Words: forze armate difesa
+Gloss first word: b'EN'	b'The military forces of a nation'
+Gloss second word: b'EN'	b'Military policy is public policy dealing with international security and the military.'
+
+Words: lago nuvola
+Gloss first word: b'EN'	b'A body of (usually fresh) water surrounded by land'
+Gloss second word: b'EN'	b'A visible mass of water or ice particles suspended at a considerable altitude'
+
+Words: monastero doccia
+Gloss first word: b'EN'	b'A religious residence especially for nuns'
+Gloss second word: b'EN'	b'Washing yourself by standing upright under water sprayed from a nozzle'
+
+Words: lingua madre lingua
+Gloss first word: b'EN'	b'The language that a person has spoken from earliest childhood'
+Gloss second word: b'EN'	b'(language) communication by word of mouth'
+
+Words: porto incarto
+Gloss first word: b'EN'	b'The act of moving something from one location to another'
+Gloss second word: b'EN'	b'Any material used especially to protect something'
+
+Words: demonio angelo
+Gloss first word: b'EN'	b'(Judeo-Christian and Islamic religions) chief spirit of evil and adversary of God; tempter of mankind; master of Hell'
+Gloss second word: b'EN'	b'Spiritual being attendant upon God'
+
+Words: crittogramma simbolo
+Gloss first word: b'EN'	b'A piece of writing in code or cipher'
+Gloss second word: b'EN'	b'(philosophy) a philosophical theory of the functions of signs and symbols'
+
+Words: campus università
+Gloss first word: b'EN'	b'A field on which the buildings of a university are situated'
+Gloss second word: b'EN'	b'Establishment where a seat of higher learning is housed, including administrative and living quarters as well as facilities for research and teaching'
+
+Words: libertà libertà
+Gloss first word: b'EN'	b'Freedom of choice'
+Gloss second word: b'EN'	b'Freedom of choice'
+
+Words: tifone ciclone
+Gloss first word: b'EN'	b'A severe tropical cyclone usually with heavy rains and winds moving a 73-136 knots (12 on the Beaufort scale)'
+Gloss second word: b'EN'	b'A severe tropical cyclone usually with heavy rains and winds moving a 73-136 knots (12 on the Beaufort scale)'
+
+Words: manuale guida turistica
+Gloss first word: b'EN'	b'A concise reference book providing specific information about a subject or location'
+Gloss second word: b'EN'	b'Something that offers basic information or instruction'
+
+Words: Ebola virus Ebola
+Gloss first word: b'EN'	b'A filovirus that causes Ebola hemorrhagic fever; carried by animals; can be used as a bioweapon'
+Gloss second word: b'EN'	b'A filovirus that causes Ebola hemorrhagic fever; carried by animals; can be used as a bioweapon'
+
+Words: principessa biscotto
+Gloss first word: b'EN'	b'A female member of a royal family other than the queen (especially the daughter of a sovereign)'
+Gloss second word: b'EN'	b'Small flat ring-shaped cake or cookie'
+
+Words: treno tram
+Senses not found
+
+Words: ecosistema economia
+Gloss first word: b'EN'	b'A system formed by the interaction of a community of organisms with their physical environment'
+Gloss second word: b'EN'	b'The efficient use of resources'
+
+Words: regina regnante regina degli scacchi
+Senses not found
+
+Words: oro zinco
+Gloss first word: b'EN'	b'A soft yellow malleable ductile (trivalent and univalent) metallic element; occurs mainly as nuggets in rocks and alluvial deposits; does not react with most chemicals but is attacked by chlorine and aqua regia'
+Gloss second word: b'EN'	b'A bluish-white lustrous metallic element; brittle at ordinary temperatures but malleable when heated; used in a wide variety of alloys and in galvanizing iron; it occurs naturally as zinc sulphide in zinc blende'
+
+Words: cursore patatine fritte
+Gloss first word: b'EN'	b'(computer science) indicator consisting of a movable spot of light (an icon) on a visual display; moving it allows the user to point to commands or screen positions'
+Gloss second word: b'EN'	b'Fries with That? is a YTV produced sitcom.'
+
+Words: Rio delle Amazzoni foresta
+Gloss first word: b'EN'	b"A major South American river; arises in the Andes and flows eastward into the South Atlantic; the world's 2nd longest river (4000 miles)"
+Gloss second word: b'EN'	b'Woodlands in full leaf'
+
+Words: tennis statistica
+Gloss first word: b'EN'	b'Tennis is a sports game developed and released by Nintendo for the NES.'
+Gloss second word: b'EN'	b'A statistical parameter or population parameter is a quantity that indexes a family of probability distributions.'
+
+Words: Bolzano teorema
+Gloss first word: b'EN'	b'Bolzano Bellunese is an Italian village, hamlet of Belluno, in the Veneto.'
+Gloss second word: b'EN'	b'Teorema is a 1968 Italian art-house film written and directed by Pier Paolo Pasolini and starring Terence Stamp, Laura Betti, Silvana Mangano, Massimo Girotti, and Anne Wiazemsky.'
+
+Words: altitudine conversione
+Gloss first word: b'EN'	b'The perpendicular distance from the base of a geometric figure to the opposite vertex (or side if parallel)'
+Gloss second word: b'EN'	b'(mathematics) a function that changes the position or direction of the axes of a coordinate system'
+
+Words: barca albero
+Gloss first word: b'EN'	b'A sailing ship with 3 (or more) masts'
+Gloss second word: b'EN'	b'A vertical spar for supporting sails'
+
+Words: trono spada
+Gloss first word: b'EN'	b'The chair of state for a monarch, bishop, etc.'
+Gloss second word: b'EN'	b'The type of sword popular during the Migration Period and the Merovingian period of European history, particularly among the Germanic peoples was derived from the Roman era Spatha, and gave rise to the Carolingian or Viking sword type of the 8th to 10th centuries.'
+
+Words: cotone maglione
+Gloss first word: b'EN'	b'Fabric woven from cotton fibers'
+Gloss second word: b'EN'	b'A crocheted or knitted garment covering the upper part of the body'
+
+Words: ciliegia fragola
+Gloss first word: b'EN'	b'Any of numerous trees and shrubs producing a small fleshy round fruit with a single hard stone; many also produce a valuable hardwood'
+Gloss second word: b'EN'	b'Any of various low perennial herbs with many runners and bearing white flowers followed by edible fruits having many small achenes scattered on the surface of an enlarged red pulpy berry'
+
+Words: Islam Corano
+Gloss first word: b'EN'	b'The monotheistic religious system of Muslims founded in Arabia in the 7th century and based on the teachings of Muhammad as laid down in the Koran'
+Gloss second word: No gloss found
+
+Words: Neanderthal sport
+Senses not found
+
+Words: nepotismo re
+Gloss first word: b'EN'	b'Favoritism shown to relatives or close friends by those in power (as by giving them jobs)'
+Gloss second word: b'EN'	b'Star Wars is a 1977 American epic space opera film written and directed by George Lucas.'
+
+Words: personaggio persona
+Gloss first word: b'EN'	b'A supporting character is a character in a narrative that is not focused on by the primary storyline, but appears or is mentioned in the story enough to be more than just a minor character or a cameo appearance.'
+Gloss second word: b'EN'	b'A supporting character is a character in a narrative that is not focused on by the primary storyline, but appears or is mentioned in the story enough to be more than just a minor character or a cameo appearance.'
+
+Words: cisterna vagone
+Gloss first word: b'EN'	b'A large (usually metallic) vessel for holding gases or liquids'
+Gloss second word: b'EN'	b'A wheeled vehicle adapted to the rails of railroad'
+
+Words: Mercurio Giove
+Gloss first word: b'EN'	b'(Roman mythology) god of agriculture and vegetation; counterpart of Greek Cronus'
+Gloss second word: b'EN'	b'(Roman mythology) god of agriculture and vegetation; counterpart of Greek Cronus'
+
+Words: bronchite acetaminofene
+Gloss first word: b'EN'	b'Inflammation of the membranes lining the bronchial tubes'
+Gloss second word: b'EN'	b'An analgesic for mild pain but not for inflammation; also used as an antipyretic; (Datril, Tylenol, Panadol, Phenaphen, Tempra, and Anacin III are trademarks of brands of acetaminophen tablets)'
+
+Words: sangue corpo
+Senses not found
+
+Words: islamofobia ISIS
+Gloss first word: b'EN'	b'Prejudice against Muslims'
+Gloss second word: b'EN'	b'The Islamic State of Iraq and the Levant, also known as the Islamic State of Iraq and Syria or Islamic State of Iraq and al-Sham, Islamic State and by its Arabic language acronym Daesh, is a Salafi jihadist terrorist organisation and former unrecognised proto-state that follows a fundamentalist, Wahhabi, and heterodox doctrine of Sunni Islam.'
+
+Words: uncinetto uniforme
+Gloss first word: b'EN'	b'A needle with a hook on the end; used in crocheting'
+Gloss second word: b'EN'	b"Attire that is typically worn by a horseback rider (especially a woman's attire)"
+
+Words: Hadoop touchscreen
+Gloss first word: b'EN'	b'Apache Hadoop is a collection of open-source software utilities that facilitate using a network of many computers to solve problems involving massive amounts of data and computation.'
+Gloss second word: b'EN'	b'A computer display that enables the user to interact with the computer by touching areas on the screen'
+
+Words: combustibile fossile fossile
+Gloss first word: b'EN'	b"Fuel consisting of the remains of organisms preserved in rocks in the earth's crust with high carbon and hydrogen content"
+Gloss second word: b'EN'	b'The remains (or an impression) of a plant or animal that existed in a past geological age and that has been excavated from the soil'
+
+Words: mutante sociobiologia
+Gloss first word: b'EN'	b'(genetics) any event that changes genetic structure; any alteration in the inherited nucleic acid sequence of the genotype of an organism'
+Gloss second word: b'EN'	b'The branch of biology that conducts comparative studies of the social organization of animals (including human beings) with regard to its evolutionary history'
+
+Words: sorella fratello
+Gloss first word: b'EN'	b"A person's brother or sister"
+Gloss second word: b'EN'	b"A person's brother or sister"
+
+Words: matita storia
+Gloss first word: b'EN'	b'A pencil in projective geometry is a family of geometric objects with a common property, for example the set of lines that pass through a given point in a projective plane.'
+Gloss second word: b'EN'	b'The continuum of events occurring in succession leading from the past to the present and even into the future'
+
+Words: eczema dermatite
+Gloss first word: b'EN'	b'Generic term for inflammatory conditions of the skin; particularly with vesiculation in the acute stages'
+Gloss second word: b'EN'	b'Inflammation of the skin; skin becomes itchy and may develop blisters'
+
+Words: imperatore governatore
+Gloss first word: b'EN'	b'Conqueror of Gaul and master of Italy (100-44 BC)'
+Gloss second word: b'EN'	b'A Roman governor was an official either elected or appointed to be the chief administrator of Roman law throughout one or more of the many provinces constituting the Roman Empire.'
+
+Words: corona chiave
+Gloss first word: b'EN'	b'A musical notation (over a note or chord or rest) that indicates it is to be prolonged by an unspecified amount'
+Gloss second word: b'EN'	b'A musical notation written on a staff indicating the pitch of the notes following it'
+
+Words: algebra operazione
+Gloss first word: b'EN'	b'In mathematics, and more specifically in abstract algebra, a *-algebra is a mathematical structure consisting of two involutive rings R and A, where R is commutative and A has the structure of an associative algebra over R. Involutive algebras generalize the idea of a number system equipped with conjugation, for example the complex numbers and complex conjugation, matrices over the complex numbers and conjugate transpose, and linear operators over a Hilbert space and Hermitian adjoints.'
+Gloss second word: b'EN'	b'A medical procedure involving an incision with instruments; performed to repair damage or arrest disease in a living body'
+
+Words: pistone motore
+Gloss first word: b'EN'	b'Mechanical device that has a plunging or thrusting motion'
+Gloss second word: b'EN'	b'Motor that converts thermal energy to mechanical work'
+
+Words: borsa di studio retta
+Gloss first word: b'EN'	b'The treasury of a public institution or religious order'
+Gloss second word: b'EN'	b'A fee paid for instruction (especially for higher education)'
+
+Words: libro manoscritto
+Gloss first word: b'EN'	b'In graph theory, the girth of a graph is the length of a shortest cycle contained in the graph.'
+Gloss second word: b'EN'	b'An unbound manuscript of some ancient classic (as distinguished from a scroll)'
+
+Words: lantana bocca di leone
+Gloss first word: b'EN'	b'A flowering shrub'
+Gloss second word: b'EN'	b'Perennial native to the Mediterranean but widely cultivated for its purple or pink flowers'
+
+Words: buco nero vuoto
+Gloss first word: b'EN'	b'A region of space resulting from the collapse of a star; extremely high gravitational field'
+Gloss second word: b'EN'	b'Cosmic voids are vast spaces between filaments, which contain very few or no galaxies.'
+
+Words: Impero Persiano Ciro
+Gloss first word: b'EN'	b'An empire in southern Asia created by Cyrus the Great in the 6th century BC and destroyed by Alexander the Great in the 4th century BC'
+Gloss second word: b'EN'	b'Kyros or Cyrus, Ecumenical Patriarch of Constantinople from 705 to 712.'
+
+Words: editoriale notizia
+Gloss first word: b'EN'	b'An article giving opinions or perspectives'
+Gloss second word: b'EN'	b'A daily or weekly publication on folded sheets; contains news and articles and advertisements'
+
+Words: decorazione busta
+Gloss first word: b'EN'	b'The act of decorating something (in the hope of making it more attractive)'
+Gloss second word: b'EN'	b'In physics and engineering, the envelope of an oscillating signal is a smooth curve outlining its extremes.'
+
+Words: squalo balena aragosta
+Gloss first word: b'EN'	b'Large spotted shark of warm surface waters worldwide; resembles a whale and feeds chiefly on plankton'
+Gloss second word: b'EN'	b'Palinurus elephas is a spiny lobster, which is commonly caught in the Mediterranean Sea.'
+
+Words: mais granturco
+Gloss first word: b'EN'	b'Tall annual cereal grass bearing kernels on large ears: widely cultivated in America in many varieties; the principal cereal in Mexico and Central and South America since pre-Columbian times'
+Gloss second word: b'EN'	b'Tall annual cereal grass bearing kernels on large ears: widely cultivated in America in many varieties; the principal cereal in Mexico and Central and South America since pre-Columbian times'
+
