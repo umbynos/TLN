@@ -38,7 +38,8 @@ def nasari_to_dict(nasari_file):
     nasari_dict = {}
     for line in nasari_file:
         key = line.strip("\n").split(";")[1]
-        synset = line.split(";")[2:]
+        synset = line.strip("\n").split(";")[2:]
+        synset.reverse()
         nasari_dict[key.lower()] = synset
     return nasari_dict
 
