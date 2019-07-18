@@ -1,6 +1,9 @@
 # Text Segmentation
 La Text segmentation viene fatta attraverso il Text Tiling
 
+# Testo Esercizio
+Implementare un semplice sistema di segmentazione di testi ispirato al Text Tiling, e che usi / integri risorse come WordNet, named entities, etc.
+
 ## Appunti
 Usare articoli e vettore nasari di es3 di Radicioni.
 Suddividere l'articolo in frasi/paragrafi e sistemare in gruppi (per numero di frasi nel gruppo o per num totale di blocchi)
