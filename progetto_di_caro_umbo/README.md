@@ -12,6 +12,6 @@ Fare questa operazione per tutte le frasi all'interno di un blocco.
 
 È un metodo un po' stupido poichè il numero di divisioni rimane uguale all'inizio.
 
-## Apunti2
+## Appunti2
 Sarebbe magari meglio mettere una frase all'interno di un nuovo blocco se è molto diversa dal blocco precedente.
 Oppure scorro tutto il file e quando la frase successiva è molto diversa dalla precedente divido.
