@@ -27,9 +27,15 @@ def main():
             lines_no_stopwords.append(remove_stopwords(line))
     file.close()
 
-    # divide sentences into blocks
+    # divide sentences into blocks with max 3 elem
     blocks = list(chunks(lines, 3))
     print(blocks)
+
+    # compute similarity between sentences in a block
+
+    for block in blocks:
+        for line in blocks:
+            print()
 
     # rearrange sentences into blocks
 
@@ -55,7 +61,7 @@ def chunks(l, n):
         yield l[i:i + n]
 
 
-def weighted_overlap(vector1, vector2):  # i valori nei vettori devono essere in ordine crescente
+def weighted_overlap(vector1, vector2):
     overlap = []
     numerator = 0
     denominator = 0

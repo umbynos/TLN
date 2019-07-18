@@ -15,3 +15,11 @@ Fare questa operazione per tutte le frasi all'interno di un blocco.
 ## Appunti2
 Sarebbe magari meglio mettere una frase all'interno di un nuovo blocco se è molto diversa dal blocco precedente.
 Oppure scorro tutto il file e quando la frase successiva è molto diversa dalla precedente divido.
+
+# ToDo
+1) Lettura e inizializazione files [FATTO]
+2) Creazione strutture dati [FATTO]
+3) Weighted Overlap [FATTO da provare]
+4) Suddivisione in blocchi [FATTO]
+5) Fare WO sulle varie frasi e applicare spostamento della suddivisione
+6) Magari applicare algo di inizializzazione più intelligente
