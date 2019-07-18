@@ -21,8 +21,8 @@ using term repetition has three main parts:
 - Divide input text into individual lexical units (list of words)
 - Skip title
 - Convert to lower-case
-- Skip stop words
-- Reduce tokens to their morphemes (Kartunen, Koskenniemi, and Kaplan (1987))
+- Skip stop words and punctuation
+- Reduce tokens to their morphemes
 - Subdivide text into pseudosentences of a predefined
  size w (equal-sized units: number of shared terms
 between two long sentences and between a long and a short

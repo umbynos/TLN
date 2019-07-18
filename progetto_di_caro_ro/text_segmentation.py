@@ -17,14 +17,21 @@ def main():
     words = extrapolate_file(trump_file)
     # skip stop words and punctuation + convert to lower-case + reduce to morpheme
     tokens = tokenize_words(words)
-    print(words)
-    print(tokens)
-    # decidere in quante parti suddividere il testo
-    # suddividerlo
+    # find w
+    # DIMENSIONE DI W???
+    # each segment contains 10% of the words (not considering punctuation)
+    no_punct_words = []
+    for word in words:
+        if word not in list(string.punctuation):
+            no_punct_words.append(word)
+    w = int(0.1 * len(no_punct_words))
+    # Subdivide text into pseudosentences of a predefined size w
+    pseudosentences = list_pseudosentences(w, words)
+    for elem in pseudosentences:
+        print(elem)
     # scegliere il metodo per calcolare la coesione
     # applicare il metodo
     # risistemare le finestre
-    return 1
 
 
 # divide input text into individual lexical units (list of words)
@@ -34,6 +41,7 @@ def extrapolate_file(file_to_open):
     for line in file:
         for word in word_tokenize(line):
             words.append(word)
+    file.close()
     return words
 
 
@@ -48,6 +56,23 @@ def tokenize_words(words):
         if word not in sw_punct:
             tokens.append(lemmatizer.lemmatize(word.lower()))
     return tokens
+
+
+# Subdivide text into pseudosentences of a predefined size w
+def list_pseudosentences(w, words):
+    pseudosentences = []
+    pseudosentence = ""
+    count = w
+    for i in range(len(words)):
+        if count > 0:
+            pseudosentence += words[i] + " "
+            if words[i] not in list(string.punctuation):
+                count -= 1
+        else:
+            count = w
+            pseudosentences.append(pseudosentence)
+            pseudosentence = ""
+    return pseudosentences
 
 
 if __name__ == "__main__":
