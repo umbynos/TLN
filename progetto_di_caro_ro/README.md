@@ -34,7 +34,12 @@ with a record of the token-sequence number
 it occurred in, and the number of times it appeared in the 
 token-sequence
 - A record is also kept of the locations of the paragraph
-breaks within the text
+breaks within the text  
+NOTA: questo ed il record precedente non sono stati fatti
 - Stop words contribute to the computation of the size of
 the token-sequence, but not to the computation of
 the similarity between blocks of text.
+
+# TO DO
+Lexical Score Determination  
+Leggere pdf pag 16 e fare cosa dice
