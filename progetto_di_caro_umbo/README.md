@@ -21,5 +21,6 @@ Oppure scorro tutto il file e quando la frase successiva è molto diversa dalla 
 2) Creazione strutture dati [FATTO]
 3) Weighted Overlap [FATTO da provare]
 4) Suddivisione in blocchi [FATTO]
-5) Fare WO sulle varie frasi e applicare spostamento della suddivisione
-6) Magari applicare algo di inizializzazione più intelligente
+5) Fare WO sulle varie frasi nei cari blocchi [FATTO]
+6) Applicare spostamento della suddivisione [DUNNO]
+7) Magari applicare algo di elaborazione più intelligente

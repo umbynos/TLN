@@ -21,21 +21,47 @@ def main():
     # create data structures
     lines = []
     lines_no_stopwords = []
+    i = 0
     for line_number, line in enumerate(file):
         if line != "\n" and not line.startswith("#") and line_number != 4:
-            lines.append(line)
+            #  contains a list of sentences from the articles
+            lines.append((i, line.strip("\n")))
+            #  contains a list of sets of the words taken from the sentences (w/o the stopwords)
             lines_no_stopwords.append(remove_stopwords(line))
+            i += 1
     file.close()
 
     # divide sentences into blocks with max 3 elem
     blocks = list(chunks(lines, 3))
-    print(blocks)
+
+    # print the division of the paragraphs
+    for block in blocks:
+        for sent in block:
+            print(sent[0], end=" ")
+        print("|", end=" ")
+    print("")
 
     # compute similarity between sentences in a block
+    wo_list = []
+    for b in blocks:
+        if len(b) > 1: #  the block must contain at least 2 elems
+            for index_1, index_2 in zip(b[:-1],b[1:]):
+                wo_partial = 0
+                i_1 = index_1[0]
+                i_2 = index_2[0]
+                for word1 in lines_no_stopwords[i_1]:
+                    v1 = search_in_dict(word1, nasari_dict)
+                    for word2 in lines_no_stopwords[i_2]:
+                        v2 = search_in_dict(word2, nasari_dict)
+                        if v1 and v2: #  se v1 e v2 non sono vuoti
+                            wo_partial += weighted_overlap(v1,v2)
+                wo_list.append((i_1, i_2, round(wo_partial, 3)))
+    print(wo_list)
 
-    for block in blocks:
-        for line in blocks:
-            print()
+    # for che scorre tutti i blocchi
+        # for che scorre a due a due le frasi all'interno del blocco
+            # calcolo della wo su ogni coppia di parole (e le sommo?)
+            #salvo la wo da qualche parte
 
     # rearrange sentences into blocks
 
@@ -78,9 +104,14 @@ def weighted_overlap(vector1, vector2):
     if denominator == 0:
         return 0
     else:
-        return sqrt(numerator / denominator)
-    return similarity  # between [0,1]
+        return sqrt(numerator / denominator) # between [0,1]
 
+
+def search_in_dict(w, nasari_d):
+    if w in nasari_d:
+        return nasari_d[w]
+    else:
+        return []
 
 if __name__ == "__main__":
     main()
