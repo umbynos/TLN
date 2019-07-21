@@ -35,16 +35,12 @@ def main():
     blocks = list(chunks(lines, 3))
 
     # print the division of the paragraphs
-    for block in blocks:
-        for sent in block:
-            print(sent[0], end=" ")
-        print("|", end=" ")
-    print("")
+    print_blocks(blocks)
 
     # compute similarity between sentences in a block
-    wo_list = []
+    wo_all = {}
     for b in blocks:
-        if len(b) > 1: #  the block must contain at least 2 elems
+        if len(b) > 1: #  the block must contain at least 2 elems, to compute similarity
             for index_1, index_2 in zip(b[:-1],b[1:]):
                 wo_partial = 0
                 i_1 = index_1[0]
@@ -55,16 +51,27 @@ def main():
                         v2 = search_in_dict(word2, nasari_dict)
                         if v1 and v2: #  se v1 e v2 non sono vuoti
                             wo_partial += weighted_overlap(v1,v2)
-                wo_list.append((i_1, i_2, round(wo_partial, 3)))
-    print(wo_list)
-
-    # for che scorre tutti i blocchi
-        # for che scorre a due a due le frasi all'interno del blocco
-            # calcolo della wo su ogni coppia di parole (e le sommo?)
-            #salvo la wo da qualche parte
+                wo_all[(i_1, i_2)] = round(wo_partial, 3)
+    print(wo_all)
 
     # rearrange sentences into blocks
 
+    for block in blocks:
+        min = 10 #  initialize to infty
+        for index_1, index_2 in zip(b[:-1], b[1:]):
+            i_1 = index_1[0]
+            i_2 = index_2[0]
+            wo = wo_all[(i_1, i_2)]
+            if wo < min: #  update min
+                min = wo
+                i1_min = i_1
+                i2_min = i_2
+
+        #check in which block put the element to pop.
+        #check which element to pop (1 or 2)
+        # OR simply put a "|" between the two elements when printing them -> remove the block data structure: useless
+        #everytime simply print the division (simpler this way)
+        #check if it's correct to use the sentences and not the pseudosentences.
 
 def nasari_to_dict(nasari_file):
     nasari_dict = {}
@@ -112,6 +119,13 @@ def search_in_dict(w, nasari_d):
         return nasari_d[w]
     else:
         return []
+
+def print_blocks(blocks):
+    for block in blocks:
+        for sent in block:
+            print(sent[0], end=" ")
+        print("|", end=" ")
+    print("")
 
 if __name__ == "__main__":
     main()
