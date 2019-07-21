@@ -4,6 +4,7 @@
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+import progetto_di_caro_ro.similarity as sim
 import string
 
 
@@ -27,8 +28,6 @@ def main():
     w = int(0.1 * len(no_punct_words))
     # Subdivide text into pseudosentences of a predefined size w
     pseudosentences = list_pseudosentences(w, words)
-    for elem in pseudosentences:
-        print(elem)
     # scegliere il metodo per calcolare la coesione
     # applicare il metodo
     # risistemare le finestre

@@ -40,6 +40,34 @@ NOTA: questo ed il record precedente non sono stati fatti
 the token-sequence, but not to the computation of
 the similarity between blocks of text.
 
+### Lexical Score Determination
+Vediamo due tipi di score:
+- Block comparison: confronta blocchi adiacenti di testi per
+vedere quanto sono simili in base a quante parole hanno in
+comune (similarità lessicale). k: dimensione dei blocchi.  
+La similarità si calcola per ogni sequenza di token: viene assegnato
+uno score ad ogni gap di sequenze di token i in base a quanto
+i blocchi che vanno da i-k a i sono simili ai blocchi che vanno
+da i+1 a i+k+1.  
+Similarità tra blocchi: siano b1={token-sequence_{i-k},...,
+token-sequence_{i}} e b2={token-sequence_{i+l},...,
+token-sequence_{i+k+l}}, allora score = formula pag 17
+- Vocabulary Introduxtion Method: assegna uno score ad una
+sequeza di token in base a quante nuove parole ci sono 
+nell'intervallo in cui si trova il punto di mezzo (midpoint)  
+Numero di parole nuove / numero di parole totali
+
+NOTA: si utilizzano le pseudo sentences perché i paragrafi
+hanno una lunghezza irregolare che porterebbe ad un confronto
+sbilanciato. Per usarli ci andrebbe una normalizzazione  
+
+Non utilizzo nessuno dei due: utilizzo WordNet e quindi come
+valutazione di similarità utilizzo Wu & Palmer o Leacock Chodorow
+
+### Boundary Identification
+
+
+
 # TO DO
 Lexical Score Determination  
 Leggere pdf pag 16 e fare cosa dice
