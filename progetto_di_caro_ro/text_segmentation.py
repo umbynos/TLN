@@ -18,18 +18,23 @@ def main():
     words = extrapolate_file(trump_file)
     # skip stop words and punctuation + convert to lower-case + reduce to morpheme
     tokens = tokenize_words(words)
-    # find w
-    # DIMENSIONE DI W???
-    # each segment contains 10% of the words (not considering punctuation)
+    # Subdivide text into pseudosentences of a predefined size w
+    w = 20
+    pseudosentences = list_pseudosentences(w, words)
+    # find k: number of sentences in each block
+    # each block contains 10% of the words text (not considering punctuation)
     no_punct_words = []
     for word in words:
         if word not in list(string.punctuation):
             no_punct_words.append(word)
-    w = int(0.1 * len(no_punct_words))
-    # Subdivide text into pseudosentences of a predefined size w
-    pseudosentences = list_pseudosentences(w, words)
-    # scegliere il metodo per calcolare la coesione
-    # applicare il metodo
+    k = int(0.1 * len(no_punct_words))
+    # Lexical Score Determination
+    # Prendere la formula a pagina 17. w di un t può essere la media di wup che t ha con tutte le
+    # altre parole della pseudo sentence
+    weights = find_weights(pseudosentences)
+    # weights: tested with first pseudo sentence: all zero.Check others
+    # Boundary Identification
+    # trovare depth score
     # risistemare le finestre
 
 
@@ -39,13 +44,13 @@ def extrapolate_file(file_to_open):
     words = []
     for line in file:
         for word in word_tokenize(line):
-            words.append(word)
+            words.append(word.lower())
     file.close()
     return words
 
 
 # LASCIA DELLA PUNTEGGIATURA: ' " (FORSE) ALTRO. LASCIARLA E QUANDO NON LO TROVI NON LO CONSIDERI O AGGIUNGERLE A MANO?
-# remove stop words and punctuation + convert to lower-case + reduce to morpheme
+# remove stop words and punctuation + reduce to morpheme
 # sw_punct: list containing english stop words and punctuation
 def tokenize_words(words):
     tokens = []
@@ -53,7 +58,7 @@ def tokenize_words(words):
     lemmatizer = WordNetLemmatizer()
     for word in words:
         if word not in sw_punct:
-            tokens.append(lemmatizer.lemmatize(word.lower()))
+            tokens.append(lemmatizer.lemmatize(word))
     return tokens
 
 
@@ -72,6 +77,27 @@ def list_pseudosentences(w, words):
             pseudosentences.append(pseudosentence)
             pseudosentence = ""
     return pseudosentences
+
+
+def find_weights(pseudosentences):
+    weights = []
+    # per ogni pseudo frase
+    for pseudosent in pseudosentences:
+        # per ogni parola
+        words = word_tokenize(pseudosent)
+        wups = []
+        for i, word1 in enumerate(words):
+            if word1 not in list(string.punctuation):
+                # calcolo wup con ogni altra parola in pseudo frase
+                for j, word2 in enumerate(words):
+                    if i != j and word2 not in list(string.punctuation):
+                        wups.append(sim.wu_and_palmer(word1, word2))
+                # faccio la media
+                weight = 0.0
+                for wup in wups:
+                    weight += wup
+                weights.append(weight / len(wups))
+    return weights
 
 
 if __name__ == "__main__":

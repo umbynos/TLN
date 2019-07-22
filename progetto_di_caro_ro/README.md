@@ -69,5 +69,5 @@ valutazione di similarità utilizzo Wu & Palmer o Leacock Chodorow
 
 
 # TO DO
-Lexical Score Determination  
-Leggere pdf pag 16 e fare cosa dice
+w: dimensione pseudo frasi  
+k: numero di pseudo frasi all'interno dei blocchi
