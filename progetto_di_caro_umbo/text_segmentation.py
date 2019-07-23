@@ -56,22 +56,25 @@ def main():
 
     # rearrange sentences into blocks
 
-    for block in blocks:
-        min = 10 #  initialize to infty
-        for index_1, index_2 in zip(b[:-1], b[1:]):
+    new_blocks = [[]]
+    i1_min = i2_min = 0
+    for i, block in enumerate(blocks):
+        min = None
+        for index_1, index_2 in zip(block[:-1], block[1:]):
             i_1 = index_1[0]
             i_2 = index_2[0]
             wo = wo_all[(i_1, i_2)]
-            if wo < min: #  update min
+            if min == None or wo < min:
                 min = wo
                 i1_min = i_1
                 i2_min = i_2
+        new_block1 = [old_tuple for old_tuple in block if old_tuple[0] <= i1_min]
+        new_blocks[i].extend(new_block1)
+        new_block2 = [old_tuple for old_tuple in block if old_tuple[0] >= i2_min]
+        new_blocks.append(new_block2)
 
-        #check in which block put the element to pop.
-        #check which element to pop (1 or 2)
-        # OR simply put a "|" between the two elements when printing them -> remove the block data structure: useless
-        #everytime simply print the division (simpler this way)
-        #check if it's correct to use the sentences and not the pseudosentences.
+    print_blocks(new_blocks)
+
 
 def nasari_to_dict(nasari_file):
     nasari_dict = {}
