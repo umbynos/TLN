@@ -23,20 +23,13 @@ def main():
     pseudosentences = list_pseudosentences(w, words)
     # find k: number of sentences in each block
     # each block contains 10% of the words text (not considering punctuation)
-    no_punct_words = []
-    for word in words:
-        if word not in list(string.punctuation):
-            no_punct_words.append(word)
-    k = int(0.1 * len(no_punct_words))
+    k = int(0.1 * len(pseudosentences))  # SOLITAMENTE QUANTI ARGOMENTI AFFRONTA UN TESTO?
+    # put pseudosentences in blocks of length k
+    blocks = find_blocks(pseudosentences, k)
     # Lexical Score Determination
-    # Prendere la formula a pagina 17. w di un t può essere la media di wup che t ha con tutte le
-    # altre parole della pseudo sentence
+    # dentro ad ogni blocco confronti le parole in pseudo frasi contigue
     weights = find_weights(pseudosentences)
-    # weights: tested with first pseudo sentence: all zero.Check others
     # Boundary Identification
-    # trovare depth score
-    # risistemare le finestre
-
 
 # divide input text into individual lexical units (list of words)
 def extrapolate_file(file_to_open):
@@ -69,14 +62,30 @@ def list_pseudosentences(w, words):
     count = w
     for i in range(len(words)):
         if count > 0:
-            pseudosentence += words[i] + " "
             if words[i] not in list(string.punctuation):
+                pseudosentence += words[i] + " "
                 count -= 1
         else:
             count = w
             pseudosentences.append(pseudosentence)
             pseudosentence = ""
     return pseudosentences
+
+
+# put pseudosentences in blocks of length k
+def find_blocks(pseudosentences, k):
+    count = k
+    blocks = []
+    block = []
+    for pseudosent in pseudosentences:
+        if count > 0:
+            block.append(pseudosent)
+            count -= 1
+        else:
+            count = k
+            blocks.append(block)
+            block = []
+    return blocks
 
 
 def find_weights(pseudosentences):
