@@ -86,6 +86,8 @@ def find_blocks(pseudosentences, k):
             count = k
             blocks.append(block)
             block = []
+    if block:  # if block isn't empty
+        blocks.append(block)
     return blocks
 
 
