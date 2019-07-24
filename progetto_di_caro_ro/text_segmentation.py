@@ -68,7 +68,8 @@ def list_pseudosentences(w, words):
         else:
             count = w
             pseudosentences.append(pseudosentence)
-            pseudosentence = ""
+            pseudosentence = "" + words[i] + " "
+    pseudosentences.append(pseudosentence)
     return pseudosentences
 
 
