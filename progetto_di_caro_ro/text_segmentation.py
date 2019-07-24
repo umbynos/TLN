@@ -6,6 +6,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import progetto_di_caro_ro.similarity as sim
 import string
+import copy
 
 
 def main():
@@ -28,24 +29,28 @@ def main():
     # Lexical Score Determination
     dict_similarities = find_similarities(blocks)
     # Boundary Identification
-    new_blocks = find_new_blocks(dict_similarities, blocks)
+    iteration_number = 3
+    new_segmentation = find_new_boundaries(iteration_number, dict_similarities, blocks)
     print("###########################")
-    print("OLD BLOCKS' LENGTH")
+    print("## OLD SEGMENTS' LENGTH ##")
+    print("###########################")
     for i, block in enumerate(blocks):
         print(str(i) + " " + str(len(block)))
     print("###########################")
-    print("NEW BLOCKS' LENGTH")
-    for i, block in enumerate(new_blocks):
+    print("## NEW SEGMENTS' LENGTH ##")
+    print("###########################")
+    for i, block in enumerate(new_segmentation):
         print(str(i) + " " + str(len(block)))
     print("###########################")
-    print("OLD BLOCKS")
+    print("###### OLD SEGMENTS ######")
+    print("###########################")
     for block in blocks:
         print(block)
     print("###########################")
-    print("NEW BLOCKS")
-    for block in new_blocks:
-        print(block)
+    print("###### NEW SEGMENTS ######")
     print("###########################")
+    for block in new_segmentation:
+        print(block)
 
 
 # divide input text into individual lexical units (list of words)
@@ -129,6 +134,14 @@ def find_similarities(blocks):
                     dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)] = weight / len(wups)  # O SOLO IL PESO SENZA DIVIDERE???
                 pseudo_sent_pos += 1
     return dict_similarities
+
+
+def find_new_boundaries(iteration_number, dict_similarities, blocks):
+    aux_blocks = copy.deepcopy(blocks)
+    while iteration_number > 0:
+        aux_blocks = copy.deepcopy(find_new_blocks(dict_similarities, aux_blocks))
+        iteration_number -= 1
+    return aux_blocks
 
 
 def find_new_blocks(dict_similarities, blocks):
