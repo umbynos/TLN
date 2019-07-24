@@ -30,7 +30,23 @@ def main():
     dict_similarities = find_similarities(blocks)
     # Boundary Identification
     new_blocks = find_new_blocks(dict_similarities, blocks)
-    print()
+    print("###########################")
+    print("OLD BLOCKS' LENGTH")
+    for i, block in enumerate(blocks):
+        print(str(i) + " " + str(len(block)))
+    print("###########################")
+    print("NEW BLOCKS' LENGTH")
+    for i, block in enumerate(new_blocks):
+        print(str(i) + " " + str(len(block)))
+    print("###########################")
+    print("OLD BLOCKS")
+    for block in blocks:
+        print(block)
+    print("###########################")
+    print("NEW BLOCKS")
+    for block in new_blocks:
+        print(block)
+    print("###########################")
 
 
 # divide input text into individual lexical units (list of words)
@@ -116,21 +132,27 @@ def find_similarities(blocks):
     return dict_similarities
 
 
-# NON C'è SIMMETRIA TRA GLI INDICI -> METTERE LE SIM IN UN DIZIONARIO: KEY: POS DELLE PSEUDO FRASI; VALORE: SIMILARITà
-def find_new_blocks(similarities, blocks):
+def find_new_blocks(dict_similarities, blocks):
     new_blocks = []
     new_block = []
-    for block_sims in similarities:
-        minimum = block_sims[0]
-        i = 0
-        for j, similarity in enumerate(block_sims):
-            if similarity < minimum:
-                minimum = similarity
-                i = j
-        for k in range(i):
-            new_block.append(blocks[i][k])
+    pseudo_sent_pos = 0
+    bad_pseudosent_pos = 0
+    for b, block in enumerate(blocks):
+        minimum = dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)]
+        for ps in range(len(block)-1): # -1: l'ultimo non lo considero: andrei oltre
+            actual_sim = dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)]
+            if actual_sim < minimum:
+                minimum = actual_sim
+                bad_pseudosent_pos = ps+1
+            pseudo_sent_pos += 1
+        for k in range(bad_pseudosent_pos):
+            new_block.append(block[k])
         new_blocks.append(new_block)
         new_block = []
+        remaining = bad_pseudosent_pos
+        while remaining < len(block):
+            new_block.append(block[remaining])
+            remaining += 1
     return new_blocks
 
 
