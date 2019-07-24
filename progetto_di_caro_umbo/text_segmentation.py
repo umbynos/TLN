@@ -81,7 +81,7 @@ def weighted_overlap(vector1, vector2):
             if word1 == word2:  # if they contains the same word
                 overlap.append([word1, index1, index2])
     for (word, value1, value2) in overlap:
-        numerator += (index1+index2)**(-1)  # TO DO: Fix this
+        numerator += (value1+1+value2+1)**(-1)  # +1 because index starts from 0
     for i in range(1, len(overlap)):
         denominator += (2*i)**(-1)
     if denominator == 0:
