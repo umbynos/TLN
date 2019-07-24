@@ -22,8 +22,8 @@ def wu_and_palmer(word1, word2):
                         cs = new_cs
                         res1 = s1
                         res2 = s2
-        if res1 and res2: # not all synsets have a root in common
-            print("wu_and_palmer WN: ", res1.wup_similarity(res2))
+        # if res1 and res2:  # not all synsets have a root in common
+        #    print("wu_and_palmer WN: ", res1.wup_similarity(res2))
     return cs
 
 

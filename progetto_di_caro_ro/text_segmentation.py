@@ -16,20 +16,21 @@ def main():
     moon_file = "data/The-Last-Man-on-the-Moon--Eugene-Cernan-gives-a-compelling-account.txt"
     # divide input text into individual lexical units (list of words)
     words = extrapolate_file(trump_file)
-    # skip stop words and punctuation + convert to lower-case + reduce to morpheme
-    tokens = tokenize_words(words)
     # Subdivide text into pseudosentences of a predefined size w
-    w = 20
+    w = 10
     pseudosentences = list_pseudosentences(w, words)
     # find k: number of sentences in each block
-    # each block contains 10% of the words text (not considering punctuation)
+    # each block contains 10% of the pseudosentences text (not considering punctuation)
     k = int(0.1 * len(pseudosentences))  # SOLITAMENTE QUANTI ARGOMENTI AFFRONTA UN TESTO?
     # put pseudosentences in blocks of length k
+    # block = [strings]
     blocks = find_blocks(pseudosentences, k)
     # Lexical Score Determination
-    # dentro ad ogni blocco confronti le parole in pseudo frasi contigue
-    weights = find_weights(pseudosentences)
+    # dentro ad ogni blocco confronti le parole di pseudo frasi contigue
+    similarities = find_similarities(blocks)
+    print()
     # Boundary Identification
+
 
 # divide input text into individual lexical units (list of words)
 def extrapolate_file(file_to_open):
@@ -42,14 +43,14 @@ def extrapolate_file(file_to_open):
     return words
 
 
-# LASCIA DELLA PUNTEGGIATURA: ' " (FORSE) ALTRO. LASCIARLA E QUANDO NON LO TROVI NON LO CONSIDERI O AGGIUNGERLE A MANO?
+# LASCIA DELLA PUNTEGGIATURA: ' " (FORSE) ALTRO. LASCIARLA E QUANDO NON LO TROVI NON LO CONSIDERI O AGGIUNGERLE A MANO? (questi ci sono già  + ['\'', '\"'])
 # remove stop words and punctuation + reduce to morpheme
 # sw_punct: list containing english stop words and punctuation
 def tokenize_words(words):
     tokens = []
     sw_punct = stopwords.words('english') + list(string.punctuation)
     lemmatizer = WordNetLemmatizer()
-    for word in words:
+    for word in word_tokenize(words):
         if word not in sw_punct:
             tokens.append(lemmatizer.lemmatize(word))
     return tokens
@@ -91,25 +92,29 @@ def find_blocks(pseudosentences, k):
     return blocks
 
 
-def find_weights(pseudosentences):
-    weights = []
-    # per ogni pseudo frase
-    for pseudosent in pseudosentences:
-        # per ogni parola
-        words = word_tokenize(pseudosent)
-        wups = []
-        for i, word1 in enumerate(words):
-            if word1 not in list(string.punctuation):
-                # calcolo wup con ogni altra parola in pseudo frase
-                for j, word2 in enumerate(words):
-                    if i != j and word2 not in list(string.punctuation):
-                        wups.append(sim.wu_and_palmer(word1, word2))
-                # faccio la media
+# compute wup similarity for every word in the first pseudo sentence with every word of the second
+def find_similarities(blocks):
+    similarities = []
+    block_similarities = []
+    for block in blocks:
+        for i in range(len(block)):
+            if i+1 < len(block):
+                # token:  no stopwords and punctuation + morpheme
+                tokens1 = tokenize_words(block[i])
+                tokens2 = tokenize_words(block[i+1])
+                wups = []
+                for token1 in tokens1:
+                    for token2 in tokens2:
+                        wups.append(sim.wu_and_palmer(token1, token2))
+                    # average
                 weight = 0.0
                 for wup in wups:
                     weight += wup
-                weights.append(weight / len(wups))
-    return weights
+                block_similarities.append(weight / len(wups))  # O SOLO IL PESO SENZA DIVIDERE???
+            elif block_similarities:
+                similarities.append(block_similarities)
+                block_similarities = []
+    return similarities
 
 
 if __name__ == "__main__":
