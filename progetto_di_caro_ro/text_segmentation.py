@@ -27,9 +27,10 @@ def main():
     blocks = find_blocks(pseudosentences, k)
     # Lexical Score Determination
     # dentro ad ogni blocco confronti le parole di pseudo frasi contigue
-    similarities = find_similarities(blocks)
-    print()
+    dict_similarities = find_similarities(blocks)
     # Boundary Identification
+    new_blocks = find_new_blocks(dict_similarities, blocks)
+    print()
 
 
 # divide input text into individual lexical units (list of words)
@@ -94,8 +95,8 @@ def find_blocks(pseudosentences, k):
 
 # compute wup similarity for every word in the first pseudo sentence with every word of the second
 def find_similarities(blocks):
-    similarities = []
-    block_similarities = []
+    dict_similarities = {}
+    pseudo_sent_pos = 0
     for block in blocks:
         for i in range(len(block)):
             if i+1 < len(block):
@@ -110,11 +111,27 @@ def find_similarities(blocks):
                 weight = 0.0
                 for wup in wups:
                     weight += wup
-                block_similarities.append(weight / len(wups))  # O SOLO IL PESO SENZA DIVIDERE???
-            elif block_similarities:
-                similarities.append(block_similarities)
-                block_similarities = []
-    return similarities
+                dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)] = weight / len(wups)  # O SOLO IL PESO SENZA DIVIDERE???
+                pseudo_sent_pos += 1
+    return dict_similarities
+
+
+# NON C'è SIMMETRIA TRA GLI INDICI -> METTERE LE SIM IN UN DIZIONARIO: KEY: POS DELLE PSEUDO FRASI; VALORE: SIMILARITà
+def find_new_blocks(similarities, blocks):
+    new_blocks = []
+    new_block = []
+    for block_sims in similarities:
+        minimum = block_sims[0]
+        i = 0
+        for j, similarity in enumerate(block_sims):
+            if similarity < minimum:
+                minimum = similarity
+                i = j
+        for k in range(i):
+            new_block.append(blocks[i][k])
+        new_blocks.append(new_block)
+        new_block = []
+    return new_blocks
 
 
 if __name__ == "__main__":
