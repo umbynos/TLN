@@ -1,4 +1,4 @@
-# Text Segmentation with Text Tiling method
+# Text Segmentation with Text Tiling Method
 
 
 from nltk.tokenize import word_tokenize
@@ -20,13 +20,12 @@ def main():
     w = 10
     pseudosentences = list_pseudosentences(w, words)
     # find k: number of sentences in each block
-    # each block contains 10% of the pseudosentences text (not considering punctuation)
+    # each block contains 10% of the pseudosentences text
     k = int(0.1 * len(pseudosentences))  # SOLITAMENTE QUANTI ARGOMENTI AFFRONTA UN TESTO?
     # put pseudosentences in blocks of length k
-    # block = [strings]
+    # block type: [strings]
     blocks = find_blocks(pseudosentences, k)
     # Lexical Score Determination
-    # dentro ad ogni blocco confronti le parole di pseudo frasi contigue
     dict_similarities = find_similarities(blocks)
     # Boundary Identification
     new_blocks = find_new_blocks(dict_similarities, blocks)
@@ -60,8 +59,7 @@ def extrapolate_file(file_to_open):
     return words
 
 
-# LASCIA DELLA PUNTEGGIATURA: ' " (FORSE) ALTRO. LASCIARLA E QUANDO NON LO TROVI NON LO CONSIDERI O AGGIUNGERLE A MANO? (questi ci sono già  + ['\'', '\"'])
-# remove stop words and punctuation + reduce to morpheme
+# remove stop words and punctuation + reduce to lemma
 # sw_punct: list containing english stop words and punctuation
 def tokenize_words(words):
     tokens = []
@@ -116,18 +114,19 @@ def find_similarities(blocks):
     for block in blocks:
         for i in range(len(block)):
             if i+1 < len(block):
-                # token:  no stopwords and punctuation + morpheme
+                # token:  no stopwords and punctuation + lemma
                 tokens1 = tokenize_words(block[i])
                 tokens2 = tokenize_words(block[i+1])
                 wups = []
                 for token1 in tokens1:
                     for token2 in tokens2:
                         wups.append(sim.wu_and_palmer(token1, token2))
-                    # average
+                # average
                 weight = 0.0
                 for wup in wups:
                     weight += wup
-                dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)] = weight / len(wups)  # O SOLO IL PESO SENZA DIVIDERE???
+                if len(wups) > 0:
+                    dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)] = weight / len(wups)  # O SOLO IL PESO SENZA DIVIDERE???
                 pseudo_sent_pos += 1
     return dict_similarities
 
@@ -136,10 +135,10 @@ def find_new_blocks(dict_similarities, blocks):
     new_blocks = []
     new_block = []
     pseudo_sent_pos = 0
-    bad_pseudosent_pos = 0
+    bad_pseudosent_pos = 1  # if the minimum is between the first couple, is moved the pseudosentence with index 1
     for b, block in enumerate(blocks):
         minimum = dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)]
-        for ps in range(len(block)-1): # -1: l'ultimo non lo considero: andrei oltre
+        for ps in range(len(block)-1):  # -1: if last one is considered it goes out of range
             actual_sim = dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)]
             if actual_sim < minimum:
                 minimum = actual_sim
@@ -153,6 +152,8 @@ def find_new_blocks(dict_similarities, blocks):
         while remaining < len(block):
             new_block.append(block[remaining])
             remaining += 1
+    if new_block:  # if new_block isn't empty
+        new_blocks.append(new_block)
     return new_blocks
 
 
