@@ -44,9 +44,13 @@ def main():
     wo_all = weighted_overlap_sim(blocks, lines_no_stopwords, nasari_dict)
     print(wo_all)
 
-    # rearrange sentences into blocks using wo_all
-    new_blocks = move_separators(blocks, wo_all)
-    print_blocks(new_blocks)
+    for index in range(3):
+        # rearrange sentences into blocks using wo_all
+        new_blocks = move_separators(blocks, wo_all)
+        print_blocks(new_blocks)
+        wo_all = weighted_overlap_sim(new_blocks, lines_no_stopwords, nasari_dict)
+        print(wo_all)
+        blocks = new_blocks
 
 
 def nasari_to_dict(nasari_file):
@@ -126,7 +130,7 @@ def weighted_overlap_sim(blocks, lines_no_stopwords, nasari_dict):
 
 
 def move_separators(blocks, wo_all):
-    new_blocks = [[]]  # add empry list in order to use .extend
+    new_blocks = [[]]  # add empty list in order to use .extend
     i1_min = i2_min = 0
     for i, block in enumerate(blocks):
         minimum = None
@@ -138,14 +142,21 @@ def move_separators(blocks, wo_all):
                 minimum = wo
                 i1_min = i_1
                 i2_min = i_2
-        # create the first part of the split block
-        new_block1 = [old_tuple for old_tuple in block if old_tuple[0] <= i1_min]
-        # add it to the previous one (empty if it's the first)
-        new_blocks[i].extend(new_block1)
-        # create the second part of the split block
-        new_block2 = [old_tuple for old_tuple in block if old_tuple[0] >= i2_min]
-        # create the new block in the list
-        new_blocks.append(new_block2)
+        if len(blocks[i]) > 1:  # split the block only if it contains at least 2 elems
+            # create the first part of the split block
+            new_block1 = [old_tuple for old_tuple in block if old_tuple[0] <= i1_min]
+            # add it to the previous one (empty if it's the first)
+            new_blocks[i].extend(new_block1)
+            # create the second part of the split block
+            new_block2 = [old_tuple for old_tuple in block if old_tuple[0] >= i2_min]
+            # create the new block in the list
+            new_blocks.append(new_block2)
+        else:
+            new_blocks[i].extend(block)
+            if i < len(blocks)-1:  # if it's the last elem
+                new_blocks.append([])
+
+
     return new_blocks
 
 
