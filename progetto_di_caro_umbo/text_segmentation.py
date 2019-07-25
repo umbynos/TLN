@@ -1,6 +1,7 @@
 import string
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
 from math import sqrt
 
 
@@ -61,7 +62,8 @@ def nasari_to_dict(nasari_file):
 def remove_stopwords(sentence):
     # added symbols not present in string.punctuation
     stop_words = stopwords.words('english') + list(string.punctuation + '–' + '“' + '’' + '”')
-    return {word.lower() for word in word_tokenize(sentence) if word not in stop_words}
+    lemmatizer = WordNetLemmatizer()
+    return {lemmatizer.lemmatize(word.lower()) for word in word_tokenize(sentence) if word not in stop_words}
 
 
 def chunks(l, n):
