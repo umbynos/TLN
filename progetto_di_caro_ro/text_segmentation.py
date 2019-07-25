@@ -16,7 +16,7 @@ def main():
     smartphone_file = "data/People-Arent-Upgrading-Smartphones-as-Quickly-and-That-Is-Bad-for-Apple.txt"
     moon_file = "data/The-Last-Man-on-the-Moon--Eugene-Cernan-gives-a-compelling-account.txt"
     # divide input text into individual lexical units (list of words)
-    words = extrapolate_file(trump_file)
+    words = extrapolate_file(moon_file)
     # Subdivide text into pseudosentences of a predefined size w
     w = 10
     pseudosentences = list_pseudosentences(w, words)
@@ -45,12 +45,16 @@ def main():
     print("###### OLD SEGMENTS ######")
     print("###########################")
     for block in blocks:
-        print(block)
+        for pseudo_sentence in block:
+            print(pseudo_sentence)
+        print()
     print("###########################")
     print("###### NEW SEGMENTS ######")
     print("###########################")
     for block in new_segmentation:
-        print(block)
+        for pseudo_sentence in block:
+            print(pseudo_sentence)
+        print()
 
 
 # divide input text into individual lexical units (list of words)
@@ -150,15 +154,19 @@ def find_new_blocks(dict_similarities, blocks):
     pseudo_sent_pos = 0
     bad_pseudosent_pos = 1  # if the minimum is between the first couple, is moved the pseudosentence with index 1
     for b, block in enumerate(blocks):
-        minimum = dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)]
-        for ps in range(len(block)-1):  # -1: if last one is considered it goes out of range
-            actual_sim = dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)]
-            if actual_sim < minimum:
-                minimum = actual_sim
-                bad_pseudosent_pos = ps+1
-            pseudo_sent_pos += 1
-        for k in range(bad_pseudosent_pos):
-            new_block.append(block[k])
+        if len(block) > 1:
+            minimum = dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)]
+            bad_pseudosent_pos = 1
+            for ps in range(len(block)-1):  # -1: if last one is considered it goes out of range
+                actual_sim = dict_similarities[(pseudo_sent_pos, pseudo_sent_pos+1)]
+                if actual_sim < minimum:
+                    minimum = actual_sim
+                    bad_pseudosent_pos = ps+1
+                pseudo_sent_pos += 1
+            for k in range(bad_pseudosent_pos):
+                new_block.append(block[k])
+        else:
+            new_block.append(block[0])
         new_blocks.append(new_block)
         new_block = []
         remaining = bad_pseudosent_pos
