@@ -68,7 +68,7 @@ valutazione di similarità utilizzo Wu & Palmer o Leacock Chodorow
 
 
 
-# TO DO
+# COSA FA
 w: dimensione pseudo frasi  
 k: numero di pseudo frasi all'interno dei blocchi
 
@@ -77,7 +77,3 @@ k: numero di pseudo frasi all'interno dei blocchi
 contigue
 - spezzi il blocco dovre trovi il minimo trovato prima
 (ignori quindi la divisione che avevi in precedenza)
-
-In passato: Prendere la formula a pagina 17. w di un t 
-può essere la media di wup che t ha con tutte le altre
-parole della pseudo sentence
