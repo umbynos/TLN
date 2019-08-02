@@ -14,7 +14,7 @@ La salienza di solito si trova calcolando la topic signature (un insieme di sali
 Ogni valore della salienza della topic signature deve essere maggiore di una certa soglia. Dovrebbero esistere delle funzioni che la calcolano (la frequenza non è detto che vada bene).
 La SPECIFICITA LESSICALE può essere utilizzata per individuare i termini più salienti e dare così un valore alle frasi dove sono
 
-## Audio Elisa + Teoria
+## Teoria
 Contenuto dei testi: titolo e paragrafi divisi da righe vuote  
 Ovviamente si cerca di ottenere dei riassunti estrattivi (non astrattivi)  
 Esistono varie misure per fare i riassunti -> relevance criteria
@@ -37,7 +37,7 @@ Stigma: negatives, pronouns, etc. non-important sentences contain
 These phrases can be detected automatically.  
 Method: Add to sentence score if it contains a bonus phrase,
 penalize if it contains a stigma phrase.
-- Il metodo basato sulla coesione: le frafi più importanti hanno più collegamenti con altre  
+- Il metodo basato sulla coesione: le frasi più importanti hanno più collegamenti con altre  
 La coesione si può calcolare su  
   - word co-occurrences (Apply IR methods at the document level: texts
 are collections of paragraphs. Use a traditional, IR-based, word similarity measure to
@@ -49,7 +49,7 @@ paragraphs that Pi is related to. Method: determine relatedness score Si for eac
   - combinations of the above.
 
 Ne basta una, vedere se farne di più  
-Loro l'hanno fatto con il titolo e con la coesione dei paragrafi  
+Fare con il titolo e con la coesione dei paragrafi  
 Con il titolo per ogni parola del titolo trovi il vettore di Nasasri  
 Con la coesione tra i paragrafi anche (per ogni parola del paragrafo trovi il vettore)  
 Per valutare l'operato si usa la weighted overlap tra il vettore del titolo ed i vettori del paragrafo
